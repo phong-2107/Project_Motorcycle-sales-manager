@@ -28,36 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.label2.Location = new System.Drawing.Point(402, 269);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 46);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Customer";
             // 
             // QLKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 632);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1640, 875);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QLKhachHang";
             this.Text = "QLKhachHang";
             this.Load += new System.EventHandler(this.QLKhachHang_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label2;
     }
 }

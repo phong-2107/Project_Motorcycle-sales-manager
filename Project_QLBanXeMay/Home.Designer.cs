@@ -141,6 +141,7 @@
             this.Sidebar.Controls.Add(this.panel1);
             this.Sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.Sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.Sidebar.ForeColor = System.Drawing.Color.Transparent;
             this.Sidebar.Location = new System.Drawing.Point(0, 40);
             this.Sidebar.Margin = new System.Windows.Forms.Padding(0);
             this.Sidebar.Name = "Sidebar";
@@ -1275,7 +1276,7 @@
             this.Controls.Add(this.Sidebar);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(163)))));
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "Home";

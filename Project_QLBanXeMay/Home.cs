@@ -69,8 +69,8 @@ namespace Project_QLBanXeMay
         private void mdiProp()
         {
             this.SetBevel(false);
-            Controls.OfType<MdiClient>()
-                    .FirstOrDefault().BackColor = Color.FromArgb(243, 247, 255);
+            //Controls.OfType<MdiClient>()
+                    //.FirstOrDefault().BackColor = Color.FromArgb(243, 247, 255);
         }
         private void MenuTransition_Tick(object sender, EventArgs e)
         {
