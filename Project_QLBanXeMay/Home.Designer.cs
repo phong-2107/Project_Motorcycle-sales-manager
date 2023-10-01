@@ -103,12 +103,13 @@
             this.MenuTransition = new System.Windows.Forms.Timer(this.components);
             this.SidebarTransistion = new System.Windows.Forms.Timer(this.components);
             this.btnHam = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.controlBox1 = new ReaLTaiizor.Controls.ControlBox();
+            this.HeaderBar = new System.Windows.Forms.Panel();
+            this.metroControlBox1 = new ReaLTaiizor.Controls.MetroControlBox();
             this.button31 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.ReportTransition = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.Sidebar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MenuContainer.SuspendLayout();
@@ -126,7 +127,7 @@
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.HeaderBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // Sidebar
@@ -149,6 +150,7 @@
             this.Sidebar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Sidebar.Size = new System.Drawing.Size(219, 860);
             this.Sidebar.TabIndex = 3;
+            this.Sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.Sidebar_Paint);
             // 
             // panel3
             // 
@@ -559,7 +561,7 @@
             this.ReportContainer.Location = new System.Drawing.Point(0, 188);
             this.ReportContainer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.ReportContainer.Name = "ReportContainer";
-            this.ReportContainer.Size = new System.Drawing.Size(217, 49);
+            this.ReportContainer.Size = new System.Drawing.Size(217, 250);
             this.ReportContainer.TabIndex = 17;
             // 
             // panel11
@@ -640,7 +642,7 @@
             this.panel12.Controls.Add(this.button42);
             this.panel12.Controls.Add(this.button43);
             this.panel12.Controls.Add(this.button44);
-            this.panel12.Location = new System.Drawing.Point(216, 0);
+            this.panel12.Location = new System.Drawing.Point(0, 49);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(216, 49);
@@ -712,7 +714,7 @@
             this.panel13.Controls.Add(this.button46);
             this.panel13.Controls.Add(this.button47);
             this.panel13.Controls.Add(this.button48);
-            this.panel13.Location = new System.Drawing.Point(432, 0);
+            this.panel13.Location = new System.Drawing.Point(0, 98);
             this.panel13.Margin = new System.Windows.Forms.Padding(0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(216, 49);
@@ -733,7 +735,7 @@
             this.button45.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button45.Size = new System.Drawing.Size(216, 49);
             this.button45.TabIndex = 9;
-            this.button45.Text = "Export Report";
+            this.button45.Text = "Sales history";
             this.button45.UseVisualStyleBackColor = false;
             // 
             // button46
@@ -785,7 +787,7 @@
             this.panel14.Controls.Add(this.button51);
             this.panel14.Controls.Add(this.button52);
             this.panel14.Controls.Add(this.button53);
-            this.panel14.Location = new System.Drawing.Point(648, 0);
+            this.panel14.Location = new System.Drawing.Point(0, 147);
             this.panel14.Margin = new System.Windows.Forms.Padding(0);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(216, 49);
@@ -876,7 +878,7 @@
             this.About.Controls.Add(this.button16);
             this.About.Controls.Add(this.button17);
             this.About.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.About.Location = new System.Drawing.Point(0, 253);
+            this.About.Location = new System.Drawing.Point(0, 454);
             this.About.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.About.Name = "About";
             this.About.Size = new System.Drawing.Size(216, 49);
@@ -949,7 +951,7 @@
             this.panel8.Controls.Add(this.button24);
             this.panel8.Controls.Add(this.button25);
             this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel8.Location = new System.Drawing.Point(0, 318);
+            this.panel8.Location = new System.Drawing.Point(0, 519);
             this.panel8.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(216, 49);
@@ -1022,7 +1024,7 @@
             this.panel5.Controls.Add(this.button20);
             this.panel5.Controls.Add(this.button21);
             this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel5.Location = new System.Drawing.Point(0, 383);
+            this.panel5.Location = new System.Drawing.Point(0, 584);
             this.panel5.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(216, 49);
@@ -1094,7 +1096,7 @@
             this.panel1.Controls.Add(this.button29);
             this.panel1.Controls.Add(this.button30);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel1.Location = new System.Drawing.Point(0, 448);
+            this.panel1.Location = new System.Drawing.Point(0, 649);
             this.panel1.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(216, 49);
@@ -1182,42 +1184,54 @@
             this.btnHam.TabStop = false;
             this.btnHam.Click += new System.EventHandler(this.btnHam_Click);
             // 
-            // panel2
+            // HeaderBar
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel2.Controls.Add(this.controlBox1);
-            this.panel2.Controls.Add(this.button31);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.btnCreateAccount);
-            this.panel2.Controls.Add(this.btnHam);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel2.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1700, 40);
-            this.panel2.TabIndex = 0;
+            this.HeaderBar.BackColor = System.Drawing.Color.White;
+            this.HeaderBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.HeaderBar.Controls.Add(this.label1);
+            this.HeaderBar.Controls.Add(this.metroControlBox1);
+            this.HeaderBar.Controls.Add(this.button31);
+            this.HeaderBar.Controls.Add(this.button2);
+            this.HeaderBar.Controls.Add(this.btnCreateAccount);
+            this.HeaderBar.Controls.Add(this.btnHam);
+            this.HeaderBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.HeaderBar.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.HeaderBar.Location = new System.Drawing.Point(0, 0);
+            this.HeaderBar.Margin = new System.Windows.Forms.Padding(0);
+            this.HeaderBar.Name = "HeaderBar";
+            this.HeaderBar.Size = new System.Drawing.Size(1700, 40);
+            this.HeaderBar.TabIndex = 0;
+            this.HeaderBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseDown);
             // 
-            // controlBox1
+            // metroControlBox1
             // 
-            this.controlBox1.BackColor = System.Drawing.Color.White;
-            this.controlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.controlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.controlBox1.DefaultLocation = true;
-            this.controlBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.controlBox1.EnableHoverHighlight = true;
-            this.controlBox1.EnableMaximizeButton = true;
-            this.controlBox1.EnableMinimizeButton = true;
-            this.controlBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.controlBox1.Location = new System.Drawing.Point(1610, 0);
-            this.controlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.controlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.controlBox1.Name = "controlBox1";
-            this.controlBox1.Size = new System.Drawing.Size(90, 25);
-            this.controlBox1.TabIndex = 6;
-            this.controlBox1.Text = "controlBox1";
+            this.metroControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroControlBox1.CloseHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.metroControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            this.metroControlBox1.CloseNormalForeColor = System.Drawing.Color.Gray;
+            this.metroControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroControlBox1.DefaultLocation = ReaLTaiizor.Enum.Metro.LocationType.Normal;
+            this.metroControlBox1.DisabledForeColor = System.Drawing.Color.DimGray;
+            this.metroControlBox1.IsDerivedStyle = true;
+            this.metroControlBox1.Location = new System.Drawing.Point(1597, 4);
+            this.metroControlBox1.MaximizeBox = true;
+            this.metroControlBox1.MaximizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.metroControlBox1.MaximizeHoverForeColor = System.Drawing.Color.Gray;
+            this.metroControlBox1.MaximizeNormalForeColor = System.Drawing.Color.Gray;
+            this.metroControlBox1.MinimizeBox = false;
+            this.metroControlBox1.MinimizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.metroControlBox1.MinimizeHoverForeColor = System.Drawing.Color.Gray;
+            this.metroControlBox1.MinimizeNormalForeColor = System.Drawing.Color.Gray;
+            this.metroControlBox1.Name = "metroControlBox1";
+            this.metroControlBox1.Size = new System.Drawing.Size(100, 25);
+            this.metroControlBox1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.metroControlBox1.StyleManager = null;
+            this.metroControlBox1.TabIndex = 6;
+            this.metroControlBox1.Text = "metroControlBox1";
+            this.metroControlBox1.ThemeAuthor = "Taiizor";
+            this.metroControlBox1.ThemeName = "MetroLight";
+            this.metroControlBox1.Click += new System.EventHandler(this.metroControlBox1_Click);
             // 
             // button31
             // 
@@ -1265,16 +1279,24 @@
             this.ReportTransition.Interval = 10;
             this.ReportTransition.Tick += new System.EventHandler(this.ReportTransition_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1087, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "today ";
+            // 
             // Home
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1700, 900);
             this.Controls.Add(this.Sidebar);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.HeaderBar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1282,6 +1304,7 @@
             this.Name = "Home";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ontrocon";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Sidebar.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1300,7 +1323,8 @@
             this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.HeaderBar.ResumeLayout(false);
+            this.HeaderBar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1357,7 +1381,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.PictureBox btnHam;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel HeaderBar;
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button2;
@@ -1384,7 +1408,8 @@
         private System.Windows.Forms.Button button52;
         private System.Windows.Forms.Button button53;
         private System.Windows.Forms.Timer ReportTransition;
-        private ReaLTaiizor.Controls.ControlBox controlBox1;
+        private ReaLTaiizor.Controls.MetroControlBox metroControlBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

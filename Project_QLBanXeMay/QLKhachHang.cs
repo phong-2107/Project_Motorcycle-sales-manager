@@ -21,5 +21,34 @@ namespace Project_QLBanXeMay
         {
             this.ControlBox = false;
         }
+
+        bool AddCustomerExpand = false;
+        private void AddCustomerTransition_Tick(object sender, EventArgs e)
+        {
+            if (AddCustomerExpand == false)
+            {
+                pnAddCustomer.Width += 10;
+                if (pnAddCustomer.Width >= 477)
+                {
+                    AddCustomerExpand = true;
+                    AddCustomerTransition.Stop();
+                }
+            }
+            else
+            {
+                pnAddCustomer.Width -= 10;
+                if (pnAddCustomer.Width <= 0)
+                {
+                    AddCustomerExpand = false;
+                    AddCustomerTransition.Stop();
+                }
+            }
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            AddCustomerTransition.Start();
+        }
+
     }
 }

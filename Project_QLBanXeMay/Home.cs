@@ -39,8 +39,12 @@ namespace Project_QLBanXeMay
         {
             InitializeComponent();
             mdiProp();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0, Width, Height, 15, 15));
+            AutoSize = false;
+            AutoScaleMode = AutoScaleMode.Font;
+            this.MaximumSize = new System.Drawing.Size(1700,900);
+
+
+            //this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0, Width, Height, 15, 15));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -341,6 +345,29 @@ namespace Project_QLBanXeMay
         }
 
         private void nightControlBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HeaderBar_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void metroControlBox1_Load(object sender, EventArgs e)
+        {
+
+            FormBorderStyle = FormBorderStyle.Sizable;
+            MaximizeBox = false;
+        }
+
+        private void metroControlBox1_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void Sidebar_Paint(object sender, PaintEventArgs e)
         {
 
         }
