@@ -19,4 +19,4 @@ D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormHelp.resou
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormSetting.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.login.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.Overview.resources
-D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormCreateUser.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.SalesHistory.resources

@@ -26,5 +26,10 @@ namespace Project_QLBanXeMay
         {
             this.ControlBox = false;
         }
+
+        private void borderRadius(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

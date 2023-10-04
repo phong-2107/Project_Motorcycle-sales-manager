@@ -33,6 +33,7 @@ namespace Project_QLBanXeMay
         QLKhachHang qLKhachHang;
         QLNhanVien qLNhanVien;
         QLVehicle qLVehicle;
+        SalesHistory salesHistory;
         login login;
 
         public Home()
@@ -260,6 +261,25 @@ namespace Project_QLBanXeMay
         }
 
 
+
+
+
+        private void btnSalesHistory_Click(object sender, EventArgs e)
+        {
+            if (salesHistory == null)
+            {
+                salesHistory = new SalesHistory();
+                salesHistory.FormClosed += salesHistory_FormClosed;
+                salesHistory.MdiParent = this;
+                salesHistory.Dock = DockStyle.Fill;
+                salesHistory.Show();
+            }
+            else
+            {
+                salesHistory.Activate();
+            }
+        }
+
         //================ 3. About Event CLick =================
         private void btnAbout_Click(object sender, EventArgs e)
         {
@@ -276,9 +296,14 @@ namespace Project_QLBanXeMay
                 about.Activate();
             }
         }
+
         private void About_FormClosed(object sender, FormClosedEventArgs e)
         {
             about = null;
+        }
+        private void salesHistory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            salesHistory = null;
         }
 
 
@@ -344,15 +369,6 @@ namespace Project_QLBanXeMay
             login = null;   
         }
 
-        private void nightControlBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HeaderBar_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
 
         private void metroControlBox1_Load(object sender, EventArgs e)
         {
@@ -361,15 +377,7 @@ namespace Project_QLBanXeMay
             MaximizeBox = false;
         }
 
-        private void metroControlBox1_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
 
-        private void Sidebar_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }

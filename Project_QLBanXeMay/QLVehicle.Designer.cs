@@ -53,7 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnAddImg = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtCompany = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.picMotor = new System.Windows.Forms.PictureBox();
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtColor = new System.Windows.Forms.TextBox();
@@ -80,6 +78,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.btnAddMotor = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAddImg = new System.Windows.Forms.Button();
+            this.picMotor = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotorcycles)).BeginInit();
             this.panel3.SuspendLayout();
@@ -89,10 +89,10 @@
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMotor)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMotor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -138,7 +138,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMotorcycles.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMotorcycles.Location = new System.Drawing.Point(9, 9);
+            this.dgvMotorcycles.Location = new System.Drawing.Point(15, 9);
             this.dgvMotorcycles.Margin = new System.Windows.Forms.Padding(9);
             this.dgvMotorcycles.Name = "dgvMotorcycles";
             this.dgvMotorcycles.ReadOnly = true;
@@ -353,30 +353,15 @@
             this.panel4.Controls.Add(this.label18);
             this.panel4.Location = new System.Drawing.Point(988, 86);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(503, 575);
+            this.panel4.Size = new System.Drawing.Size(478, 575);
             this.panel4.TabIndex = 8;
-            // 
-            // btnAddImg
-            // 
-            this.btnAddImg.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddImg.FlatAppearance.BorderSize = 0;
-            this.btnAddImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddImg.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAddImg.Image = ((System.Drawing.Image)(resources.GetObject("btnAddImg.Image")));
-            this.btnAddImg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddImg.Location = new System.Drawing.Point(287, 301);
-            this.btnAddImg.Name = "btnAddImg";
-            this.btnAddImg.Size = new System.Drawing.Size(174, 38);
-            this.btnAddImg.TabIndex = 57;
-            this.btnAddImg.Text = "Add image";
-            this.btnAddImg.UseVisualStyleBackColor = false;
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.txtCompany);
-            this.panel10.Location = new System.Drawing.Point(49, 520);
+            this.panel10.Location = new System.Drawing.Point(38, 520);
             this.panel10.Name = "panel10";
             this.panel10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel10.Size = new System.Drawing.Size(179, 38);
@@ -399,7 +384,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label21.Location = new System.Drawing.Point(46, 501);
+            this.label21.Location = new System.Drawing.Point(35, 501);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(65, 16);
             this.label21.TabIndex = 55;
@@ -410,7 +395,7 @@
             this.panel9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.txtDisplacement);
-            this.panel9.Location = new System.Drawing.Point(49, 443);
+            this.panel9.Location = new System.Drawing.Point(38, 443);
             this.panel9.Name = "panel9";
             this.panel9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel9.Size = new System.Drawing.Size(179, 38);
@@ -433,7 +418,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label20.Location = new System.Drawing.Point(46, 424);
+            this.label20.Location = new System.Drawing.Point(35, 424);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(90, 16);
             this.label20.TabIndex = 53;
@@ -444,7 +429,7 @@
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.txtPrice);
-            this.panel5.Location = new System.Drawing.Point(282, 443);
+            this.panel5.Location = new System.Drawing.Point(271, 443);
             this.panel5.Name = "panel5";
             this.panel5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel5.Size = new System.Drawing.Size(179, 38);
@@ -467,7 +452,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(279, 424);
+            this.label1.Location = new System.Drawing.Point(268, 424);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 16);
             this.label1.TabIndex = 51;
@@ -478,7 +463,7 @@
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.txtQuantity);
-            this.panel6.Location = new System.Drawing.Point(50, 373);
+            this.panel6.Location = new System.Drawing.Point(39, 373);
             this.panel6.Name = "panel6";
             this.panel6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel6.Size = new System.Drawing.Size(179, 38);
@@ -501,21 +486,11 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label15.Location = new System.Drawing.Point(47, 354);
+            this.label15.Location = new System.Drawing.Point(36, 354);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(55, 16);
             this.label15.TabIndex = 49;
             this.label15.Text = "Quantity";
-            // 
-            // picMotor
-            // 
-            this.picMotor.Image = ((System.Drawing.Image)(resources.GetObject("picMotor.Image")));
-            this.picMotor.Location = new System.Drawing.Point(20, 14);
-            this.picMotor.Name = "picMotor";
-            this.picMotor.Size = new System.Drawing.Size(460, 263);
-            this.picMotor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMotor.TabIndex = 48;
-            this.picMotor.TabStop = false;
             // 
             // cmbType
             // 
@@ -525,7 +500,7 @@
             "Current",
             "Prospective",
             "Non-active"});
-            this.cmbType.Location = new System.Drawing.Point(282, 523);
+            this.cmbType.Location = new System.Drawing.Point(271, 523);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(179, 28);
             this.cmbType.TabIndex = 46;
@@ -535,7 +510,7 @@
             this.panel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.txtColor);
-            this.panel7.Location = new System.Drawing.Point(280, 371);
+            this.panel7.Location = new System.Drawing.Point(269, 371);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(180, 38);
             this.panel7.TabIndex = 43;
@@ -556,7 +531,7 @@
             this.panel8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.txtNameMotor);
-            this.panel8.Location = new System.Drawing.Point(49, 301);
+            this.panel8.Location = new System.Drawing.Point(38, 301);
             this.panel8.Name = "panel8";
             this.panel8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel8.Size = new System.Drawing.Size(179, 38);
@@ -579,7 +554,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label16.Location = new System.Drawing.Point(279, 500);
+            this.label16.Location = new System.Drawing.Point(268, 500);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(76, 16);
             this.label16.TabIndex = 39;
@@ -590,7 +565,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label17.Location = new System.Drawing.Point(279, 352);
+            this.label17.Location = new System.Drawing.Point(268, 352);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 16);
             this.label17.TabIndex = 38;
@@ -601,7 +576,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label18.Location = new System.Drawing.Point(47, 282);
+            this.label18.Location = new System.Drawing.Point(36, 282);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(81, 16);
             this.label18.TabIndex = 37;
@@ -612,7 +587,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Location = new System.Drawing.Point(287, 75);
+            this.btnDelete.Location = new System.Drawing.Point(263, 71);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(3);
             this.btnDelete.Size = new System.Drawing.Size(182, 52);
@@ -625,7 +600,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Location = new System.Drawing.Point(62, 75);
+            this.btnUpdate.Location = new System.Drawing.Point(38, 71);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Padding = new System.Windows.Forms.Padding(3);
             this.btnUpdate.Size = new System.Drawing.Size(188, 52);
@@ -649,7 +624,7 @@
             this.btnAddMotor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(163)))));
             this.btnAddMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMotor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddMotor.Location = new System.Drawing.Point(57, 17);
+            this.btnAddMotor.Location = new System.Drawing.Point(33, 13);
             this.btnAddMotor.Name = "btnAddMotor";
             this.btnAddMotor.Padding = new System.Windows.Forms.Padding(3);
             this.btnAddMotor.Size = new System.Drawing.Size(412, 52);
@@ -666,8 +641,33 @@
             this.panel2.Location = new System.Drawing.Point(988, 680);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(503, 141);
+            this.panel2.Size = new System.Drawing.Size(478, 141);
             this.panel2.TabIndex = 59;
+            // 
+            // btnAddImg
+            // 
+            this.btnAddImg.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddImg.FlatAppearance.BorderSize = 0;
+            this.btnAddImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddImg.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnAddImg.Image = ((System.Drawing.Image)(resources.GetObject("btnAddImg.Image")));
+            this.btnAddImg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddImg.Location = new System.Drawing.Point(276, 300);
+            this.btnAddImg.Name = "btnAddImg";
+            this.btnAddImg.Size = new System.Drawing.Size(174, 38);
+            this.btnAddImg.TabIndex = 57;
+            this.btnAddImg.Text = "Add image";
+            this.btnAddImg.UseVisualStyleBackColor = false;
+            // 
+            // picMotor
+            // 
+            this.picMotor.Image = ((System.Drawing.Image)(resources.GetObject("picMotor.Image")));
+            this.picMotor.Location = new System.Drawing.Point(9, 14);
+            this.picMotor.Name = "picMotor";
+            this.picMotor.Size = new System.Drawing.Size(460, 263);
+            this.picMotor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMotor.TabIndex = 48;
+            this.picMotor.TabStop = false;
             // 
             // QLVehicle
             // 
@@ -702,12 +702,12 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMotor)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picMotor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

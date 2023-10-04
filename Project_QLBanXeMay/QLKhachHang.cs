@@ -50,5 +50,19 @@ namespace Project_QLBanXeMay
             AddCustomerTransition.Start();
         }
 
+        private void AddCustomer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnSearch_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void searchLabel_Click(object sender, EventArgs e)
+        {
+            searchLabel.Visible = false;
+        }
     }
 }

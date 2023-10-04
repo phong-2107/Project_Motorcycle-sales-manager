@@ -16,7 +16,7 @@ namespace Project_QLBanXeMay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            Application.Run(new login());
         } 
     }
 }

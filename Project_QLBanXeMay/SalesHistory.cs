@@ -16,5 +16,26 @@ namespace Project_QLBanXeMay
         {
             InitializeComponent();
         }
+
+        private void btnOther_Click(object sender, EventArgs e)
+        {
+            SearchByDate.Visible = true;
+        }
+
+        private void btnToday_Click(object sender, EventArgs e)
+        {
+            SearchByDate.Visible = false;
+        }
+
+
+        private void btnYesterday_Click(object sender, EventArgs e)
+        {
+            SearchByDate.Visible = false;
+        }
+
+        private void searchLabel_Click(object sender, EventArgs e)
+        {
+            searchLabel.Visible = false;
+        }
     }
 }
