@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_QLBanXeMay.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,14 @@ namespace Project_QLBanXeMay
 {
     public partial class login : Form
     {
-
         /*==========  Connection databse ============*/
         //private static QLXMEntities db = new QLXMEntities();
-        public static string username, fullname;
+        private static string fullname;
         public static int quyen;
+        private static string username;
+
+        public  string Username { get => username; set => username = value; }
+        public  string Fullname { get => fullname; set => fullname = value; }
 
 
         // 
@@ -26,50 +30,47 @@ namespace Project_QLBanXeMay
             InitializeComponent();
         }
 
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void login_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-
+            var context = new Model1();
+            List <DangNhap> lg = context.DangNhaps.ToList();
+            int tmp = 0;
             if (txtAccount.Text != "" && txtPassword.Text != "")
             {
-                /*
-                var user = db.DangNhaps.Select(s => s).Where(s => s.TaiKhoan.Equals(txtTaiKhoan.Text) && s.MatKhau.Equals(txtMatKhau.Text)).FirstOrDefault();
-                if (user != null)
+                foreach(var item in lg)
                 {
-                    username = txtTaiKhoan.Text;
-                    fullname = user.TenDayDu;
-                    quyen = int.Parse(user.Quyen + "");
-                    this.Close();
+                    if(txtAccount.Text == item.TaiKhoan && txtPassword.Text == item.MatKhau)
+                    {
+                        tmp = 1;
+                    }
+                }
+
+                if(tmp == 1)
+                {
+                    
+                    this.Hide();
+                    Overview overview = new Overview();
+                    Home home = new Home();
+                    home.Username = txtAccount.Text;
+                    home.Password = txtPassword.Text;
+                    overview.Username = txtAccount.Text;
+                    home.Closed += (s, args) => this.Close();
+                    home.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu sai", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtTaiKhoan.Text = "";
-                    txtMatKhau.Text = "";
-                    txtTaiKhoan.Focus();
+                    MessageBox.Show("Account or password is incorrect", "Sign in", MessageBoxButtons.OK);
                 }
-                */
-
-                this.Hide();
-                Home home = new Home();
-                home.Closed += (s, args) => this.Close();
-                home.Show();
-                
             }
             else
             {

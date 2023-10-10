@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            System.Windows.Forms.Button button1;
             this.Sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
@@ -85,28 +84,24 @@
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.BtnLogOut = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.BtnLogOut = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             this.MenuTransition = new System.Windows.Forms.Timer(this.components);
             this.SidebarTransistion = new System.Windows.Forms.Timer(this.components);
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.metroControlBox1 = new ReaLTaiizor.Controls.MetroControlBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.btnHam = new System.Windows.Forms.PictureBox();
             this.ReportTransition = new System.Windows.Forms.Timer(this.components);
-            this.pnSearch = new System.Windows.Forms.Panel();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            button1 = new System.Windows.Forms.Button();
             this.Sidebar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MenuContainer.SuspendLayout();
@@ -120,11 +115,10 @@
             this.panel13.SuspendLayout();
             this.About.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
-            this.pnSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // Sidebar
@@ -135,8 +129,8 @@
             this.Sidebar.Controls.Add(this.ReportContainer);
             this.Sidebar.Controls.Add(this.About);
             this.Sidebar.Controls.Add(this.panel8);
-            this.Sidebar.Controls.Add(this.panel5);
             this.Sidebar.Controls.Add(this.panel1);
+            this.Sidebar.Controls.Add(this.panel5);
             this.Sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.Sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.Sidebar.ForeColor = System.Drawing.Color.Transparent;
@@ -556,7 +550,7 @@
             this.ReportContainer.Location = new System.Drawing.Point(0, 188);
             this.ReportContainer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.ReportContainer.Name = "ReportContainer";
-            this.ReportContainer.Size = new System.Drawing.Size(217, 150);
+            this.ReportContainer.Size = new System.Drawing.Size(217, 49);
             this.ReportContainer.TabIndex = 17;
             // 
             // panel11
@@ -637,7 +631,7 @@
             this.panel12.Controls.Add(this.button42);
             this.panel12.Controls.Add(this.button43);
             this.panel12.Controls.Add(this.button44);
-            this.panel12.Location = new System.Drawing.Point(0, 49);
+            this.panel12.Location = new System.Drawing.Point(216, 0);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(216, 49);
@@ -660,6 +654,7 @@
             this.btnImportReport.TabIndex = 8;
             this.btnImportReport.Text = "Import Report";
             this.btnImportReport.UseVisualStyleBackColor = false;
+            this.btnImportReport.Click += new System.EventHandler(this.btnImportReport_Click);
             // 
             // button42
             // 
@@ -709,7 +704,7 @@
             this.panel13.Controls.Add(this.button46);
             this.panel13.Controls.Add(this.button47);
             this.panel13.Controls.Add(this.button48);
-            this.panel13.Location = new System.Drawing.Point(0, 98);
+            this.panel13.Location = new System.Drawing.Point(432, 0);
             this.panel13.Margin = new System.Windows.Forms.Padding(0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(216, 49);
@@ -783,7 +778,7 @@
             this.About.Controls.Add(this.button16);
             this.About.Controls.Add(this.button17);
             this.About.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.About.Location = new System.Drawing.Point(0, 354);
+            this.About.Location = new System.Drawing.Point(0, 253);
             this.About.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.About.Name = "About";
             this.About.Size = new System.Drawing.Size(216, 49);
@@ -856,7 +851,7 @@
             this.panel8.Controls.Add(this.button24);
             this.panel8.Controls.Add(this.button25);
             this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel8.Location = new System.Drawing.Point(0, 419);
+            this.panel8.Location = new System.Drawing.Point(0, 318);
             this.panel8.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(216, 49);
@@ -922,78 +917,6 @@
             this.button25.Text = "Help";
             this.button25.UseVisualStyleBackColor = true;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.BtnLogOut);
-            this.panel5.Controls.Add(this.button19);
-            this.panel5.Controls.Add(this.button20);
-            this.panel5.Controls.Add(this.button21);
-            this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel5.Location = new System.Drawing.Point(0, 484);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(216, 49);
-            this.panel5.TabIndex = 15;
-            // 
-            // BtnLogOut
-            // 
-            this.BtnLogOut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnLogOut.FlatAppearance.BorderSize = 0;
-            this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("BtnLogOut.Image")));
-            this.BtnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLogOut.Location = new System.Drawing.Point(0, 0);
-            this.BtnLogOut.Name = "BtnLogOut";
-            this.BtnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnLogOut.Size = new System.Drawing.Size(216, 49);
-            this.BtnLogOut.TabIndex = 8;
-            this.BtnLogOut.Text = "              LogOut";
-            this.BtnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLogOut.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
-            this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button19.Location = new System.Drawing.Point(0, 0);
-            this.button19.Name = "button19";
-            this.button19.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button19.Size = new System.Drawing.Size(216, 49);
-            this.button19.TabIndex = 7;
-            this.button19.Text = "Help";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
-            this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.Location = new System.Drawing.Point(0, 0);
-            this.button20.Name = "button20";
-            this.button20.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button20.Size = new System.Drawing.Size(216, 49);
-            this.button20.TabIndex = 6;
-            this.button20.Text = "Help";
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button21.Image = ((System.Drawing.Image)(resources.GetObject("button21.Image")));
-            this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button21.Location = new System.Drawing.Point(0, 0);
-            this.button21.Name = "button21";
-            this.button21.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button21.Size = new System.Drawing.Size(216, 49);
-            this.button21.TabIndex = 5;
-            this.button21.Text = "Help";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnSettings);
@@ -1001,7 +924,7 @@
             this.panel1.Controls.Add(this.button29);
             this.panel1.Controls.Add(this.button30);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel1.Location = new System.Drawing.Point(0, 549);
+            this.panel1.Location = new System.Drawing.Point(0, 383);
             this.panel1.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(216, 49);
@@ -1067,6 +990,79 @@
             this.button30.Text = "Help";
             this.button30.UseVisualStyleBackColor = true;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.BtnLogOut);
+            this.panel5.Controls.Add(this.button19);
+            this.panel5.Controls.Add(this.button20);
+            this.panel5.Controls.Add(this.button21);
+            this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.panel5.Location = new System.Drawing.Point(0, 448);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(216, 49);
+            this.panel5.TabIndex = 15;
+            // 
+            // BtnLogOut
+            // 
+            this.BtnLogOut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnLogOut.FlatAppearance.BorderSize = 0;
+            this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("BtnLogOut.Image")));
+            this.BtnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnLogOut.Location = new System.Drawing.Point(0, 0);
+            this.BtnLogOut.Name = "BtnLogOut";
+            this.BtnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnLogOut.Size = new System.Drawing.Size(216, 49);
+            this.BtnLogOut.TabIndex = 8;
+            this.BtnLogOut.Text = "              LogOut";
+            this.BtnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnLogOut.UseVisualStyleBackColor = true;
+            this.BtnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
+            // 
+            // button19
+            // 
+            this.button19.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
+            this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button19.Location = new System.Drawing.Point(0, 0);
+            this.button19.Name = "button19";
+            this.button19.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button19.Size = new System.Drawing.Size(216, 49);
+            this.button19.TabIndex = 7;
+            this.button19.Text = "Help";
+            this.button19.UseVisualStyleBackColor = true;
+            // 
+            // button20
+            // 
+            this.button20.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
+            this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button20.Location = new System.Drawing.Point(0, 0);
+            this.button20.Name = "button20";
+            this.button20.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button20.Size = new System.Drawing.Size(216, 49);
+            this.button20.TabIndex = 6;
+            this.button20.Text = "Help";
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // button21
+            // 
+            this.button21.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button21.Image = ((System.Drawing.Image)(resources.GetObject("button21.Image")));
+            this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button21.Location = new System.Drawing.Point(0, 0);
+            this.button21.Name = "button21";
+            this.button21.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button21.Size = new System.Drawing.Size(216, 49);
+            this.button21.TabIndex = 5;
+            this.button21.Text = "Help";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
             // MenuTransition
             // 
             this.MenuTransition.Interval = 10;
@@ -1081,9 +1077,8 @@
             // 
             this.HeaderBar.BackColor = System.Drawing.Color.White;
             this.HeaderBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.HeaderBar.Controls.Add(this.pnSearch);
             this.HeaderBar.Controls.Add(this.metroControlBox1);
-            this.HeaderBar.Controls.Add(this.button2);
+            this.HeaderBar.Controls.Add(this.btnSetting);
             this.HeaderBar.Controls.Add(this.btnCreateAccount);
             this.HeaderBar.Controls.Add(this.btnHam);
             this.HeaderBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1123,17 +1118,17 @@
             this.metroControlBox1.ThemeAuthor = "Taiizor";
             this.metroControlBox1.ThemeName = "MetroLight";
             // 
-            // button2
+            // btnSetting
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1401, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(38, 34);
-            this.button2.TabIndex = 5;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSetting.BackColor = System.Drawing.Color.Transparent;
+            this.btnSetting.FlatAppearance.BorderSize = 0;
+            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
+            this.btnSetting.Location = new System.Drawing.Point(1401, 2);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(38, 34);
+            this.btnSetting.TabIndex = 5;
+            this.btnSetting.UseVisualStyleBackColor = false;
             // 
             // btnCreateAccount
             // 
@@ -1149,7 +1144,6 @@
             this.btnCreateAccount.Size = new System.Drawing.Size(146, 33);
             this.btnCreateAccount.TabIndex = 5;
             this.btnCreateAccount.Text = "anonymous";
-            this.btnCreateAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreateAccount.UseVisualStyleBackColor = false;
             this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
@@ -1169,50 +1163,6 @@
             // 
             this.ReportTransition.Interval = 10;
             this.ReportTransition.Tick += new System.EventHandler(this.ReportTransition_Tick);
-            // 
-            // pnSearch
-            // 
-            this.pnSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnSearch.Controls.Add(this.searchLabel);
-            this.pnSearch.Controls.Add(button1);
-            this.pnSearch.Controls.Add(this.txtSearch);
-            this.pnSearch.Location = new System.Drawing.Point(47, 5);
-            this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(320, 32);
-            this.pnSearch.TabIndex = 14;
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.searchLabel.Location = new System.Drawing.Point(38, 4);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(59, 18);
-            this.searchLabel.TabIndex = 19;
-            this.searchLabel.Text = "Search ";
-            // 
-            // button1
-            // 
-            button1.BackColor = System.Drawing.Color.White;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            button1.Location = new System.Drawing.Point(-1, 0);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(33, 27);
-            button1.TabIndex = 10;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(38, 4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(268, 19);
-            this.txtSearch.TabIndex = 10;
             // 
             // Home
             // 
@@ -1245,12 +1195,10 @@
             this.panel13.ResumeLayout(false);
             this.About.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.HeaderBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
-            this.pnSearch.ResumeLayout(false);
-            this.pnSearch.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1304,7 +1252,7 @@
         private System.Windows.Forms.PictureBox btnHam;
         private System.Windows.Forms.Panel HeaderBar;
         private System.Windows.Forms.Button btnCreateAccount;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.FlowLayoutPanel ReportContainer;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btnReport;
@@ -1328,9 +1276,6 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Panel pnSearch;
-        private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.TextBox txtSearch;
     }
 }
 

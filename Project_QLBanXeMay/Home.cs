@@ -14,6 +14,8 @@ namespace Project_QLBanXeMay
 {
     public partial class Home : Form
     {
+
+        /* Custom border radius for form home */
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn(
@@ -25,6 +27,7 @@ namespace Project_QLBanXeMay
             int nHeightEllipe
         );
 
+        /* Create a child form for form home */
         Home home;
         Overview overview;
         FormAbout about;
@@ -34,7 +37,21 @@ namespace Project_QLBanXeMay
         QLNhanVien qLNhanVien;
         QLVehicle qLVehicle;
         SalesHistory salesHistory;
+        ImportHistory importHistory;
         login login;
+
+        /*  initialize variables */
+        bool menuExpand = false;
+        bool reportExpand = false;
+
+        private static string password;
+        public static int quyen;
+        private static string username;
+
+        public string Username { get => username; set => username = value; }
+        public string Password { get => password; set => password = value; }
+
+        /* ============ Source code MAIN ==============*/
 
         public Home()
         {
@@ -43,13 +60,13 @@ namespace Project_QLBanXeMay
             AutoSize = false;
             AutoScaleMode = AutoScaleMode.Font;
             this.MaximumSize = new System.Drawing.Size(1700,900);
-
-
-            //this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0, Width, Height, 15, 15));
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0, Width, Height, 15, 15));
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            btnCreateAccount.Text = username;
+            
             if (overview == null)
             {
                 overview = new Overview();
@@ -64,18 +81,9 @@ namespace Project_QLBanXeMay
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-        bool menuExpand = false;
-        bool reportExpand = false;
-
         private void mdiProp()
         {
             this.SetBevel(false);
-            //Controls.OfType<MdiClient>()
-                    //.FirstOrDefault().BackColor = Color.FromArgb(243, 247, 255);
         }
         private void MenuTransition_Tick(object sender, EventArgs e)
         {
@@ -261,9 +269,6 @@ namespace Project_QLBanXeMay
         }
 
 
-
-
-
         private void btnSalesHistory_Click(object sender, EventArgs e)
         {
             if (salesHistory == null)
@@ -278,6 +283,31 @@ namespace Project_QLBanXeMay
             {
                 salesHistory.Activate();
             }
+        }
+        private void salesHistory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            salesHistory = null;
+        }
+
+
+        private void btnImportReport_Click(object sender, EventArgs e)
+        {
+            if (importHistory == null)
+            {
+                importHistory = new ImportHistory();
+                importHistory.FormClosed += ImportHistory_FormClosed;
+                importHistory.MdiParent = this;
+                importHistory.Dock = DockStyle.Fill;
+                importHistory.Show();
+            }
+            else
+            {
+                importHistory.Activate();
+            }
+        }
+        private void ImportHistory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            importHistory = null;
         }
 
         //================ 3. About Event CLick =================
@@ -296,16 +326,10 @@ namespace Project_QLBanXeMay
                 about.Activate();
             }
         }
-
         private void About_FormClosed(object sender, FormClosedEventArgs e)
         {
             about = null;
         }
-        private void salesHistory_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            salesHistory = null;
-        }
-
 
 
         //================ 4. Help Event CLick =================
@@ -351,19 +375,14 @@ namespace Project_QLBanXeMay
             setting = null;
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             login = new login();
             login.FormClosed += login_FormClosed;
             login.Dock = DockStyle.Fill;
+            
             login.Show();
         }
-
         private void login_FormClosed(object sender, FormClosedEventArgs e)
         {
             login = null;   
@@ -377,7 +396,22 @@ namespace Project_QLBanXeMay
             MaximizeBox = false;
         }
 
+        private void BtnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure Logout ? ", "LOG OUT", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                login lg = new login();
+                lg.Show();
+                lg.FormClosing += FrmClosing;
+                Hide();
+            }
+        }
 
+        private void FrmClosing(object sender, FormClosingEventArgs e)
+        {
+            Show();
+        }
 
     }
 }

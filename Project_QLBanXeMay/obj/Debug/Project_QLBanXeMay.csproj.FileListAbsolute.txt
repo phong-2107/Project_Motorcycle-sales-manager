@@ -20,3 +20,8 @@ D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormSetting.re
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.login.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.Overview.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.SalesHistory.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.ImportHistory.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.dll
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.SqlServer.dll
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.xml
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.SqlServer.xml

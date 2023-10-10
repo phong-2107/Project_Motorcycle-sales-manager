@@ -33,14 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="ReaLTaiizor, Version=3.7.9.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ReaLTaiizor.3.7.9.5\lib\net48\ReaLTaiizor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BorderRadiusControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="borderRadius\borderPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="borderRadius\RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormAbout.cs">
@@ -79,6 +94,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImportHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportHistory.Designer.cs">
+      <DependentUpon>ImportHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +107,20 @@
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="mdiProperties.cs" />
+    <Compile Include="models\ChiTietPhieuNhap.cs" />
+    <Compile Include="models\ChiTietPhieuXuat.cs" />
+    <Compile Include="models\ChiTietXe.cs" />
+    <Compile Include="models\DangNhap.cs" />
+    <Compile Include="models\HangXe.cs" />
+    <Compile Include="models\KhachHang.cs" />
+    <Compile Include="models\MauXe.cs" />
+    <Compile Include="models\Model1.cs" />
+    <Compile Include="models\NhaCungCap.cs" />
+    <Compile Include="models\NhanVien.cs" />
+    <Compile Include="models\PhieuNhap.cs" />
+    <Compile Include="models\PhieuXuat.cs" />
+    <Compile Include="models\sysdiagram.cs" />
+    <Compile Include="models\Xe.cs" />
     <Compile Include="Overview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportHistory.resx">
+      <DependentUpon>ImportHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
