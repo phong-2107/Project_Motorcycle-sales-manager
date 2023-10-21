@@ -33,24 +33,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.label5 = new System.Windows.Forms.Label();
             this.SearchByDate = new Project_QLBanXeMay.borderRadius.borderPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnWeek = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSearchDay = new System.Windows.Forms.Button();
             this.btnMonth = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.borderPanel3 = new Project_QLBanXeMay.borderRadius.borderPanel();
             this.dgvMotorcycles = new System.Windows.Forms.DataGridView();
-            this.SoHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoKhung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDImport = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HangXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateBuy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateImport = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borderPanel2 = new Project_QLBanXeMay.borderRadius.borderPanel();
             this.searchLabel = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -60,7 +61,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnToday = new System.Windows.Forms.Button();
             this.btnYesterday = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             button1 = new System.Windows.Forms.Button();
             this.SearchByDate.SuspendLayout();
             this.borderPanel3.SuspendLayout();
@@ -74,11 +74,21 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            button1.Location = new System.Drawing.Point(17, 9);
+            button1.Location = new System.Drawing.Point(14, 8);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(43, 36);
             button1.TabIndex = 10;
             button1.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(29, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(369, 42);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Manager Import History";
             // 
             // SearchByDate
             // 
@@ -87,12 +97,12 @@
             this.SearchByDate.Controls.Add(this.btnWeek);
             this.SearchByDate.Controls.Add(this.label18);
             this.SearchByDate.Controls.Add(this.label2);
-            this.SearchByDate.Controls.Add(this.button3);
+            this.SearchByDate.Controls.Add(this.btnSearchDay);
             this.SearchByDate.Controls.Add(this.btnMonth);
-            this.SearchByDate.Controls.Add(this.dateTimePicker1);
-            this.SearchByDate.Controls.Add(this.dateTimePicker2);
+            this.SearchByDate.Controls.Add(this.dtpFrom);
+            this.SearchByDate.Controls.Add(this.dtpTo);
             this.SearchByDate.Controls.Add(this.label1);
-            this.SearchByDate.Location = new System.Drawing.Point(1072, 242);
+            this.SearchByDate.Location = new System.Drawing.Point(1055, 238);
             this.SearchByDate.Name = "SearchByDate";
             this.SearchByDate.Size = new System.Drawing.Size(272, 429);
             this.SearchByDate.TabIndex = 39;
@@ -115,6 +125,7 @@
             this.btnWeek.TabIndex = 12;
             this.btnWeek.Text = "Week";
             this.btnWeek.UseVisualStyleBackColor = true;
+            this.btnWeek.Click += new System.EventHandler(this.btnWeek_Click);
             // 
             // label18
             // 
@@ -136,16 +147,17 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "To";
             // 
-            // button3
+            // btnSearchDay
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(70, 350);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 30);
-            this.button3.TabIndex = 29;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSearchDay.FlatAppearance.BorderSize = 0;
+            this.btnSearchDay.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSearchDay.Location = new System.Drawing.Point(65, 350);
+            this.btnSearchDay.Name = "btnSearchDay";
+            this.btnSearchDay.Size = new System.Drawing.Size(150, 30);
+            this.btnSearchDay.TabIndex = 29;
+            this.btnSearchDay.Text = "Search";
+            this.btnSearchDay.UseVisualStyleBackColor = true;
+            this.btnSearchDay.Click += new System.EventHandler(this.btnSearchDay_Click);
             // 
             // btnMonth
             // 
@@ -157,22 +169,23 @@
             this.btnMonth.TabIndex = 13;
             this.btnMonth.Text = "Month";
             this.btnMonth.UseVisualStyleBackColor = true;
+            this.btnMonth.Click += new System.EventHandler(this.btnMonth_Click);
             // 
-            // dateTimePicker1
+            // dtpFrom
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(70, 269);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 20);
-            this.dateTimePicker1.TabIndex = 22;
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFrom.Location = new System.Drawing.Point(70, 269);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(150, 20);
+            this.dtpFrom.TabIndex = 22;
             // 
-            // dateTimePicker2
+            // dtpTo
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(70, 308);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(150, 20);
-            this.dateTimePicker2.TabIndex = 24;
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTo.Location = new System.Drawing.Point(70, 308);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(150, 20);
+            this.dtpTo.TabIndex = 24;
             // 
             // label1
             // 
@@ -187,7 +200,7 @@
             // 
             this.borderPanel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.borderPanel3.Controls.Add(this.dgvMotorcycles);
-            this.borderPanel3.Location = new System.Drawing.Point(40, 242);
+            this.borderPanel3.Location = new System.Drawing.Point(23, 238);
             this.borderPanel3.Name = "borderPanel3";
             this.borderPanel3.Size = new System.Drawing.Size(1014, 544);
             this.borderPanel3.TabIndex = 38;
@@ -210,12 +223,12 @@
             this.dgvMotorcycles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMotorcycles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMotorcycles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SoHoaDon,
-            this.nameCustomer,
-            this.nameMotor,
-            this.SoKhung,
+            this.IDImport,
+            this.NameMotor,
+            this.HangXe,
+            this.SoLuong,
             this.Cost,
-            this.DateBuy});
+            this.DateImport});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -224,7 +237,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMotorcycles.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMotorcycles.Location = new System.Drawing.Point(14, 9);
+            this.dgvMotorcycles.Location = new System.Drawing.Point(23, 20);
             this.dgvMotorcycles.Margin = new System.Windows.Forms.Padding(9);
             this.dgvMotorcycles.Name = "dgvMotorcycles";
             this.dgvMotorcycles.ReadOnly = true;
@@ -240,51 +253,51 @@
             this.dgvMotorcycles.RowTemplate.ReadOnly = true;
             this.dgvMotorcycles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMotorcycles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvMotorcycles.Size = new System.Drawing.Size(991, 507);
+            this.dgvMotorcycles.Size = new System.Drawing.Size(982, 507);
             this.dgvMotorcycles.StandardTab = true;
             this.dgvMotorcycles.TabIndex = 0;
             // 
-            // SoHoaDon
+            // IDImport
             // 
-            this.SoHoaDon.HeaderText = "So hoa don";
-            this.SoHoaDon.Name = "SoHoaDon";
-            this.SoHoaDon.ReadOnly = true;
-            this.SoHoaDon.Width = 140;
+            this.IDImport.HeaderText = "IDImport";
+            this.IDImport.Name = "IDImport";
+            this.IDImport.ReadOnly = true;
+            this.IDImport.Width = 200;
             // 
-            // nameCustomer
+            // NameMotor
             // 
-            this.nameCustomer.HeaderText = "ten khach hang";
-            this.nameCustomer.Name = "nameCustomer";
-            this.nameCustomer.ReadOnly = true;
-            this.nameCustomer.Width = 200;
+            this.NameMotor.HeaderText = "Ten Xe";
+            this.NameMotor.Name = "NameMotor";
+            this.NameMotor.ReadOnly = true;
+            this.NameMotor.Width = 150;
             // 
-            // nameMotor
+            // HangXe
             // 
-            this.nameMotor.HeaderText = "ten Xe";
-            this.nameMotor.Name = "nameMotor";
-            this.nameMotor.ReadOnly = true;
-            this.nameMotor.Width = 150;
+            this.HangXe.HeaderText = "Hang Xe";
+            this.HangXe.Name = "HangXe";
+            this.HangXe.ReadOnly = true;
+            this.HangXe.Width = 150;
             // 
-            // SoKhung
+            // SoLuong
             // 
-            this.SoKhung.HeaderText = "SoKhung";
-            this.SoKhung.Name = "SoKhung";
-            this.SoKhung.ReadOnly = true;
-            this.SoKhung.Width = 150;
+            this.SoLuong.HeaderText = "SoLuong";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            this.SoLuong.Width = 150;
             // 
             // Cost
             // 
-            this.Cost.HeaderText = "Thanh Tien";
+            this.Cost.HeaderText = "cost";
             this.Cost.Name = "Cost";
             this.Cost.ReadOnly = true;
             this.Cost.Width = 150;
             // 
-            // DateBuy
+            // DateImport
             // 
-            this.DateBuy.HeaderText = "Ngay Mua";
-            this.DateBuy.Name = "DateBuy";
-            this.DateBuy.ReadOnly = true;
-            this.DateBuy.Width = 200;
+            this.DateImport.HeaderText = "Ngay Nhap";
+            this.DateImport.Name = "DateImport";
+            this.DateImport.ReadOnly = true;
+            this.DateImport.Width = 150;
             // 
             // borderPanel2
             // 
@@ -292,10 +305,12 @@
             this.borderPanel2.Controls.Add(this.searchLabel);
             this.borderPanel2.Controls.Add(button1);
             this.borderPanel2.Controls.Add(this.txtSearch);
-            this.borderPanel2.Location = new System.Drawing.Point(49, 167);
+            this.borderPanel2.Location = new System.Drawing.Point(32, 163);
             this.borderPanel2.Name = "borderPanel2";
             this.borderPanel2.Size = new System.Drawing.Size(370, 48);
             this.borderPanel2.TabIndex = 37;
+            this.borderPanel2.Click += new System.EventHandler(this.borderPanel2_Click);
+            this.borderPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.borderPanel2_Paint);
             // 
             // searchLabel
             // 
@@ -307,6 +322,7 @@
             this.searchLabel.Size = new System.Drawing.Size(96, 18);
             this.searchLabel.TabIndex = 19;
             this.searchLabel.Text = "Search  by ID";
+            this.searchLabel.Click += new System.EventHandler(this.searchLabel_Click);
             // 
             // txtSearch
             // 
@@ -316,6 +332,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(280, 19);
             this.txtSearch.TabIndex = 10;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // borderPanel1
             // 
@@ -326,7 +343,7 @@
             this.borderPanel1.Controls.Add(this.btnToday);
             this.borderPanel1.Controls.Add(this.btnYesterday);
             this.borderPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borderPanel1.Location = new System.Drawing.Point(426, 165);
+            this.borderPanel1.Location = new System.Drawing.Point(409, 161);
             this.borderPanel1.Name = "borderPanel1";
             this.borderPanel1.Size = new System.Drawing.Size(332, 51);
             this.borderPanel1.TabIndex = 36;
@@ -350,6 +367,7 @@
             this.btnOther.TabIndex = 28;
             this.btnOther.Text = "Other";
             this.btnOther.UseVisualStyleBackColor = true;
+            this.btnOther.Click += new System.EventHandler(this.btnOther_Click);
             // 
             // panel4
             // 
@@ -370,6 +388,7 @@
             this.btnToday.TabIndex = 14;
             this.btnToday.Text = "Today";
             this.btnToday.UseVisualStyleBackColor = true;
+            this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
             // 
             // btnYesterday
             // 
@@ -382,22 +401,13 @@
             this.btnYesterday.TabIndex = 16;
             this.btnYesterday.Text = "Yesterday";
             this.btnYesterday.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(369, 42);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Manager Import History";
+            this.btnYesterday.Click += new System.EventHandler(this.btnYesterday_Click);
             // 
             // ImportHistory
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1484, 836);
+            this.ClientSize = new System.Drawing.Size(1350, 850);
             this.Controls.Add(this.SearchByDate);
             this.Controls.Add(this.borderPanel3);
             this.Controls.Add(this.borderPanel2);
@@ -406,6 +416,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ImportHistory";
             this.Text = "ImportHistory";
+            this.Load += new System.EventHandler(this.ImportHistory_Load);
             this.SearchByDate.ResumeLayout(false);
             this.SearchByDate.PerformLayout();
             this.borderPanel3.ResumeLayout(false);
@@ -425,19 +436,13 @@
         private System.Windows.Forms.Button btnWeek;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSearchDay;
         private System.Windows.Forms.Button btnMonth;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
+        private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.Label label1;
         private borderRadius.borderPanel borderPanel3;
         private System.Windows.Forms.DataGridView dgvMotorcycles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameCustomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameMotor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoKhung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateBuy;
         private borderRadius.borderPanel borderPanel2;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox txtSearch;
@@ -448,5 +453,11 @@
         private System.Windows.Forms.Button btnToday;
         private System.Windows.Forms.Button btnYesterday;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDImport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameMotor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HangXe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateImport;
     }
 }

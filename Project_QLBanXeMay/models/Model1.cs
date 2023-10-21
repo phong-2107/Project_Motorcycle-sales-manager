@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Project_QLBanXeMay.models
+namespace Project_QLBanXeMay.Models
 {
     public partial class Model1 : DbContext
     {
@@ -28,6 +28,25 @@ namespace Project_QLBanXeMay.models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<PhieuNhap>()
+                .HasMany(e => e.ChiTietPhieuNhaps)
+                .WithRequired(e => e.PhieuNhap)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PhieuXuat>()
+                .HasMany(e => e.ChiTietPhieuXuats)
+                .WithRequired(e => e.PhieuXuat)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Xe>()
+                .HasMany(e => e.ChiTietPhieuNhaps)
+                .WithRequired(e => e.Xe)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Xe>()
+                .HasMany(e => e.ChiTietPhieuXuats)
+                .WithRequired(e => e.Xe)
+                .WillCascadeOnDelete(false);
         }
     }
 }

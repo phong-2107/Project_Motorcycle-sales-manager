@@ -61,9 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BorderRadiusControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="borderRadius\borderPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -76,11 +73,11 @@
     <Compile Include="FormAbout.Designer.cs">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHelp.cs">
+    <Compile Include="FormContact.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHelp.Designer.cs">
-      <DependentUpon>FormHelp.cs</DependentUpon>
+    <Compile Include="FormContact.Designer.cs">
+      <DependentUpon>FormContact.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSetting.cs">
       <SubType>Form</SubType>
@@ -107,20 +104,20 @@
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="mdiProperties.cs" />
-    <Compile Include="models\ChiTietPhieuNhap.cs" />
-    <Compile Include="models\ChiTietPhieuXuat.cs" />
-    <Compile Include="models\ChiTietXe.cs" />
-    <Compile Include="models\DangNhap.cs" />
-    <Compile Include="models\HangXe.cs" />
-    <Compile Include="models\KhachHang.cs" />
-    <Compile Include="models\MauXe.cs" />
-    <Compile Include="models\Model1.cs" />
-    <Compile Include="models\NhaCungCap.cs" />
-    <Compile Include="models\NhanVien.cs" />
-    <Compile Include="models\PhieuNhap.cs" />
-    <Compile Include="models\PhieuXuat.cs" />
-    <Compile Include="models\sysdiagram.cs" />
-    <Compile Include="models\Xe.cs" />
+    <Compile Include="Models\ChiTietPhieuNhap.cs" />
+    <Compile Include="Models\ChiTietPhieuXuat.cs" />
+    <Compile Include="Models\ChiTietXe.cs" />
+    <Compile Include="Models\DangNhap.cs" />
+    <Compile Include="Models\HangXe.cs" />
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\MauXe.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\NhaCungCap.cs" />
+    <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\PhieuNhap.cs" />
+    <Compile Include="Models\PhieuXuat.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\Xe.cs" />
     <Compile Include="Overview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,8 +153,8 @@
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHelp.resx">
-      <DependentUpon>FormHelp.cs</DependentUpon>
+    <EmbeddedResource Include="FormContact.resx">
+      <DependentUpon>FormContact.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
@@ -228,5 +225,6 @@
   <ItemGroup>
     <None Include="Resources\icons8-menu-30.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,4 @@
-namespace Project_QLBanXeMay.models
+namespace Project_QLBanXeMay.Models
 {
     using System;
     using System.Collections.Generic;

@@ -40,7 +40,7 @@ namespace Project_QLBanXeMay.borderRadius
             GraphicsPath GraphPath = GetRoundPath(Rect, borderRadius);
 
             this.Region = new Region(GraphPath);
-            using (Pen pen = new Pen(Color.Silver, borderThickness))
+            using (Pen pen = new Pen(Color.White, borderThickness))
             {
                 pen.Alignment = PenAlignment.Inset;
                 e.Graphics.DrawPath(pen, GraphPath);

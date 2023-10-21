@@ -1,4 +1,4 @@
-namespace Project_QLBanXeMay.models
+namespace Project_QLBanXeMay.Models
 {
     using System;
     using System.Collections.Generic;
@@ -16,7 +16,8 @@ namespace Project_QLBanXeMay.models
         }
 
         [Key]
-        public int MaKH { get; set; }
+        [StringLength(50)]
+        public string MaKH { get; set; }
 
         [StringLength(50)]
         public string TenKH { get; set; }

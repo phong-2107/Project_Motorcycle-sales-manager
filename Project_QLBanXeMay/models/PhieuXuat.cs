@@ -1,4 +1,4 @@
-namespace Project_QLBanXeMay.models
+namespace Project_QLBanXeMay.Models
 {
     using System;
     using System.Collections.Generic;
@@ -23,7 +23,8 @@ namespace Project_QLBanXeMay.models
         [StringLength(50)]
         public string MaNV { get; set; }
 
-        public int? MaKH { get; set; }
+        [StringLength(50)]
+        public string MaKH { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? NgayXuat { get; set; }

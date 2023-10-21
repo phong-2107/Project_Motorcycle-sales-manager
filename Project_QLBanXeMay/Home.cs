@@ -31,7 +31,7 @@ namespace Project_QLBanXeMay
         Home home;
         Overview overview;
         FormAbout about;
-        FormHelp help;
+        FormContact help;
         FormSetting setting;
         QLKhachHang qLKhachHang;
         QLNhanVien qLNhanVien;
@@ -56,11 +56,15 @@ namespace Project_QLBanXeMay
         public Home()
         {
             InitializeComponent();
-            mdiProp();
-            AutoSize = false;
-            AutoScaleMode = AutoScaleMode.Font;
-            this.MaximumSize = new System.Drawing.Size(1700,900);
+            //mdiProp();
+            //AutoSize = true;
+            //AutoScaleMode = AutoScaleMode.Font;
+            //this.MaximumSize = new System.Drawing.Size(1700,900);
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0, Width, Height, 15, 15));
+            this.ControlBox = false;
+            this.Text = string.Empty;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -191,6 +195,7 @@ namespace Project_QLBanXeMay
                 overview = new Overview();
                 overview.FormClosed += Overview_FormClosed;
                 overview.Show();
+                
             }
             else
             {
@@ -236,6 +241,7 @@ namespace Project_QLBanXeMay
                 qLKhachHang.MdiParent = this;
                 qLKhachHang.Dock = DockStyle.Fill;
                 qLKhachHang.Show();
+                qLKhachHang.Refresh();
             }
             else
             {
@@ -337,7 +343,7 @@ namespace Project_QLBanXeMay
         {
             if (help == null)
             {
-                help = new FormHelp();
+                help = new FormContact();
                 help.FormClosed += Help_FormClosed;
                 help.MdiParent = this;
                 help.Dock = DockStyle.Fill;
@@ -388,13 +394,6 @@ namespace Project_QLBanXeMay
             login = null;   
         }
 
-
-        private void metroControlBox1_Load(object sender, EventArgs e)
-        {
-
-            FormBorderStyle = FormBorderStyle.Sizable;
-            MaximizeBox = false;
-        }
 
         private void BtnLogOut_Click(object sender, EventArgs e)
         {

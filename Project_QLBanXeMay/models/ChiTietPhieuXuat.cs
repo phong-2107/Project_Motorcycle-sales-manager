@@ -1,4 +1,4 @@
-namespace Project_QLBanXeMay.models
+namespace Project_QLBanXeMay.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,21 +10,16 @@ namespace Project_QLBanXeMay.models
     public partial class ChiTietPhieuXuat
     {
         [Key]
-        public int MaCTPX { get; set; }
-
+        [Column(Order = 0)]
         [StringLength(50)]
         public string MaPX { get; set; }
 
+        [Key]
+        [Column(Order = 1)]
         [StringLength(50)]
         public string MaXe { get; set; }
 
-        [StringLength(50)]
-        public string SoKhung { get; set; }
-
-        [StringLength(50)]
-        public string SoMay { get; set; }
-
-        public double? DonGia { get; set; }
+        public int? SoLuong { get; set; }
 
         public virtual PhieuXuat PhieuXuat { get; set; }
 

@@ -1,4 +1,4 @@
-namespace Project_QLBanXeMay.models
+namespace Project_QLBanXeMay.Models
 {
     using System;
     using System.Collections.Generic;
@@ -21,24 +21,28 @@ namespace Project_QLBanXeMay.models
         [StringLength(50)]
         public string MaXe { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string TenXe { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string MauSac { get; set; }
 
-        public int? SoLuong { get; set; }
+        public int SoLuongTong { get; set; }
 
-        public double? DonGia { get; set; }
+        public double DonGia { get; set; }
 
-        public int? PhanKhoi { get; set; }
+        public int PhanKhoi { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string LoaiXe { get; set; }
 
         [StringLength(50)]
         public string AnhXe { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string HangXe { get; set; }
 

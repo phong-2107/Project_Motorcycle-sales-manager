@@ -15,7 +15,6 @@ D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.QLNhanVien.res
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.QLKhachHang.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.QLVehicle.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormAbout.resources
-D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormHelp.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormSetting.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.login.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.Overview.resources
@@ -25,3 +24,4 @@ D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.dll
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.SqlServer.dll
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.xml
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.SqlServer.xml
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormContact.resources

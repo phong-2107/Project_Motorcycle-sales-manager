@@ -45,16 +45,16 @@
             this.btnMonth = new System.Windows.Forms.Button();
             this.btnToday = new System.Windows.Forms.Button();
             this.btnYesterday = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOther = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSearchDay = new System.Windows.Forms.Button();
             this.searchLabel = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.borderPanel1 = new Project_QLBanXeMay.borderRadius.borderPanel();
@@ -74,7 +74,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            button1.Location = new System.Drawing.Point(27, 9);
+            button1.Location = new System.Drawing.Point(17, 5);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(43, 36);
             button1.TabIndex = 10;
@@ -112,7 +112,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMotorcycles.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMotorcycles.Location = new System.Drawing.Point(9, 11);
+            this.dgvMotorcycles.Location = new System.Drawing.Point(15, 9);
             this.dgvMotorcycles.Margin = new System.Windows.Forms.Padding(9);
             this.dgvMotorcycles.Name = "dgvMotorcycles";
             this.dgvMotorcycles.ReadOnly = true;
@@ -127,8 +127,8 @@
             this.dgvMotorcycles.RowTemplate.Height = 50;
             this.dgvMotorcycles.RowTemplate.ReadOnly = true;
             this.dgvMotorcycles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMotorcycles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvMotorcycles.Size = new System.Drawing.Size(991, 507);
+            this.dgvMotorcycles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMotorcycles.Size = new System.Drawing.Size(1018, 580);
             this.dgvMotorcycles.StandardTab = true;
             this.dgvMotorcycles.TabIndex = 0;
             // 
@@ -137,7 +137,7 @@
             this.SoHoaDon.HeaderText = "So hoa don";
             this.SoHoaDon.Name = "SoHoaDon";
             this.SoHoaDon.ReadOnly = true;
-            this.SoHoaDon.Width = 140;
+            this.SoHoaDon.Width = 160;
             // 
             // nameCustomer
             // 
@@ -155,10 +155,10 @@
             // 
             // SoKhung
             // 
-            this.SoKhung.HeaderText = "SoKhung";
+            this.SoKhung.HeaderText = "SoLuong";
             this.SoKhung.Name = "SoKhung";
             this.SoKhung.ReadOnly = true;
-            this.SoKhung.Width = 150;
+            this.SoKhung.Width = 200;
             // 
             // Cost
             // 
@@ -172,7 +172,7 @@
             this.DateBuy.HeaderText = "Ngay Mua";
             this.DateBuy.Name = "DateBuy";
             this.DateBuy.ReadOnly = true;
-            this.DateBuy.Width = 200;
+            this.DateBuy.Width = 150;
             // 
             // label5
             // 
@@ -193,6 +193,7 @@
             this.btnWeek.TabIndex = 12;
             this.btnWeek.Text = "Week";
             this.btnWeek.UseVisualStyleBackColor = true;
+            this.btnWeek.Click += new System.EventHandler(this.btnWeek_Click);
             // 
             // btnMonth
             // 
@@ -204,6 +205,7 @@
             this.btnMonth.TabIndex = 13;
             this.btnMonth.Text = "Month";
             this.btnMonth.UseVisualStyleBackColor = true;
+            this.btnMonth.Click += new System.EventHandler(this.btnMonth_Click);
             // 
             // btnToday
             // 
@@ -231,13 +233,14 @@
             this.btnYesterday.UseVisualStyleBackColor = true;
             this.btnYesterday.Click += new System.EventHandler(this.btnYesterday_Click);
             // 
-            // dateTimePicker2
+            // dtpTo
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(70, 308);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(150, 24);
-            this.dateTimePicker2.TabIndex = 24;
+            this.dtpTo.CustomFormat = "dd/MM/yyyy";
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTo.Location = new System.Drawing.Point(70, 308);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(150, 24);
+            this.dtpTo.TabIndex = 24;
             // 
             // label2
             // 
@@ -248,13 +251,14 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "To";
             // 
-            // dateTimePicker1
+            // dtpFrom
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(70, 269);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 24);
-            this.dateTimePicker1.TabIndex = 22;
+            this.dtpFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFrom.Location = new System.Drawing.Point(70, 269);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(150, 24);
+            this.dtpFrom.TabIndex = 22;
             // 
             // label1
             // 
@@ -313,16 +317,17 @@
             this.label18.TabIndex = 31;
             this.label18.Text = "Search Other";
             // 
-            // button3
+            // btnSearchDay
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(70, 350);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 30);
-            this.button3.TabIndex = 29;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSearchDay.FlatAppearance.BorderSize = 0;
+            this.btnSearchDay.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSearchDay.Location = new System.Drawing.Point(70, 350);
+            this.btnSearchDay.Name = "btnSearchDay";
+            this.btnSearchDay.Size = new System.Drawing.Size(150, 30);
+            this.btnSearchDay.TabIndex = 29;
+            this.btnSearchDay.Text = "Search";
+            this.btnSearchDay.UseVisualStyleBackColor = true;
+            this.btnSearchDay.Click += new System.EventHandler(this.btnSearchDay_Click);
             // 
             // searchLabel
             // 
@@ -344,6 +349,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(280, 19);
             this.txtSearch.TabIndex = 10;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // borderPanel1
             // 
@@ -354,7 +360,7 @@
             this.borderPanel1.Controls.Add(this.btnToday);
             this.borderPanel1.Controls.Add(this.btnYesterday);
             this.borderPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borderPanel1.Location = new System.Drawing.Point(418, 165);
+            this.borderPanel1.Location = new System.Drawing.Point(401, 128);
             this.borderPanel1.Name = "borderPanel1";
             this.borderPanel1.Size = new System.Drawing.Size(332, 51);
             this.borderPanel1.TabIndex = 31;
@@ -365,7 +371,7 @@
             this.borderPanel2.Controls.Add(this.searchLabel);
             this.borderPanel2.Controls.Add(button1);
             this.borderPanel2.Controls.Add(this.txtSearch);
-            this.borderPanel2.Location = new System.Drawing.Point(42, 163);
+            this.borderPanel2.Location = new System.Drawing.Point(25, 126);
             this.borderPanel2.Name = "borderPanel2";
             this.borderPanel2.Size = new System.Drawing.Size(370, 48);
             this.borderPanel2.TabIndex = 32;
@@ -374,9 +380,9 @@
             // 
             this.borderPanel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.borderPanel3.Controls.Add(this.dgvMotorcycles);
-            this.borderPanel3.Location = new System.Drawing.Point(32, 242);
+            this.borderPanel3.Location = new System.Drawing.Point(15, 205);
             this.borderPanel3.Name = "borderPanel3";
-            this.borderPanel3.Size = new System.Drawing.Size(1014, 544);
+            this.borderPanel3.Size = new System.Drawing.Size(1046, 600);
             this.borderPanel3.TabIndex = 33;
             // 
             // SearchByDate
@@ -386,12 +392,12 @@
             this.SearchByDate.Controls.Add(this.btnWeek);
             this.SearchByDate.Controls.Add(this.label18);
             this.SearchByDate.Controls.Add(this.label2);
-            this.SearchByDate.Controls.Add(this.button3);
+            this.SearchByDate.Controls.Add(this.btnSearchDay);
             this.SearchByDate.Controls.Add(this.btnMonth);
-            this.SearchByDate.Controls.Add(this.dateTimePicker1);
-            this.SearchByDate.Controls.Add(this.dateTimePicker2);
+            this.SearchByDate.Controls.Add(this.dtpFrom);
+            this.SearchByDate.Controls.Add(this.dtpTo);
             this.SearchByDate.Controls.Add(this.label1);
-            this.SearchByDate.Location = new System.Drawing.Point(1064, 242);
+            this.SearchByDate.Location = new System.Drawing.Point(1067, 205);
             this.SearchByDate.Name = "SearchByDate";
             this.SearchByDate.Size = new System.Drawing.Size(272, 429);
             this.SearchByDate.TabIndex = 34;
@@ -402,7 +408,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1500, 875);
+            this.ClientSize = new System.Drawing.Size(1350, 850);
             this.Controls.Add(this.SearchByDate);
             this.Controls.Add(this.borderPanel3);
             this.Controls.Add(this.borderPanel2);
@@ -413,6 +419,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SalesHistory";
             this.Text = "SalesHistory";
+            this.Load += new System.EventHandler(this.SalesHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotorcycles)).EndInit();
             this.borderPanel1.ResumeLayout(false);
             this.borderPanel2.ResumeLayout(false);
@@ -432,27 +439,27 @@
         private System.Windows.Forms.Button btnMonth;
         private System.Windows.Forms.Button btnToday;
         private System.Windows.Forms.Button btnYesterday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameCustomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameMotor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoKhung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateBuy;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnOther;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSearchDay;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label18;
         private borderRadius.borderPanel borderPanel1;
         private borderRadius.borderPanel borderPanel2;
         private borderRadius.borderPanel borderPanel3;
         private borderRadius.borderPanel SearchByDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameCustomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameMotor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoKhung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateBuy;
     }
 }

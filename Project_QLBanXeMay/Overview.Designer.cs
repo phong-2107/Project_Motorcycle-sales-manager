@@ -37,6 +37,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbFinancing = new System.Windows.Forms.Label();
@@ -71,13 +74,30 @@
             this.NameMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.borderPanel7 = new Project_QLBanXeMay.borderRadius.borderPanel();
+            this.dgvTransaction = new System.Windows.Forms.DataGridView();
+            this.MaPX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borderPanel1 = new Project_QLBanXeMay.borderRadius.borderPanel();
             this.label28 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.borderPanel6 = new Project_QLBanXeMay.borderRadius.borderPanel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtTotalCost = new System.Windows.Forms.Label();
             this.borderPanel5 = new Project_QLBanXeMay.borderRadius.borderPanel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtIncomeToday = new System.Windows.Forms.Label();
             this.borderPanel4 = new Project_QLBanXeMay.borderRadius.borderPanel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtMoborSold = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.borderPanel2 = new Project_QLBanXeMay.borderRadius.borderPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -87,22 +107,30 @@
             this.label14 = new System.Windows.Forms.Label();
             this.borderPanel3 = new Project_QLBanXeMay.borderRadius.borderPanel();
             this.lbMontorcycle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMotor = new System.Windows.Forms.DataGridView();
             this.nameMotorcycle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motorCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HangXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.btnRefresh = new Project_QLBanXeMay.borderRadius.RoundedButton();
             button1 = new System.Windows.Forms.Button();
             button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotorcycles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.borderPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).BeginInit();
             this.borderPanel1.SuspendLayout();
+            this.borderPanel6.SuspendLayout();
+            this.borderPanel5.SuspendLayout();
+            this.borderPanel4.SuspendLayout();
             this.borderPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.borderPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMotor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,7 +173,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(47, 9);
+            this.label5.Location = new System.Drawing.Point(12, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(159, 42);
             this.label5.TabIndex = 2;
@@ -157,7 +185,7 @@
             this.lbFinancing.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbFinancing.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFinancing.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(163)))));
-            this.lbFinancing.Location = new System.Drawing.Point(105, 310);
+            this.lbFinancing.Location = new System.Drawing.Point(74, 275);
             this.lbFinancing.Name = "lbFinancing";
             this.lbFinancing.Size = new System.Drawing.Size(240, 29);
             this.lbFinancing.TabIndex = 14;
@@ -166,7 +194,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(61, 310);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 275);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(38, 29);
             this.pictureBox1.TabIndex = 14;
@@ -175,9 +203,10 @@
             // lbfinancy
             // 
             this.lbfinancy.AutoSize = true;
+            this.lbfinancy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbfinancy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbfinancy.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbfinancy.Location = new System.Drawing.Point(798, 310);
+            this.lbfinancy.Location = new System.Drawing.Point(760, 283);
             this.lbfinancy.Name = "lbfinancy";
             this.lbfinancy.Size = new System.Drawing.Size(52, 18);
             this.lbfinancy.TabIndex = 22;
@@ -522,13 +551,120 @@
             this.Company.ReadOnly = true;
             this.Company.Width = 150;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label13.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(163)))));
+            this.label13.Location = new System.Drawing.Point(74, 458);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(260, 29);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Transaction Overview";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(30, 458);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(38, 29);
+            this.pictureBox5.TabIndex = 25;
+            this.pictureBox5.TabStop = false;
+            // 
             // borderPanel7
             // 
             this.borderPanel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.borderPanel7.Location = new System.Drawing.Point(113, 503);
+            this.borderPanel7.Controls.Add(this.dgvTransaction);
+            this.borderPanel7.Location = new System.Drawing.Point(23, 501);
             this.borderPanel7.Name = "borderPanel7";
-            this.borderPanel7.Size = new System.Drawing.Size(737, 292);
+            this.borderPanel7.Size = new System.Drawing.Size(803, 317);
             this.borderPanel7.TabIndex = 23;
+            // 
+            // dgvTransaction
+            // 
+            this.dgvTransaction.AllowUserToAddRows = false;
+            this.dgvTransaction.AllowUserToDeleteRows = false;
+            this.dgvTransaction.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvTransaction.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTransaction.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTransaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaPX,
+            this.MaNV,
+            this.MaKH,
+            this.Date,
+            this.TotalCost});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTransaction.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvTransaction.Location = new System.Drawing.Point(12, 19);
+            this.dgvTransaction.Margin = new System.Windows.Forms.Padding(9);
+            this.dgvTransaction.Name = "dgvTransaction";
+            this.dgvTransaction.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvTransaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvTransaction.RowHeadersVisible = false;
+            this.dgvTransaction.RowTemplate.Height = 50;
+            this.dgvTransaction.RowTemplate.ReadOnly = true;
+            this.dgvTransaction.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTransaction.Size = new System.Drawing.Size(791, 289);
+            this.dgvTransaction.TabIndex = 18;
+            // 
+            // MaPX
+            // 
+            this.MaPX.HeaderText = "  IDImport";
+            this.MaPX.Name = "MaPX";
+            this.MaPX.ReadOnly = true;
+            this.MaPX.Width = 150;
+            // 
+            // MaNV
+            // 
+            this.MaNV.HeaderText = "Staff";
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            this.MaNV.Width = 160;
+            // 
+            // MaKH
+            // 
+            this.MaKH.HeaderText = "Customer";
+            this.MaKH.Name = "MaKH";
+            this.MaKH.ReadOnly = true;
+            this.MaKH.Width = 140;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Time";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 150;
+            // 
+            // TotalCost
+            // 
+            this.TotalCost.HeaderText = "Total Revenue";
+            this.TotalCost.Name = "TotalCost";
+            this.TotalCost.ReadOnly = true;
+            this.TotalCost.Width = 180;
             // 
             // borderPanel1
             // 
@@ -536,7 +672,7 @@
             this.borderPanel1.Controls.Add(this.label28);
             this.borderPanel1.Controls.Add(button2);
             this.borderPanel1.Controls.Add(this.textBox1);
-            this.borderPanel1.Location = new System.Drawing.Point(876, 106);
+            this.borderPanel1.Location = new System.Drawing.Point(838, 71);
             this.borderPanel1.Name = "borderPanel1";
             this.borderPanel1.Size = new System.Drawing.Size(370, 48);
             this.borderPanel1.TabIndex = 21;
@@ -564,26 +700,140 @@
             // borderPanel6
             // 
             this.borderPanel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.borderPanel6.Location = new System.Drawing.Point(618, 355);
+            this.borderPanel6.Controls.Add(this.label35);
+            this.borderPanel6.Controls.Add(this.label37);
+            this.borderPanel6.Controls.Add(this.txtTotalCost);
+            this.borderPanel6.Location = new System.Drawing.Point(561, 320);
             this.borderPanel6.Name = "borderPanel6";
-            this.borderPanel6.Size = new System.Drawing.Size(232, 122);
+            this.borderPanel6.Size = new System.Drawing.Size(251, 122);
             this.borderPanel6.TabIndex = 20;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(197, 57);
+            this.label35.Margin = new System.Windows.Forms.Padding(0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(27, 29);
+            this.label35.TabIndex = 12;
+            this.label35.Text = "$";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label37.Location = new System.Drawing.Point(69, 20);
+            this.label37.Margin = new System.Windows.Forms.Padding(0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(112, 20);
+            this.label37.TabIndex = 9;
+            this.label37.Text = "Total Revenue";
+            // 
+            // txtTotalCost
+            // 
+            this.txtTotalCost.AutoSize = true;
+            this.txtTotalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.txtTotalCost.Location = new System.Drawing.Point(36, 57);
+            this.txtTotalCost.Margin = new System.Windows.Forms.Padding(0);
+            this.txtTotalCost.Name = "txtTotalCost";
+            this.txtTotalCost.Size = new System.Drawing.Size(27, 29);
+            this.txtTotalCost.TabIndex = 11;
+            this.txtTotalCost.Text = "0";
             // 
             // borderPanel5
             // 
             this.borderPanel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.borderPanel5.Location = new System.Drawing.Point(357, 355);
+            this.borderPanel5.Controls.Add(this.label32);
+            this.borderPanel5.Controls.Add(this.label33);
+            this.borderPanel5.Controls.Add(this.txtIncomeToday);
+            this.borderPanel5.Location = new System.Drawing.Point(282, 320);
             this.borderPanel5.Name = "borderPanel5";
-            this.borderPanel5.Size = new System.Drawing.Size(247, 122);
+            this.borderPanel5.Size = new System.Drawing.Size(251, 122);
             this.borderPanel5.TabIndex = 20;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.Location = new System.Drawing.Point(159, 57);
+            this.label32.Margin = new System.Windows.Forms.Padding(0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(27, 29);
+            this.label32.TabIndex = 9;
+            this.label32.Text = "$";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label33.Location = new System.Drawing.Point(55, 20);
+            this.label33.Margin = new System.Windows.Forms.Padding(0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(120, 20);
+            this.label33.TabIndex = 5;
+            this.label33.Text = "Today\'s Income";
+            // 
+            // txtIncomeToday
+            // 
+            this.txtIncomeToday.AutoSize = true;
+            this.txtIncomeToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIncomeToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(255)))));
+            this.txtIncomeToday.Location = new System.Drawing.Point(97, 57);
+            this.txtIncomeToday.Margin = new System.Windows.Forms.Padding(0);
+            this.txtIncomeToday.Name = "txtIncomeToday";
+            this.txtIncomeToday.Size = new System.Drawing.Size(27, 29);
+            this.txtIncomeToday.TabIndex = 8;
+            this.txtIncomeToday.Text = "0";
             // 
             // borderPanel4
             // 
             this.borderPanel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.borderPanel4.Location = new System.Drawing.Point(108, 355);
+            this.borderPanel4.Controls.Add(this.label29);
+            this.borderPanel4.Controls.Add(this.txtMoborSold);
+            this.borderPanel4.Controls.Add(this.label31);
+            this.borderPanel4.Location = new System.Drawing.Point(35, 320);
             this.borderPanel4.Name = "borderPanel4";
-            this.borderPanel4.Size = new System.Drawing.Size(237, 122);
+            this.borderPanel4.Size = new System.Drawing.Size(229, 122);
             this.borderPanel4.TabIndex = 19;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label29.Location = new System.Drawing.Point(50, 20);
+            this.label29.Margin = new System.Windows.Forms.Padding(0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(137, 20);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "Motorcycle  SOLD";
+            // 
+            // txtMoborSold
+            // 
+            this.txtMoborSold.AutoSize = true;
+            this.txtMoborSold.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMoborSold.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(255)))));
+            this.txtMoborSold.Location = new System.Drawing.Point(98, 60);
+            this.txtMoborSold.Margin = new System.Windows.Forms.Padding(0);
+            this.txtMoborSold.Name = "txtMoborSold";
+            this.txtMoborSold.Size = new System.Drawing.Size(27, 29);
+            this.txtMoborSold.TabIndex = 8;
+            this.txtMoborSold.Text = "0";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(43, 67);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(0, 20);
+            this.label31.TabIndex = 6;
             // 
             // borderPanel2
             // 
@@ -594,15 +844,15 @@
             this.borderPanel2.Controls.Add(this.label22);
             this.borderPanel2.Controls.Add(this.txtusername);
             this.borderPanel2.Controls.Add(this.label14);
-            this.borderPanel2.Location = new System.Drawing.Point(50, 106);
+            this.borderPanel2.Location = new System.Drawing.Point(19, 71);
             this.borderPanel2.Name = "borderPanel2";
-            this.borderPanel2.Size = new System.Drawing.Size(800, 180);
+            this.borderPanel2.Size = new System.Drawing.Size(807, 180);
             this.borderPanel2.TabIndex = 18;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(568, 6);
+            this.pictureBox3.Location = new System.Drawing.Point(557, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(209, 174);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -651,7 +901,7 @@
             this.txtusername.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtusername.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusername.ForeColor = System.Drawing.Color.White;
-            this.txtusername.Location = new System.Drawing.Point(122, 22);
+            this.txtusername.Location = new System.Drawing.Point(124, 22);
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(78, 37);
             this.txtusername.TabIndex = 16;
@@ -673,92 +923,95 @@
             // 
             this.borderPanel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.borderPanel3.Controls.Add(this.lbMontorcycle);
-            this.borderPanel3.Controls.Add(this.dataGridView1);
+            this.borderPanel3.Controls.Add(this.dgvMotor);
             this.borderPanel3.Controls.Add(this.label27);
             this.borderPanel3.Controls.Add(this.pictureBox4);
-            this.borderPanel3.Location = new System.Drawing.Point(876, 168);
+            this.borderPanel3.Location = new System.Drawing.Point(838, 133);
             this.borderPanel3.Name = "borderPanel3";
-            this.borderPanel3.Size = new System.Drawing.Size(478, 638);
+            this.borderPanel3.Size = new System.Drawing.Size(478, 676);
             this.borderPanel3.TabIndex = 16;
             // 
             // lbMontorcycle
             // 
             this.lbMontorcycle.AutoSize = true;
+            this.lbMontorcycle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbMontorcycle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMontorcycle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbMontorcycle.Location = new System.Drawing.Point(404, 594);
+            this.lbMontorcycle.Location = new System.Drawing.Point(404, 625);
             this.lbMontorcycle.Name = "lbMontorcycle";
             this.lbMontorcycle.Size = new System.Drawing.Size(52, 18);
             this.lbMontorcycle.TabIndex = 23;
             this.lbMontorcycle.Text = "See all";
             this.lbMontorcycle.Click += new System.EventHandler(this.lbMontorcycle_Click);
             // 
-            // dataGridView1
+            // dgvMotor
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvMotor.AllowUserToAddRows = false;
+            this.dgvMotor.AllowUserToDeleteRows = false;
+            this.dgvMotor.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvMotor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMotor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMotor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMotor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameMotorcycle,
             this.priceMotor,
-            this.motorCompany});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.Location = new System.Drawing.Point(47, 78);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(9);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 50;
-            this.dataGridView1.RowTemplate.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(375, 507);
-            this.dataGridView1.StandardTab = true;
-            this.dataGridView1.TabIndex = 17;
+            this.HangXe});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMotor.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvMotor.Location = new System.Drawing.Point(17, 65);
+            this.dgvMotor.Margin = new System.Windows.Forms.Padding(9);
+            this.dgvMotor.Name = "dgvMotor";
+            this.dgvMotor.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvMotor.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvMotor.RowHeadersVisible = false;
+            this.dgvMotor.RowTemplate.Height = 50;
+            this.dgvMotor.RowTemplate.ReadOnly = true;
+            this.dgvMotor.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMotor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMotor.Size = new System.Drawing.Size(452, 507);
+            this.dgvMotor.TabIndex = 17;
             // 
             // nameMotorcycle
             // 
             this.nameMotorcycle.HeaderText = "name";
             this.nameMotorcycle.Name = "nameMotorcycle";
             this.nameMotorcycle.ReadOnly = true;
+            this.nameMotorcycle.Width = 180;
             // 
             // priceMotor
             // 
             this.priceMotor.HeaderText = "Price";
             this.priceMotor.Name = "priceMotor";
             this.priceMotor.ReadOnly = true;
+            this.priceMotor.Width = 120;
             // 
-            // motorCompany
+            // HangXe
             // 
-            this.motorCompany.HeaderText = "Company";
-            this.motorCompany.Name = "motorCompany";
-            this.motorCompany.ReadOnly = true;
+            this.HangXe.HeaderText = "HangXe";
+            this.HangXe.Name = "HangXe";
+            this.HangXe.ReadOnly = true;
+            this.HangXe.Width = 150;
             // 
             // label27
             // 
@@ -781,11 +1034,41 @@
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label30.Location = new System.Drawing.Point(774, 466);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(52, 18);
+            this.label30.TabIndex = 26;
+            this.label30.Text = "See all";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(1261, 85);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(46, 42);
+            this.btnRefresh.TabIndex = 27;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Overview
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1640, 875);
+            this.ClientSize = new System.Drawing.Size(1350, 850);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.borderPanel7);
             this.Controls.Add(this.lbfinancy);
             this.Controls.Add(this.borderPanel1);
@@ -807,14 +1090,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotorcycles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.borderPanel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).EndInit();
             this.borderPanel1.ResumeLayout(false);
             this.borderPanel1.PerformLayout();
+            this.borderPanel6.ResumeLayout(false);
+            this.borderPanel6.PerformLayout();
+            this.borderPanel5.ResumeLayout(false);
+            this.borderPanel5.PerformLayout();
+            this.borderPanel4.ResumeLayout(false);
+            this.borderPanel4.PerformLayout();
             this.borderPanel2.ResumeLayout(false);
             this.borderPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.borderPanel3.ResumeLayout(false);
             this.borderPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMotor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -872,12 +1164,31 @@
         private System.Windows.Forms.Label txtusername;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameMotorcycle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceMotor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn motorCompany;
+        private System.Windows.Forms.DataGridView dgvMotor;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbMontorcycle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameMotorcycle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceMotor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HangXe;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label txtMoborSold;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label txtIncomeToday;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label txtTotalCost;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.DataGridView dgvTransaction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalCost;
+        private System.Windows.Forms.Label label30;
+        private borderRadius.RoundedButton btnRefresh;
     }
 }

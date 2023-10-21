@@ -21,5 +21,10 @@ namespace Project_QLBanXeMay
         {
             this.ControlBox = false;
         }
+
+        private void borderPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
