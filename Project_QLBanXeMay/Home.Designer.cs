@@ -96,12 +96,11 @@
             this.button21 = new System.Windows.Forms.Button();
             this.MenuTransition = new System.Windows.Forms.Timer(this.components);
             this.SidebarTransistion = new System.Windows.Forms.Timer(this.components);
-            this.HeaderBar = new System.Windows.Forms.Panel();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.btnHam = new System.Windows.Forms.PictureBox();
             this.ReportTransition = new System.Windows.Forms.Timer(this.components);
-            this.controlBox1 = new ReaLTaiizor.Controls.ControlBox();
-            this.btnSetting = new System.Windows.Forms.Button();
+            this.sider = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.Sidebar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MenuContainer.SuspendLayout();
@@ -117,8 +116,9 @@
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
+            this.sider.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // Sidebar
@@ -131,15 +131,14 @@
             this.Sidebar.Controls.Add(this.panel8);
             this.Sidebar.Controls.Add(this.panel1);
             this.Sidebar.Controls.Add(this.panel5);
-            this.Sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.Sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.Sidebar.ForeColor = System.Drawing.Color.Transparent;
-            this.Sidebar.Location = new System.Drawing.Point(0, 40);
+            this.Sidebar.Location = new System.Drawing.Point(0, 3);
             this.Sidebar.Margin = new System.Windows.Forms.Padding(0);
             this.Sidebar.Name = "Sidebar";
             this.Sidebar.Padding = new System.Windows.Forms.Padding(0, 50, 0, 0);
             this.Sidebar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Sidebar.Size = new System.Drawing.Size(219, 850);
+            this.Sidebar.Size = new System.Drawing.Size(221, 890);
             this.Sidebar.TabIndex = 3;
             // 
             // panel3
@@ -1073,23 +1072,6 @@
             this.SidebarTransistion.Interval = 10;
             this.SidebarTransistion.Tick += new System.EventHandler(this.SidebarTransistion_Tick);
             // 
-            // HeaderBar
-            // 
-            this.HeaderBar.BackColor = System.Drawing.Color.White;
-            this.HeaderBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.HeaderBar.Controls.Add(this.controlBox1);
-            this.HeaderBar.Controls.Add(this.btnSetting);
-            this.HeaderBar.Controls.Add(this.btnCreateAccount);
-            this.HeaderBar.Controls.Add(this.btnHam);
-            this.HeaderBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.HeaderBar.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.HeaderBar.Location = new System.Drawing.Point(0, 0);
-            this.HeaderBar.Margin = new System.Windows.Forms.Padding(0);
-            this.HeaderBar.Name = "HeaderBar";
-            this.HeaderBar.Size = new System.Drawing.Size(1570, 40);
-            this.HeaderBar.TabIndex = 0;
-            // 
             // btnCreateAccount
             // 
             this.btnCreateAccount.BackColor = System.Drawing.Color.Transparent;
@@ -1099,7 +1081,7 @@
             this.btnCreateAccount.ForeColor = System.Drawing.Color.Gray;
             this.btnCreateAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateAccount.Image")));
             this.btnCreateAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateAccount.Location = new System.Drawing.Point(1290, 4);
+            this.btnCreateAccount.Location = new System.Drawing.Point(38, 3);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(146, 33);
             this.btnCreateAccount.TabIndex = 5;
@@ -1110,7 +1092,7 @@
             // btnHam
             // 
             this.btnHam.Image = global::Project_QLBanXeMay.Properties.Resources.icons8_menu_30;
-            this.btnHam.Location = new System.Drawing.Point(12, 3);
+            this.btnHam.Location = new System.Drawing.Point(3, 3);
             this.btnHam.Name = "btnHam";
             this.btnHam.Padding = new System.Windows.Forms.Padding(3);
             this.btnHam.Size = new System.Drawing.Size(29, 32);
@@ -1124,52 +1106,48 @@
             this.ReportTransition.Interval = 10;
             this.ReportTransition.Tick += new System.EventHandler(this.ReportTransition_Tick);
             // 
-            // controlBox1
+            // sider
             // 
-            this.controlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlBox1.BackColor = System.Drawing.Color.White;
-            this.controlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.controlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.controlBox1.DefaultLocation = true;
-            this.controlBox1.EnableHoverHighlight = true;
-            this.controlBox1.EnableMaximizeButton = true;
-            this.controlBox1.EnableMinimizeButton = true;
-            this.controlBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.controlBox1.Location = new System.Drawing.Point(1468, 10);
-            this.controlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.controlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.controlBox1.Name = "controlBox1";
-            this.controlBox1.Size = new System.Drawing.Size(90, 25);
-            this.controlBox1.TabIndex = 6;
-            this.controlBox1.Text = "controlBox1";
+            this.sider.BackColor = System.Drawing.Color.Transparent;
+            this.sider.Controls.Add(this.Sidebar);
+            this.sider.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sider.Location = new System.Drawing.Point(0, 0);
+            this.sider.Name = "sider";
+            this.sider.Size = new System.Drawing.Size(221, 890);
+            this.sider.TabIndex = 6;
             // 
-            // btnSetting
+            // panel10
             // 
-            this.btnSetting.BackColor = System.Drawing.Color.Transparent;
-            this.btnSetting.FlatAppearance.BorderSize = 0;
-            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
-            this.btnSetting.Location = new System.Drawing.Point(1246, 4);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(38, 34);
-            this.btnSetting.TabIndex = 5;
-            this.btnSetting.UseVisualStyleBackColor = false;
+            this.panel10.Controls.Add(this.btnHam);
+            this.panel10.Controls.Add(this.btnCreateAccount);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(221, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1349, 45);
+            this.panel10.TabIndex = 7;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
+            this.AllowDrop = true;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1570, 890);
-            this.Controls.Add(this.Sidebar);
-            this.Controls.Add(this.HeaderBar);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.sider);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.IsMdiContainer = true;
+            this.MaximumSize = new System.Drawing.Size(1586, 929);
+            this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "Home";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager Motorcycle";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Sidebar.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1186,8 +1164,9 @@
             this.panel8.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.HeaderBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
+            this.sider.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1239,7 +1218,6 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.PictureBox btnHam;
-        private System.Windows.Forms.Panel HeaderBar;
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.FlowLayoutPanel ReportContainer;
         private System.Windows.Forms.Panel panel11;
@@ -1263,8 +1241,8 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button25;
-        private ReaLTaiizor.Controls.ControlBox controlBox1;
-        private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Panel sider;
+        private System.Windows.Forms.Panel panel10;
     }
 }
 

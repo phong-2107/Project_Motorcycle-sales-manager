@@ -32,8 +32,11 @@ namespace Project_QLBanXeMay
             foreach (Control c in form.Controls)
             {
                 MdiClient client = c as MdiClient;
-                if(client != null)
+                
+                if (client != null)
                 {
+                    client.BackColor = System.Drawing.Color.FromArgb(243, 245, 255);
+                    
                     int windowLong = GetWindowLong(c.Handle, GWL_EXSTYLE);
                     if(show)
                     {

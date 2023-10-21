@@ -14,8 +14,8 @@ namespace Project_QLBanXeMay
 {
     public partial class Home : Form
     {
-
-        /* Custom border radius for form home */
+        
+        /* Custom border radius for form home *//*
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn(
@@ -26,7 +26,7 @@ namespace Project_QLBanXeMay
             int nWidthEllipse,
             int nHeightEllipe
         );
-
+        */
         /* Create a child form for form home */
         Home home;
         Overview overview;
@@ -56,14 +56,19 @@ namespace Project_QLBanXeMay
         public Home()
         {
             InitializeComponent();
-            //mdiProp();
-            //AutoSize = true;
+            mdiProp();
             //AutoScaleMode = AutoScaleMode.Font;
-            //this.MaximumSize = new System.Drawing.Size(1700,900);
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0, Width, Height, 15, 15));
-            this.ControlBox = false;
+            //this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0, Width, Height, 15, 15));
+            StartPosition = FormStartPosition.Manual;
+            Rectangle screen = Screen.FromPoint(Cursor.Position).WorkingArea;
+            int w = Width >= screen.Width ? screen.Width : (screen.Width + Width) / 2;
+            int h = Height >= screen.Height ? screen.Height : (screen.Height + Height) / 2;
+            Location = new Point(screen.Left + (screen.Width - w) / 2, screen.Top + (screen.Height - h) / 2);
+            Size = new Size(w, h);
             this.Text = string.Empty;
             this.DoubleBuffered = true;
+            this.Location = new Point(0, 0);
+            //this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
@@ -78,6 +83,9 @@ namespace Project_QLBanXeMay
                 overview.MdiParent = this;
                 //overview.Dock = DockStyle.Fill;
                 overview.Show();
+
+               
+
             }
             else
             {
@@ -149,7 +157,8 @@ namespace Project_QLBanXeMay
             if (sidebarExpand)
             {
                 Sidebar.Width -= 10;
-                if(Sidebar.Width <= 70)
+                sider.Width -= 10;
+                if(Sidebar.Width <= 70 && sider.Width <= 70)
                 {
                     sidebarExpand = false;
                     SidebarTransistion.Stop();
@@ -164,7 +173,8 @@ namespace Project_QLBanXeMay
             else
             {
                 Sidebar.Width += 10;
-                if(Sidebar.Width >= 216)
+                sider.Width += 10;
+                if(Sidebar.Width >= 216 && sider.Width >= 216)
                 {
                     sidebarExpand = true;
                     SidebarTransistion.Stop();
@@ -412,5 +422,9 @@ namespace Project_QLBanXeMay
             Show();
         }
 
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
