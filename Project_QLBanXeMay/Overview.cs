@@ -127,6 +127,22 @@ namespace Project_QLBanXeMay
             }
         }
 
+        private void lbSales_Click(object sender, EventArgs e)
+        {
+            if(salesHistory == null)
+            {
+                salesHistory = new SalesHistory();
+                salesHistory.FormClosed += salesHistory_FormClosed;
+                salesHistory.MdiParent = base.MdiParent;
+                salesHistory.Dock = DockStyle.Fill;
+                salesHistory.Show();
+            }
+            else
+            {
+                salesHistory.Activate();
+            }
+        }
+
         private void lbMontorcycle_Click(object sender, EventArgs e)
         {
             if (qLVehicle == null)
@@ -167,5 +183,7 @@ namespace Project_QLBanXeMay
         {
             Overview_Load(sender, e);
         }
+
+        
     }
 }

@@ -30,16 +30,10 @@
         {
             System.Windows.Forms.Button button1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesHistory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvMotorcycles = new System.Windows.Forms.DataGridView();
-            this.SoHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoKhung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateBuy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.btnWeek = new System.Windows.Forms.Button();
             this.btnMonth = new System.Windows.Forms.Button();
@@ -61,6 +55,13 @@
             this.borderPanel2 = new Project_QLBanXeMay.borderRadius.borderPanel();
             this.borderPanel3 = new Project_QLBanXeMay.borderRadius.borderPanel();
             this.SearchByDate = new Project_QLBanXeMay.borderRadius.borderPanel();
+            this.SoHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoKhung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateBuy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefresh = new Project_QLBanXeMay.borderRadius.RoundedButton();
             button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotorcycles)).BeginInit();
             this.borderPanel1.SuspendLayout();
@@ -87,15 +88,15 @@
             this.dgvMotorcycles.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvMotorcycles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMotorcycles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMotorcycles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMotorcycles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMotorcycles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMotorcycles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SoHoaDon,
@@ -104,75 +105,33 @@
             this.SoKhung,
             this.Cost,
             this.DateBuy});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMotorcycles.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMotorcycles.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvMotorcycles.Location = new System.Drawing.Point(15, 9);
             this.dgvMotorcycles.Margin = new System.Windows.Forms.Padding(9);
             this.dgvMotorcycles.Name = "dgvMotorcycles";
             this.dgvMotorcycles.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvMotorcycles.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvMotorcycles.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvMotorcycles.RowHeadersVisible = false;
             this.dgvMotorcycles.RowTemplate.Height = 50;
             this.dgvMotorcycles.RowTemplate.ReadOnly = true;
             this.dgvMotorcycles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMotorcycles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMotorcycles.Size = new System.Drawing.Size(1018, 580);
+            this.dgvMotorcycles.Size = new System.Drawing.Size(1004, 580);
             this.dgvMotorcycles.StandardTab = true;
             this.dgvMotorcycles.TabIndex = 0;
-            // 
-            // SoHoaDon
-            // 
-            this.SoHoaDon.HeaderText = "So hoa don";
-            this.SoHoaDon.Name = "SoHoaDon";
-            this.SoHoaDon.ReadOnly = true;
-            this.SoHoaDon.Width = 160;
-            // 
-            // nameCustomer
-            // 
-            this.nameCustomer.HeaderText = "ten khach hang";
-            this.nameCustomer.Name = "nameCustomer";
-            this.nameCustomer.ReadOnly = true;
-            this.nameCustomer.Width = 200;
-            // 
-            // nameMotor
-            // 
-            this.nameMotor.HeaderText = "ten Xe";
-            this.nameMotor.Name = "nameMotor";
-            this.nameMotor.ReadOnly = true;
-            this.nameMotor.Width = 150;
-            // 
-            // SoKhung
-            // 
-            this.SoKhung.HeaderText = "SoLuong";
-            this.SoKhung.Name = "SoKhung";
-            this.SoKhung.ReadOnly = true;
-            this.SoKhung.Width = 200;
-            // 
-            // Cost
-            // 
-            this.Cost.HeaderText = "Thanh Tien";
-            this.Cost.Name = "Cost";
-            this.Cost.ReadOnly = true;
-            this.Cost.Width = 150;
-            // 
-            // DateBuy
-            // 
-            this.DateBuy.HeaderText = "Ngay Mua";
-            this.DateBuy.Name = "DateBuy";
-            this.DateBuy.ReadOnly = true;
-            this.DateBuy.Width = 150;
             // 
             // label5
             // 
@@ -382,7 +341,7 @@
             this.borderPanel3.Controls.Add(this.dgvMotorcycles);
             this.borderPanel3.Location = new System.Drawing.Point(15, 205);
             this.borderPanel3.Name = "borderPanel3";
-            this.borderPanel3.Size = new System.Drawing.Size(1046, 600);
+            this.borderPanel3.Size = new System.Drawing.Size(1034, 600);
             this.borderPanel3.TabIndex = 33;
             // 
             // SearchByDate
@@ -397,11 +356,66 @@
             this.SearchByDate.Controls.Add(this.dtpFrom);
             this.SearchByDate.Controls.Add(this.dtpTo);
             this.SearchByDate.Controls.Add(this.label1);
-            this.SearchByDate.Location = new System.Drawing.Point(1067, 205);
+            this.SearchByDate.Location = new System.Drawing.Point(1066, 205);
             this.SearchByDate.Name = "SearchByDate";
             this.SearchByDate.Size = new System.Drawing.Size(272, 429);
             this.SearchByDate.TabIndex = 34;
             this.SearchByDate.Visible = false;
+            // 
+            // SoHoaDon
+            // 
+            this.SoHoaDon.HeaderText = "So hoa don";
+            this.SoHoaDon.Name = "SoHoaDon";
+            this.SoHoaDon.ReadOnly = true;
+            this.SoHoaDon.Width = 180;
+            // 
+            // nameCustomer
+            // 
+            this.nameCustomer.HeaderText = "ten khach hang";
+            this.nameCustomer.Name = "nameCustomer";
+            this.nameCustomer.ReadOnly = true;
+            this.nameCustomer.Width = 180;
+            // 
+            // nameMotor
+            // 
+            this.nameMotor.HeaderText = "ten Xe";
+            this.nameMotor.Name = "nameMotor";
+            this.nameMotor.ReadOnly = true;
+            this.nameMotor.Width = 180;
+            // 
+            // SoKhung
+            // 
+            this.SoKhung.HeaderText = "SoLuong";
+            this.SoKhung.Name = "SoKhung";
+            this.SoKhung.ReadOnly = true;
+            // 
+            // Cost
+            // 
+            this.Cost.HeaderText = "Thanh Tien";
+            this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
+            this.Cost.Width = 180;
+            // 
+            // DateBuy
+            // 
+            this.DateBuy.HeaderText = "Ngay Mua";
+            this.DateBuy.Name = "DateBuy";
+            this.DateBuy.ReadOnly = true;
+            this.DateBuy.Width = 150;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(375, 9);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(46, 42);
+            this.btnRefresh.TabIndex = 35;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // SalesHistory
             // 
@@ -409,6 +423,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1350, 850);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.SearchByDate);
             this.Controls.Add(this.borderPanel3);
             this.Controls.Add(this.borderPanel2);
@@ -461,5 +476,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoKhung;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateBuy;
+        private borderRadius.RoundedButton btnRefresh;
     }
 }

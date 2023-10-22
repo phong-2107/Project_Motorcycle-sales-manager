@@ -48,6 +48,9 @@ namespace Project_QLBanXeMay
         public static int quyen;
         private static string username;
 
+        private Panel botttomBorder;
+        private Panel leftBorder;
+
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
 
@@ -57,8 +60,6 @@ namespace Project_QLBanXeMay
         {
             InitializeComponent();
             mdiProp();
-            //AutoScaleMode = AutoScaleMode.Font;
-            //this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0, Width, Height, 15, 15));
             StartPosition = FormStartPosition.Manual;
             Rectangle screen = Screen.FromPoint(Cursor.Position).WorkingArea;
             int w = Width >= screen.Width ? screen.Width : (screen.Width + Width) / 2;
@@ -68,9 +69,23 @@ namespace Project_QLBanXeMay
             this.Text = string.Empty;
             this.DoubleBuffered = true;
             this.Location = new Point(0, 0);
-            //this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            botttomBorder = new Panel();
+            botttomBorder.Size = new Size(160, 7);
+            pnBar.Controls.Add(botttomBorder);
+            botttomBorder.BackColor = System.Drawing.Color.FromArgb(72, 60, 255);
+            botttomBorder.Location = new Point(btnCreaateInvoice.Location.X, 40);
+
+            leftBorder = new Panel();
+            leftBorder.Size = new Size(7, 49);
+            
         }
+
+        
+
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -130,7 +145,7 @@ namespace Project_QLBanXeMay
             if (reportExpand == false)
             {
                 ReportContainer.Height += 10;
-                if (ReportContainer.Height >= 197)
+                if (ReportContainer.Height >= 147)
                 {
                     ReportTransition.Stop();
                     reportExpand = true;
@@ -152,39 +167,40 @@ namespace Project_QLBanXeMay
             ReportTransition.Start();
         }
 
-        private void SidebarTransistion_Tick(object sender, EventArgs e)
+        private void siderTransistion_Tick(object sender, EventArgs e)
         {
+            
+
             if (sidebarExpand)
             {
-                Sidebar.Width -= 10;
-                sider.Width -= 10;
-                if(Sidebar.Width <= 70 && sider.Width <= 70)
+                
+                sider.Width -= 15;
+                if ( sider.Width <= 70)
                 {
                     sidebarExpand = false;
                     SidebarTransistion.Stop();
-                    btnHome.Width = Sidebar.Width;
-                    btnAbout.Width = Sidebar.Width;
-                    btnHelp.Width = Sidebar.Width;
-                    btnSettings.Width = Sidebar.Width;
-                    MenuContainer.Width = Sidebar.Width;
-                    ReportContainer.Width = Sidebar.Width;
+                    btnHome.Width = sider.Width;
+                    btnAbout.Width = sider.Width;
+                    btnHelp.Width = sider.Width;
+                    btnSettings.Width = sider.Width;
+                    MenuContainer.Width = sider.Width;
+                    ReportContainer.Width = sider.Width;
                 }
             }
             else
             {
-                Sidebar.Width += 10;
-                sider.Width += 10;
-                if(Sidebar.Width >= 216 && sider.Width >= 216)
+                sider.Width += 15;
+                if ( sider.Width >= 216)
                 {
                     sidebarExpand = true;
                     SidebarTransistion.Stop();
 
-                    btnHome.Width = Sidebar.Width;
-                    btnAbout.Width = Sidebar.Width;
-                    btnHelp.Width = Sidebar.Width;
-                    btnSettings.Width = Sidebar.Width;
-                    MenuContainer.Width = Sidebar.Width;
-                    ReportContainer.Width = Sidebar.Width;
+                    btnHome.Width = sider.Width;
+                    btnAbout.Width = sider.Width;
+                    btnHelp.Width = sider.Width;
+                    btnSettings.Width = sider.Width;
+                    MenuContainer.Width = sider.Width;
+                    ReportContainer.Width = sider.Width;
                 }
             }
         }
@@ -204,11 +220,13 @@ namespace Project_QLBanXeMay
             {
                 overview = new Overview();
                 overview.FormClosed += Overview_FormClosed;
+                overview.Refresh();
                 overview.Show();
                 
             }
             else
             {
+                overview.Refresh();
                 overview.Activate();
             }
         }
@@ -228,6 +246,7 @@ namespace Project_QLBanXeMay
                 qLNhanVien.FormClosed += Staff_FormClosed;
                 qLNhanVien.MdiParent = this;
                 qLNhanVien.Dock = DockStyle.Fill;
+                qLNhanVien.Refresh();
                 qLNhanVien.Show();
             }
             else
@@ -250,8 +269,9 @@ namespace Project_QLBanXeMay
                 qLKhachHang.FormClosed += Customer_FormClosed;
                 qLKhachHang.MdiParent = this;
                 qLKhachHang.Dock = DockStyle.Fill;
-                qLKhachHang.Show();
                 qLKhachHang.Refresh();
+                qLKhachHang.Show();
+                
             }
             else
             {
@@ -272,6 +292,7 @@ namespace Project_QLBanXeMay
                 qLVehicle.FormClosed += Vehicle_FormClosed;
                 qLVehicle.MdiParent = this;
                 qLVehicle.Dock = DockStyle.Fill;
+                qLVehicle.Refresh();
                 qLVehicle.Show();
             }
             else
@@ -293,6 +314,7 @@ namespace Project_QLBanXeMay
                 salesHistory.FormClosed += salesHistory_FormClosed;
                 salesHistory.MdiParent = this;
                 salesHistory.Dock = DockStyle.Fill;
+                salesHistory.Refresh();
                 salesHistory.Show();
             }
             else
@@ -314,6 +336,7 @@ namespace Project_QLBanXeMay
                 importHistory.FormClosed += ImportHistory_FormClosed;
                 importHistory.MdiParent = this;
                 importHistory.Dock = DockStyle.Fill;
+                importHistory.Refresh();
                 importHistory.Show();
             }
             else
@@ -379,6 +402,7 @@ namespace Project_QLBanXeMay
                 setting.FormClosed += Setting_FormClosed;
                 setting.MdiParent = this;
                 setting.Dock = DockStyle.Fill;
+                setting.Refresh();
                 setting.Show();
             }
             else
@@ -425,6 +449,12 @@ namespace Project_QLBanXeMay
         private void panel10_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnCreaateInvoice_Click(object sender, EventArgs e)
+        {
+            botttomBorder.BackColor = System.Drawing.Color.FromArgb(72, 60, 255);
+            botttomBorder.Location = new Point(btnCreaateInvoice.Location.X, 40);
         }
     }
 }

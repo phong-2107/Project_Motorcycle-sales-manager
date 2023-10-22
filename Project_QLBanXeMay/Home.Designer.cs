@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.Sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -100,8 +99,9 @@
             this.btnHam = new System.Windows.Forms.PictureBox();
             this.ReportTransition = new System.Windows.Forms.Timer(this.components);
             this.sider = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.Sidebar.SuspendLayout();
+            this.pnBar = new System.Windows.Forms.Panel();
+            this.btnCreaateInvoice = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3.SuspendLayout();
             this.MenuContainer.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -118,28 +118,9 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.sider.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.pnBar.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Sidebar
-            // 
-            this.Sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(36)))), ((int)(((byte)(86)))));
-            this.Sidebar.Controls.Add(this.panel3);
-            this.Sidebar.Controls.Add(this.MenuContainer);
-            this.Sidebar.Controls.Add(this.ReportContainer);
-            this.Sidebar.Controls.Add(this.About);
-            this.Sidebar.Controls.Add(this.panel8);
-            this.Sidebar.Controls.Add(this.panel1);
-            this.Sidebar.Controls.Add(this.panel5);
-            this.Sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.Sidebar.ForeColor = System.Drawing.Color.Transparent;
-            this.Sidebar.Location = new System.Drawing.Point(0, 3);
-            this.Sidebar.Margin = new System.Windows.Forms.Padding(0);
-            this.Sidebar.Name = "Sidebar";
-            this.Sidebar.Padding = new System.Windows.Forms.Padding(0, 50, 0, 0);
-            this.Sidebar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Sidebar.Size = new System.Drawing.Size(221, 890);
-            this.Sidebar.TabIndex = 3;
             // 
             // panel3
             // 
@@ -148,7 +129,7 @@
             this.panel3.Controls.Add(this.button27);
             this.panel3.Controls.Add(this.button28);
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel3.Location = new System.Drawing.Point(0, 58);
+            this.panel3.Location = new System.Drawing.Point(0, 8);
             this.panel3.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(216, 49);
@@ -222,7 +203,7 @@
             this.MenuContainer.Controls.Add(this.panel6);
             this.MenuContainer.Controls.Add(this.panel9);
             this.MenuContainer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.MenuContainer.Location = new System.Drawing.Point(0, 123);
+            this.MenuContainer.Location = new System.Drawing.Point(0, 138);
             this.MenuContainer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.MenuContainer.Name = "MenuContainer";
             this.MenuContainer.Size = new System.Drawing.Size(217, 49);
@@ -546,7 +527,7 @@
             this.ReportContainer.Controls.Add(this.panel13);
             this.ReportContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.ReportContainer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.ReportContainer.Location = new System.Drawing.Point(0, 188);
+            this.ReportContainer.Location = new System.Drawing.Point(0, 73);
             this.ReportContainer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.ReportContainer.Name = "ReportContainer";
             this.ReportContainer.Size = new System.Drawing.Size(217, 49);
@@ -777,7 +758,7 @@
             this.About.Controls.Add(this.button16);
             this.About.Controls.Add(this.button17);
             this.About.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.About.Location = new System.Drawing.Point(0, 253);
+            this.About.Location = new System.Drawing.Point(0, 203);
             this.About.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.About.Name = "About";
             this.About.Size = new System.Drawing.Size(216, 49);
@@ -850,7 +831,7 @@
             this.panel8.Controls.Add(this.button24);
             this.panel8.Controls.Add(this.button25);
             this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel8.Location = new System.Drawing.Point(0, 318);
+            this.panel8.Location = new System.Drawing.Point(0, 268);
             this.panel8.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(216, 49);
@@ -923,7 +904,7 @@
             this.panel1.Controls.Add(this.button29);
             this.panel1.Controls.Add(this.button30);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel1.Location = new System.Drawing.Point(0, 383);
+            this.panel1.Location = new System.Drawing.Point(0, 333);
             this.panel1.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(216, 49);
@@ -996,7 +977,7 @@
             this.panel5.Controls.Add(this.button20);
             this.panel5.Controls.Add(this.button21);
             this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel5.Location = new System.Drawing.Point(0, 448);
+            this.panel5.Location = new System.Drawing.Point(0, 398);
             this.panel5.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(216, 49);
@@ -1070,7 +1051,7 @@
             // SidebarTransistion
             // 
             this.SidebarTransistion.Interval = 10;
-            this.SidebarTransistion.Tick += new System.EventHandler(this.SidebarTransistion_Tick);
+            this.SidebarTransistion.Tick += new System.EventHandler(this.siderTransistion_Tick);
             // 
             // btnCreateAccount
             // 
@@ -1081,7 +1062,7 @@
             this.btnCreateAccount.ForeColor = System.Drawing.Color.Gray;
             this.btnCreateAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateAccount.Image")));
             this.btnCreateAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateAccount.Location = new System.Drawing.Point(38, 3);
+            this.btnCreateAccount.Location = new System.Drawing.Point(1191, 4);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(146, 33);
             this.btnCreateAccount.TabIndex = 5;
@@ -1092,10 +1073,10 @@
             // btnHam
             // 
             this.btnHam.Image = global::Project_QLBanXeMay.Properties.Resources.icons8_menu_30;
-            this.btnHam.Location = new System.Drawing.Point(3, 3);
+            this.btnHam.Location = new System.Drawing.Point(3, 4);
             this.btnHam.Name = "btnHam";
             this.btnHam.Padding = new System.Windows.Forms.Padding(3);
-            this.btnHam.Size = new System.Drawing.Size(29, 32);
+            this.btnHam.Size = new System.Drawing.Size(37, 33);
             this.btnHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnHam.TabIndex = 3;
             this.btnHam.TabStop = false;
@@ -1108,33 +1089,68 @@
             // 
             // sider
             // 
-            this.sider.BackColor = System.Drawing.Color.Transparent;
-            this.sider.Controls.Add(this.Sidebar);
+            this.sider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(36)))), ((int)(((byte)(120)))));
+            this.sider.Controls.Add(this.flowLayoutPanel1);
             this.sider.Dock = System.Windows.Forms.DockStyle.Left;
             this.sider.Location = new System.Drawing.Point(0, 0);
             this.sider.Name = "sider";
             this.sider.Size = new System.Drawing.Size(221, 890);
             this.sider.TabIndex = 6;
             // 
-            // panel10
+            // pnBar
             // 
-            this.panel10.Controls.Add(this.btnHam);
-            this.panel10.Controls.Add(this.btnCreateAccount);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(221, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1349, 45);
-            this.panel10.TabIndex = 7;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            this.pnBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnBar.Controls.Add(this.btnCreaateInvoice);
+            this.pnBar.Controls.Add(this.btnHam);
+            this.pnBar.Controls.Add(this.btnCreateAccount);
+            this.pnBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnBar.Location = new System.Drawing.Point(221, 0);
+            this.pnBar.Margin = new System.Windows.Forms.Padding(0);
+            this.pnBar.Name = "pnBar";
+            this.pnBar.Size = new System.Drawing.Size(1349, 45);
+            this.pnBar.TabIndex = 7;
+            this.pnBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            // 
+            // btnCreaateInvoice
+            // 
+            this.btnCreaateInvoice.BackColor = System.Drawing.Color.White;
+            this.btnCreaateInvoice.FlatAppearance.BorderSize = 0;
+            this.btnCreaateInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreaateInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreaateInvoice.ForeColor = System.Drawing.Color.Gray;
+            this.btnCreaateInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnCreaateInvoice.Image")));
+            this.btnCreaateInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreaateInvoice.Location = new System.Drawing.Point(982, 1);
+            this.btnCreaateInvoice.Name = "btnCreaateInvoice";
+            this.btnCreaateInvoice.Size = new System.Drawing.Size(159, 41);
+            this.btnCreaateInvoice.TabIndex = 6;
+            this.btnCreaateInvoice.Text = "Create Invoice";
+            this.btnCreaateInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreaateInvoice.UseVisualStyleBackColor = false;
+            this.btnCreaateInvoice.Click += new System.EventHandler(this.btnCreaateInvoice_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
+            this.flowLayoutPanel1.Controls.Add(this.ReportContainer);
+            this.flowLayoutPanel1.Controls.Add(this.MenuContainer);
+            this.flowLayoutPanel1.Controls.Add(this.About);
+            this.flowLayoutPanel1.Controls.Add(this.panel8);
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.panel5);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 42);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 738);
+            this.flowLayoutPanel1.TabIndex = 9;
             // 
             // Home
             // 
             this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1570, 890);
-            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.pnBar);
             this.Controls.Add(this.sider);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
@@ -1147,9 +1163,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager Motorcycle";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Sidebar.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.MenuContainer.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -1166,13 +1180,13 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.sider.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
+            this.pnBar.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel Sidebar;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.FlowLayoutPanel MenuContainer;
@@ -1242,7 +1256,9 @@
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Panel sider;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel pnBar;
+        private System.Windows.Forms.Button btnCreaateInvoice;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

@@ -167,5 +167,18 @@ namespace Project_QLBanXeMay
             int count = dgvCustomer.Rows.Count;
             lBCustomer.Text = count.ToString();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            QLKhachHang_Load(sender, e);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Model1 context = new Model1();
+            var listKH = context.KhachHangs.ToList();
+            var listSeach = listKH.Where(x => (x.MaKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower())) || (x.TenKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower()))).ToList();
+            BindGrid(listSeach);
+        }
     }
 }

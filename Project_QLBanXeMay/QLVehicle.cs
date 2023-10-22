@@ -19,12 +19,10 @@ namespace Project_QLBanXeMay
         Model1 context = new Model1();
         string pathImage = "";
 
-
         public QLVehicle()
         {
             InitializeComponent();
             StyleDatagridview(dgvMotorcycles);
-            
         }
 
         private void QLVehicle_Load(object sender, EventArgs e)
@@ -37,13 +35,11 @@ namespace Project_QLBanXeMay
             FillColor(listMau);
             FillHangXe(listHang);
             displayNumber();
-
         }
 
         private void displayNumber()
         {
             CountMotorModel.Text = context.Xes.ToList().Count.ToString();
-
         }
 
         void StyleDatagridview(DataGridView dgvMotor)
@@ -53,7 +49,6 @@ namespace Project_QLBanXeMay
             dgvMotor.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;//optional
             dgvMotor.EnableHeadersVisualStyles = false;
             dgvMotor.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvMotor.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 12);
             dgvMotor.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(246, 246, 244);
             dgvMotor.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(41, 39, 163);
             dgvMotor.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 14);
@@ -122,7 +117,6 @@ namespace Project_QLBanXeMay
             string imagePath = Path.Combine(folder, "Images");
             var img = imagePath + @"\" + path;
             picMotor.Image.Save(img, ImageFormat.Jpeg);
-            MessageBox.Show(img);
         }
 
         private void dgvMotorcycles_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -148,7 +142,6 @@ namespace Project_QLBanXeMay
                 MessageBox.Show(ex.Message);
             }
         }
-
  
         private void btnAddImg_Click(object sender, EventArgs e)
         {
@@ -174,10 +167,21 @@ namespace Project_QLBanXeMay
                 MessageBox.Show(ex.Message);
             }
         }
-        private void btnUpdate_Click(object sender, EventArgs e)
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            Model1 context = new Model1();
+            var listXe = context.Xes.ToList();
+            var listSeach = listXe.Where(x => (x.MaXe.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower())) || (x.TenXe.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))).ToList();
+
+            BindGrid(listSeach);
+        }
+
+        private void btnAddUpp_Click(object sender, EventArgs e)
         {
             try
             {
+               
                 var find = context.Xes.FirstOrDefault(p => p.MaXe.Trim() == txtId.Text);
                 if (find != null)
                 {
@@ -197,15 +201,30 @@ namespace Project_QLBanXeMay
                 }
                 else
                 {
-                    MessageBox.Show("not find Id", "Update", MessageBoxButtons.OK);
+                    Xe x = new Xe();
+                    x.MaXe = txtId.Text;
+                    x.TenXe = txtNameMotor.Text;
+                    x.MauSac = cmbColor.Text;
+                    x.SoLuongTong = int.Parse(txtQuantity.Text);
+                    x.DonGia = double.Parse(txtPrice.Text);
+                    x.PhanKhoi = int.Parse(txtDisplacement.Text);
+                    x.HangXe = cmbCompany.Text;
+                    x.LoaiXe = txtLoai.Text;
+                    x.AnhXe = pathImage;
+                    SaveImage(pathImage);
+                    context.Xes.Add(x);
+                    context.SaveChanges();
+                    MessageBox.Show("Add successfully");
+                    BindGrid(context.Xes.ToList());
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
-        private void btnDelete_Click(object sender, EventArgs e)
+
+        private void BtnDelete_Click_1(object sender, EventArgs e)
         {
             var context = new Model1();
             var findxe = context.Xes.FirstOrDefault(p => p.MaXe == txtId.Text);
@@ -227,31 +246,6 @@ namespace Project_QLBanXeMay
             else
             {
                 MessageBox.Show("kh tim thay");
-            }
-        }
-        private void btnAddMotor_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                Xe x = new Xe();
-                x.MaXe = txtId.Text;
-                x.TenXe = txtNameMotor.Text;
-                x.MauSac = cmbColor.Text;
-                x.SoLuongTong = int.Parse(txtQuantity.Text);
-                x.DonGia = double.Parse(txtPrice.Text);
-                x.PhanKhoi = int.Parse(txtDisplacement.Text);
-                x.HangXe = cmbCompany.Text;
-                x.LoaiXe = txtLoai.Text;
-                x.AnhXe = pathImage;
-                SaveImage(pathImage);
-                context.Xes.Add(x);
-                context.SaveChanges();
-                MessageBox.Show("Add successfully");
-                BindGrid(context.Xes.ToList());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
     }
