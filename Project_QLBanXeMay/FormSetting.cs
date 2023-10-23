@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_QLBanXeMay.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace Project_QLBanXeMay
 {
     public partial class FormSetting : Form
     {
+        private DangNhap dn = new DangNhap();
+        public DangNhap Dn { get => dn; set => dn = value; }
+
         public FormSetting()
         {
             InitializeComponent();

@@ -31,6 +31,8 @@ namespace Project_QLBanXeMay.Models
         [StringLength(50)]
         public string DiaChi { get; set; }
 
+        public int? HoatDong { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuXuat> PhieuXuats { get; set; }
     }

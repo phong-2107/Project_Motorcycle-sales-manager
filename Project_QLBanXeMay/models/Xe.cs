@@ -42,9 +42,8 @@ namespace Project_QLBanXeMay.Models
         [StringLength(50)]
         public string AnhXe { get; set; }
 
-        [Required]
         [StringLength(50)]
-        public string HangXe { get; set; }
+        public string MaHang { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietPhieuNhap> ChiTietPhieuNhaps { get; set; }
@@ -54,5 +53,7 @@ namespace Project_QLBanXeMay.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietXe> ChiTietXes { get; set; }
+
+        public virtual HangXe HangXe { get; set; }
     }
 }

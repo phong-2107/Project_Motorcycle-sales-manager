@@ -12,6 +12,7 @@ namespace Project_QLBanXeMay.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NhanVien()
         {
+            DangNhaps = new HashSet<DangNhap>();
             PhieuNhaps = new HashSet<PhieuNhap>();
             PhieuXuats = new HashSet<PhieuXuat>();
         }
@@ -20,6 +21,7 @@ namespace Project_QLBanXeMay.Models
         [StringLength(50)]
         public string MaNV { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string TenNV { get; set; }
 
@@ -34,6 +36,12 @@ namespace Project_QLBanXeMay.Models
 
         [StringLength(350)]
         public string DiaChi { get; set; }
+
+        [StringLength(250)]
+        public string ChucVu { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DangNhap> DangNhaps { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuNhap> PhieuNhaps { get; set; }

@@ -68,7 +68,7 @@ namespace Project_QLBanXeMay
                 dgvMotorcycles.Rows[index].Cells[2].Value = x.MauSac;
                 dgvMotorcycles.Rows[index].Cells[3].Value = x.SoLuongTong;
                 dgvMotorcycles.Rows[index].Cells[4].Value = x.DonGia;
-                dgvMotorcycles.Rows[index].Cells[5].Value = x.HangXe;
+                dgvMotorcycles.Rows[index].Cells[5].Value = x.HangXe.TenHang;
             }
         }
 
@@ -190,7 +190,7 @@ namespace Project_QLBanXeMay
                     find.DonGia = int.Parse(txtPrice.Text);
                     find.SoLuongTong = int.Parse(txtQuantity.Text);
                     find.PhanKhoi = int.Parse(txtDisplacement.Text);
-                    find.HangXe = cmbCompany.Text;
+                    find.HangXe.TenHang = cmbCompany.Text;
                     find.LoaiXe = txtLoai.Text;
 
                     find.AnhXe = pathImage;
@@ -208,7 +208,7 @@ namespace Project_QLBanXeMay
                     x.SoLuongTong = int.Parse(txtQuantity.Text);
                     x.DonGia = double.Parse(txtPrice.Text);
                     x.PhanKhoi = int.Parse(txtDisplacement.Text);
-                    x.HangXe = cmbCompany.Text;
+                    x.HangXe.TenHang = cmbCompany.Text;
                     x.LoaiXe = txtLoai.Text;
                     x.AnhXe = pathImage;
                     SaveImage(pathImage);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_QLBanXeMay.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,15 +45,14 @@ namespace Project_QLBanXeMay
         bool menuExpand = false;
         bool reportExpand = false;
 
-        private static string password;
-        public static int quyen;
-        private static string username;
+
+        private DangNhap dn = new DangNhap();
+        public DangNhap Dn { get => dn; set => dn = value; }
 
         private Panel botttomBorder;
         private Panel leftBorder;
 
-        public string Username { get => username; set => username = value; }
-        public string Password { get => password; set => password = value; }
+        
 
         /* ============ Source code MAIN ==============*/
 
@@ -77,19 +77,16 @@ namespace Project_QLBanXeMay
             botttomBorder.BackColor = System.Drawing.Color.FromArgb(72, 60, 255);
             botttomBorder.Location = new Point(btnCreaateInvoice.Location.X, 40);
 
+
             leftBorder = new Panel();
             leftBorder.Size = new Size(7, 49);
             
         }
 
-        
-
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnCreateAccount.Text = username;
+            btnCreateAccount.Text = Dn.TaiKhoan;
             
             if (overview == null)
             {
@@ -97,6 +94,7 @@ namespace Project_QLBanXeMay
                 overview.FormClosed += Overview_FormClosed;
                 overview.MdiParent = this;
                 //overview.Dock = DockStyle.Fill;
+                overview.Dn = Dn;
                 overview.Show();
 
                
@@ -402,6 +400,7 @@ namespace Project_QLBanXeMay
                 setting.FormClosed += Setting_FormClosed;
                 setting.MdiParent = this;
                 setting.Dock = DockStyle.Fill;
+                setting.Dn = Dn;
                 setting.Refresh();
                 setting.Show();
             }

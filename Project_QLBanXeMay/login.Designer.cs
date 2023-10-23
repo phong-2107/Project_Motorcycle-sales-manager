@@ -206,7 +206,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLogin.Location = new System.Drawing.Point(392, 338);
+            this.btnLogin.Location = new System.Drawing.Point(390, 324);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(268, 54);
             this.btnLogin.TabIndex = 5;
@@ -219,7 +219,7 @@
             this.lbForgetPass.AutoSize = true;
             this.lbForgetPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbForgetPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(163)))));
-            this.lbForgetPass.Location = new System.Drawing.Point(469, 418);
+            this.lbForgetPass.Location = new System.Drawing.Point(467, 394);
             this.lbForgetPass.Name = "lbForgetPass";
             this.lbForgetPass.Size = new System.Drawing.Size(125, 17);
             this.lbForgetPass.TabIndex = 6;

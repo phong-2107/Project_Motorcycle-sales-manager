@@ -46,14 +46,17 @@ namespace Project_QLBanXeMay
             dgvCustomer.Rows.Clear();
             foreach (var x in list)
             {
-
-                int index = dgvCustomer.Rows.Add();
-                dgvCustomer.Rows[index].Cells[0].Value = x.MaKH;
-                dgvCustomer.Rows[index].Cells[1].Value = x.TenKH;
-                dgvCustomer.Rows[index].Cells[2].Value = x.Email;
-                dgvCustomer.Rows[index].Cells[3].Value = x.DiaChi;
-                dgvCustomer.Rows[index].Cells[4].Value = x.DienThoai;
+                if(x.HoatDong == 1)
+                {
+                    int index = dgvCustomer.Rows.Add();
+                    dgvCustomer.Rows[index].Cells[0].Value = x.MaKH;
+                    dgvCustomer.Rows[index].Cells[1].Value = x.TenKH;
+                    dgvCustomer.Rows[index].Cells[2].Value = x.Email;
+                    dgvCustomer.Rows[index].Cells[3].Value = x.DiaChi;
+                    dgvCustomer.Rows[index].Cells[4].Value = x.DienThoai;
+                }
             }
+                
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
@@ -109,6 +112,7 @@ namespace Project_QLBanXeMay
                     x.Email = txtEmail.Text;
                     x.DiaChi = txtAddress.Text;
                     x.DienThoai = txtPhone.Text;
+                    x.HoatDong = 1;
                     context.KhachHangs.Add(x);
                     context.SaveChanges();
                     MessageBox.Show("Add successfully");
@@ -124,9 +128,7 @@ namespace Project_QLBanXeMay
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var findKH = context.KhachHangs.FirstOrDefault(p => p.MaKH == txtID.Text);
-            var findPX = context.PhieuXuats.Where(p => p.MaKH == txtID.Text);
-            var findCTX = context.ChiTietXes.Where(p => p.PhieuXuat.MaKH == txtID.Text);
-            var findCTPX = context.ChiTietPhieuXuats.Where(p => p.PhieuXuat.MaKH == txtID.Text);
+            
             
 
             if (findKH != null)
@@ -134,21 +136,7 @@ namespace Project_QLBanXeMay
                 DialogResult res = MessageBox.Show("Are you sure you want to Delete", "Confirmation", MessageBoxButtons.YesNo);
                 if (res == DialogResult.Yes)
                 {
-                    
-                    
-                    foreach (var x in findCTX)
-                    {
-                        context.ChiTietXes.Remove(x);
-                    }
-                    foreach (var x in findCTPX)
-                    {
-                        context.ChiTietPhieuXuats.Remove(x);
-                    }
-                    foreach (var x in findPX)
-                    {
-                        context.PhieuXuats.Remove(x);
-                    }
-                    context.KhachHangs.Remove(findKH);
+                    findKH.HoatDong = 0;
                     
                     context.SaveChanges();
                     BindGrid(context.KhachHangs.ToList());
@@ -176,8 +164,8 @@ namespace Project_QLBanXeMay
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             Model1 context = new Model1();
-            var listKH = context.KhachHangs.ToList();
-            var listSeach = listKH.Where(x => (x.MaKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower())) || (x.TenKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower()))).ToList();
+            var listKHHD = context.KhachHangs.Where(p => p.HoatDong == 1).ToList();
+            var listSeach = listKHHD.Where(x => (x.MaKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower())) || (x.TenKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower()))).ToList();
             BindGrid(listSeach);
         }
     }

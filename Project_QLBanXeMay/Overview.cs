@@ -27,11 +27,13 @@ namespace Project_QLBanXeMay
         private static string username;
         public string Username { get => username; set => username = value; }
 
+        private DangNhap dn = new DangNhap();
+        public DangNhap Dn { get => dn; set => dn = value; }
 
         private void Overview_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            txtusername.Text = username;
+            txtusername.Text = Dn.TaiKhoan;
 
             Model1 context = new Model1();
             var listXe = context.Xes.ToList();
@@ -49,7 +51,7 @@ namespace Project_QLBanXeMay
                 int index = dgvMotor.Rows.Add();
                 dgvMotor.Rows[index].Cells[0].Value = x.TenXe;
                 dgvMotor.Rows[index].Cells[1].Value = x.DonGia;
-                dgvMotor.Rows[index].Cells[2].Value = x.HangXe;
+                dgvMotor.Rows[index].Cells[2].Value = x.HangXe.TenHang;
    
             }
         }
@@ -67,7 +69,7 @@ namespace Project_QLBanXeMay
                     dgvTransaction.Rows[index].Cells[0].Value = x.MaPX;
                     dgvTransaction.Rows[index].Cells[1].Value = x.NhanVien.TenNV;
                     dgvTransaction.Rows[index].Cells[2].Value = x.KhachHang.TenKH;
-                    dgvTransaction.Rows[index].Cells[3].Value = x.NgayXuat.Value.ToShortDateString();
+                    dgvTransaction.Rows[index].Cells[3].Value = x.NgayXuat.Value.ToString("dd/MM/yyyy");
                     dgvTransaction.Rows[index].Cells[4].Value = x.TongTien;
                 }
             }

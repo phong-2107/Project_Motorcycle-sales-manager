@@ -35,7 +35,7 @@ namespace Project_QLBanXeMay
                 int index = dgvMotorcycles.Rows.Add();
                 dgvMotorcycles.Rows[index].Cells[0].Value = x.MaPN;
                 dgvMotorcycles.Rows[index].Cells[1].Value = x.Xe.TenXe;
-                dgvMotorcycles.Rows[index].Cells[2].Value = x.Xe.HangXe;
+                dgvMotorcycles.Rows[index].Cells[2].Value = x.Xe.HangXe.TenHang;
                 dgvMotorcycles.Rows[index].Cells[3].Value = x.SoLuong;
                 dgvMotorcycles.Rows[index].Cells[4].Value = x.Xe.DonGia;
                 dgvMotorcycles.Rows[index].Cells[5].Value = x.PhieuNhap.NgayNhap.Value.ToString("dd/MM/yyyy");

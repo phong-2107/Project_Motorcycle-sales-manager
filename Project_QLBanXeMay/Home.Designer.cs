@@ -100,8 +100,8 @@
             this.ReportTransition = new System.Windows.Forms.Timer(this.components);
             this.sider = new System.Windows.Forms.Panel();
             this.pnBar = new System.Windows.Forms.Panel();
-            this.btnCreaateInvoice = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCreaateInvoice = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.MenuContainer.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -1062,7 +1062,7 @@
             this.btnCreateAccount.ForeColor = System.Drawing.Color.Gray;
             this.btnCreateAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateAccount.Image")));
             this.btnCreateAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateAccount.Location = new System.Drawing.Point(1191, 4);
+            this.btnCreateAccount.Location = new System.Drawing.Point(66, 4);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(146, 33);
             this.btnCreateAccount.TabIndex = 5;
@@ -1111,24 +1111,6 @@
             this.pnBar.TabIndex = 7;
             this.pnBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
-            // btnCreaateInvoice
-            // 
-            this.btnCreaateInvoice.BackColor = System.Drawing.Color.White;
-            this.btnCreaateInvoice.FlatAppearance.BorderSize = 0;
-            this.btnCreaateInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreaateInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreaateInvoice.ForeColor = System.Drawing.Color.Gray;
-            this.btnCreaateInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnCreaateInvoice.Image")));
-            this.btnCreaateInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreaateInvoice.Location = new System.Drawing.Point(982, 1);
-            this.btnCreaateInvoice.Name = "btnCreaateInvoice";
-            this.btnCreaateInvoice.Size = new System.Drawing.Size(159, 41);
-            this.btnCreaateInvoice.TabIndex = 6;
-            this.btnCreaateInvoice.Text = "Create Invoice";
-            this.btnCreaateInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreaateInvoice.UseVisualStyleBackColor = false;
-            this.btnCreaateInvoice.Click += new System.EventHandler(this.btnCreaateInvoice_Click);
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -1143,6 +1125,22 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 738);
             this.flowLayoutPanel1.TabIndex = 9;
+            // 
+            // btnCreaateInvoice
+            // 
+            this.btnCreaateInvoice.BackColor = System.Drawing.Color.White;
+            this.btnCreaateInvoice.FlatAppearance.BorderSize = 0;
+            this.btnCreaateInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreaateInvoice.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreaateInvoice.ForeColor = System.Drawing.Color.Gray;
+            this.btnCreaateInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreaateInvoice.Location = new System.Drawing.Point(301, 2);
+            this.btnCreaateInvoice.Name = "btnCreaateInvoice";
+            this.btnCreaateInvoice.Size = new System.Drawing.Size(166, 41);
+            this.btnCreaateInvoice.TabIndex = 6;
+            this.btnCreaateInvoice.Text = "Tạo hóa đơn";
+            this.btnCreaateInvoice.UseVisualStyleBackColor = false;
+            this.btnCreaateInvoice.Click += new System.EventHandler(this.btnCreaateInvoice_Click);
             // 
             // Home
             // 
@@ -1257,8 +1255,8 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Panel sider;
         private System.Windows.Forms.Panel pnBar;
-        private System.Windows.Forms.Button btnCreaateInvoice;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnCreaateInvoice;
     }
 }
 

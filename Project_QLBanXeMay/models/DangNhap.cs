@@ -13,12 +13,15 @@ namespace Project_QLBanXeMay.Models
         [StringLength(50)]
         public string TaiKhoan { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string MatKhau { get; set; }
 
-        [StringLength(50)]
-        public string TenDayDu { get; set; }
+        public int Quyen { get; set; }
 
-        public int? Quyen { get; set; }
+        [StringLength(50)]
+        public string MaNV { get; set; }
+
+        public virtual NhanVien NhanVien { get; set; }
     }
 }
