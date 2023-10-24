@@ -99,8 +99,8 @@
             this.btnHam = new System.Windows.Forms.PictureBox();
             this.ReportTransition = new System.Windows.Forms.Timer(this.components);
             this.sider = new System.Windows.Forms.Panel();
-            this.pnBar = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnBar = new System.Windows.Forms.Panel();
             this.btnCreaateInvoice = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.MenuContainer.SuspendLayout();
@@ -118,8 +118,8 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.sider.SuspendLayout();
-            this.pnBar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.pnBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -1089,27 +1089,13 @@
             // 
             // sider
             // 
-            this.sider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(36)))), ((int)(((byte)(120)))));
+            this.sider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(36)))), ((int)(((byte)(91)))));
             this.sider.Controls.Add(this.flowLayoutPanel1);
             this.sider.Dock = System.Windows.Forms.DockStyle.Left;
             this.sider.Location = new System.Drawing.Point(0, 0);
             this.sider.Name = "sider";
             this.sider.Size = new System.Drawing.Size(221, 890);
             this.sider.TabIndex = 6;
-            // 
-            // pnBar
-            // 
-            this.pnBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnBar.Controls.Add(this.btnCreaateInvoice);
-            this.pnBar.Controls.Add(this.btnHam);
-            this.pnBar.Controls.Add(this.btnCreateAccount);
-            this.pnBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnBar.Location = new System.Drawing.Point(221, 0);
-            this.pnBar.Margin = new System.Windows.Forms.Padding(0);
-            this.pnBar.Name = "pnBar";
-            this.pnBar.Size = new System.Drawing.Size(1349, 45);
-            this.pnBar.TabIndex = 7;
-            this.pnBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
             // flowLayoutPanel1
             // 
@@ -1125,6 +1111,19 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 738);
             this.flowLayoutPanel1.TabIndex = 9;
+            // 
+            // pnBar
+            // 
+            this.pnBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnBar.Controls.Add(this.btnCreaateInvoice);
+            this.pnBar.Controls.Add(this.btnHam);
+            this.pnBar.Controls.Add(this.btnCreateAccount);
+            this.pnBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnBar.Location = new System.Drawing.Point(221, 0);
+            this.pnBar.Margin = new System.Windows.Forms.Padding(0);
+            this.pnBar.Name = "pnBar";
+            this.pnBar.Size = new System.Drawing.Size(1349, 45);
+            this.pnBar.TabIndex = 7;
             // 
             // btnCreaateInvoice
             // 
@@ -1159,7 +1158,7 @@
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "Home";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manager Motorcycle";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel3.ResumeLayout(false);
@@ -1178,8 +1177,8 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.sider.ResumeLayout(false);
-            this.pnBar.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.pnBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

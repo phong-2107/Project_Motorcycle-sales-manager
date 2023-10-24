@@ -27,13 +27,13 @@ namespace Project_QLBanXeMay
         private static string username;
         public string Username { get => username; set => username = value; }
 
-        private DangNhap dn = new DangNhap();
-        public DangNhap Dn { get => dn; set => dn = value; }
+        private NhanVien dn = new NhanVien();
+        public NhanVien Dn { get => dn; set => dn = value; }
 
         private void Overview_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            txtusername.Text = Dn.TaiKhoan;
+            txtusername.Text = Dn.DangNhap.TaiKhoan;
 
             Model1 context = new Model1();
             var listXe = context.Xes.ToList();
@@ -48,11 +48,13 @@ namespace Project_QLBanXeMay
             dgvMotor.Rows.Clear();
             foreach (var x in list)
             {
-                int index = dgvMotor.Rows.Add();
-                dgvMotor.Rows[index].Cells[0].Value = x.TenXe;
-                dgvMotor.Rows[index].Cells[1].Value = x.DonGia;
-                dgvMotor.Rows[index].Cells[2].Value = x.HangXe.TenHang;
-   
+                if(x!= null && x.HoatDong == 1)
+                {
+                    int index = dgvMotor.Rows.Add();
+                    dgvMotor.Rows[index].Cells[0].Value = x.TenXe;
+                    dgvMotor.Rows[index].Cells[1].Value = x.DonGia;
+                    dgvMotor.Rows[index].Cells[2].Value = x.HangXe.TenHang;
+                }
             }
         }
 

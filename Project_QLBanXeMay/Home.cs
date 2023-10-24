@@ -46,8 +46,8 @@ namespace Project_QLBanXeMay
         bool reportExpand = false;
 
 
-        private DangNhap dn = new DangNhap();
-        public DangNhap Dn { get => dn; set => dn = value; }
+        private NhanVien dn = new NhanVien();
+        public NhanVien Dn { get => dn; set => dn = value; }
 
         private Panel botttomBorder;
         private Panel leftBorder;
@@ -86,7 +86,7 @@ namespace Project_QLBanXeMay
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnCreateAccount.Text = Dn.TaiKhoan;
+            btnCreateAccount.Text = Dn.DangNhap.TaiKhoan;
             
             if (overview == null)
             {
@@ -401,7 +401,6 @@ namespace Project_QLBanXeMay
                 setting.MdiParent = this;
                 setting.Dock = DockStyle.Fill;
                 setting.Dn = Dn;
-                setting.Refresh();
                 setting.Show();
             }
             else
@@ -433,6 +432,7 @@ namespace Project_QLBanXeMay
             DialogResult dialogResult = MessageBox.Show("Are you sure Logout ? ", "LOG OUT", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+                
                 login lg = new login();
                 lg.Show();
                 lg.FormClosing += FrmClosing;
@@ -445,10 +445,6 @@ namespace Project_QLBanXeMay
             Show();
         }
 
-        private void panel10_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnCreaateInvoice_Click(object sender, EventArgs e)
         {

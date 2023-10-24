@@ -15,13 +15,7 @@ namespace Project_QLBanXeMay
     public partial class login : Form
     {
         /*==========  Connection databse ============*/
- 
-        private static string fullname;
-        public static int quyen;
-        private static string username;
 
-        public  string Username { get => username; set => username = value; }
-        public  string Fullname { get => fullname; set => fullname = value; }
         public DangNhap Dn { get => dn; set => dn = value; }
 
         private DangNhap dn = new DangNhap();
@@ -47,25 +41,27 @@ namespace Project_QLBanXeMay
         private void btnLogin_Click(object sender, EventArgs e)
         {
             var context = new Model1();
-            List <DangNhap> lg = context.DangNhaps.ToList();
-            DangNhap dangNhap = new DangNhap();
+            List <NhanVien> lg = context.NhanViens.ToList();
+            //DangNhap dangNhap = new DangNhap();
+            NhanVien nv = new NhanVien();
+            int count = 0;
             if (txtAccount.Text != "" && txtPassword.Text != "")
             {
                 foreach(var item in lg)
                 {
-                    if(txtAccount.Text == item.TaiKhoan && txtPassword.Text == item.MatKhau)
+                    if(txtAccount.Text == item.DangNhap.TaiKhoan && txtPassword.Text == item.DangNhap.MatKhau)
                     {
-                        dangNhap = item;
+                        nv = item;
+                        count = 1;
                     }
                 }
 
-                if(dangNhap != null)
+                if(count == 1)
                 {
-                    
                     this.Hide();
                     Overview overview = new Overview();
                     Home home = new Home();
-                    home.Dn = dangNhap;
+                    home.Dn = nv;
                     home.Closed += (s, args) => this.Close();
                     home.Show();
                 }

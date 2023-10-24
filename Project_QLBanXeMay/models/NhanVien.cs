@@ -12,7 +12,6 @@ namespace Project_QLBanXeMay.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NhanVien()
         {
-            DangNhaps = new HashSet<DangNhap>();
             PhieuNhaps = new HashSet<PhieuNhap>();
             PhieuXuats = new HashSet<PhieuXuat>();
         }
@@ -40,8 +39,13 @@ namespace Project_QLBanXeMay.Models
         [StringLength(250)]
         public string ChucVu { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DangNhap> DangNhaps { get; set; }
+        [StringLength(50)]
+        public string TaiKhoan { get; set; }
+
+        [StringLength(50)]
+        public string Anh { get; set; }
+
+        public virtual DangNhap DangNhap { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuNhap> PhieuNhaps { get; set; }

@@ -59,16 +59,6 @@ namespace Project_QLBanXeMay
                 
         }
 
-        private void btnAddCustomer_Click(object sender, EventArgs e)
-        {
-        }
-
-
-        private void searchLabel_Click(object sender, EventArgs e)
-        {
-            searchLabel.Visible = false;
-        }
-
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -167,6 +157,11 @@ namespace Project_QLBanXeMay
             var listKHHD = context.KhachHangs.Where(p => p.HoatDong == 1).ToList();
             var listSeach = listKHHD.Where(x => (x.MaKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower())) || (x.TenKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower()))).ToList();
             BindGrid(listSeach);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

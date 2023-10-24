@@ -64,6 +64,9 @@
     <Compile Include="borderRadius\borderPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="borderRadius\pictureboxBorder.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="borderRadius\RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>

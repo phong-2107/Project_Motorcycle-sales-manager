@@ -72,7 +72,7 @@
             this.borderPanel1.Controls.Add(this.label2);
             this.borderPanel1.Controls.Add(this.pictureBox3);
             this.borderPanel1.Controls.Add(this.label1);
-            this.borderPanel1.Location = new System.Drawing.Point(162, 154);
+            this.borderPanel1.Location = new System.Drawing.Point(136, 152);
             this.borderPanel1.Name = "borderPanel1";
             this.borderPanel1.Size = new System.Drawing.Size(1000, 552);
             this.borderPanel1.TabIndex = 19;
@@ -254,7 +254,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1640, 875);
+            this.ClientSize = new System.Drawing.Size(1350, 850);
             this.Controls.Add(this.borderPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAbout";

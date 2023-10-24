@@ -39,7 +39,7 @@ namespace Project_QLBanXeMay
 
         private void displayNumber()
         {
-            CountMotorModel.Text = context.Xes.ToList().Count.ToString();
+            CountMotorModel.Text = dgvMotorcycles.Rows.Count.ToString();
         }
 
         void StyleDatagridview(DataGridView dgvMotor)
@@ -61,14 +61,17 @@ namespace Project_QLBanXeMay
             dgvMotorcycles.Rows.Clear();
             foreach (var x in list)
             {
+                if(x.HoatDong == 1)
+                {
+                    int index = dgvMotorcycles.Rows.Add();
+                    dgvMotorcycles.Rows[index].Cells[0].Value = x.MaXe;
+                    dgvMotorcycles.Rows[index].Cells[1].Value = x.TenXe;
+                    dgvMotorcycles.Rows[index].Cells[2].Value = x.MauXe.TenMau;
+                    dgvMotorcycles.Rows[index].Cells[3].Value = x.SoLuongTong;
+                    dgvMotorcycles.Rows[index].Cells[4].Value = x.DonGia;
+                    dgvMotorcycles.Rows[index].Cells[5].Value = x.HangXe.TenHang;
+                }
                 
-                int index = dgvMotorcycles.Rows.Add();
-                dgvMotorcycles.Rows[index].Cells[0].Value = x.MaXe;
-                dgvMotorcycles.Rows[index].Cells[1].Value = x.TenXe;
-                dgvMotorcycles.Rows[index].Cells[2].Value = x.MauSac;
-                dgvMotorcycles.Rows[index].Cells[3].Value = x.SoLuongTong;
-                dgvMotorcycles.Rows[index].Cells[4].Value = x.DonGia;
-                dgvMotorcycles.Rows[index].Cells[5].Value = x.HangXe.TenHang;
             }
         }
 
@@ -182,11 +185,11 @@ namespace Project_QLBanXeMay
             try
             {
                
-                var find = context.Xes.FirstOrDefault(p => p.MaXe.Trim() == txtId.Text);
+                var find = context.Xes.FirstOrDefault(p => (p.MaXe.Trim() == txtId.Text) && (p.HoatDong == 1));
                 if (find != null)
                 {
                     find.TenXe = txtNameMotor.Text;
-                    find.MauSac = cmbColor.Text;
+                    find.MauXe.TenMau = cmbColor.Text;
                     find.DonGia = int.Parse(txtPrice.Text);
                     find.SoLuongTong = int.Parse(txtQuantity.Text);
                     find.PhanKhoi = int.Parse(txtDisplacement.Text);
@@ -204,13 +207,14 @@ namespace Project_QLBanXeMay
                     Xe x = new Xe();
                     x.MaXe = txtId.Text;
                     x.TenXe = txtNameMotor.Text;
-                    x.MauSac = cmbColor.Text;
+                    x.MauXe.TenMau = cmbColor.Text;
                     x.SoLuongTong = int.Parse(txtQuantity.Text);
                     x.DonGia = double.Parse(txtPrice.Text);
                     x.PhanKhoi = int.Parse(txtDisplacement.Text);
                     x.HangXe.TenHang = cmbCompany.Text;
                     x.LoaiXe = txtLoai.Text;
                     x.AnhXe = pathImage;
+                    x.HoatDong = 1;
                     SaveImage(pathImage);
                     context.Xes.Add(x);
                     context.SaveChanges();
@@ -227,7 +231,7 @@ namespace Project_QLBanXeMay
         private void BtnDelete_Click_1(object sender, EventArgs e)
         {
             var context = new Model1();
-            var findxe = context.Xes.FirstOrDefault(p => p.MaXe == txtId.Text);
+            var findxe = context.Xes.FirstOrDefault(p => (p.MaXe == txtId.Text) &&(p.HoatDong == 1));
             //var findc
 
             if (findxe != null)
@@ -236,9 +240,10 @@ namespace Project_QLBanXeMay
                 if (res == DialogResult.Yes)
                 {
 
-                    context.Xes.Remove(findxe);
+                    //context.Xes.Remove(findxe);
+                    findxe.HoatDong = 0;
                     context.SaveChanges();
-                    BindGrid(context.Xes.ToList());
+                    QLVehicle_Load(sender, e);
                     MessageBox.Show("xoa thanh cong");
                 }
 
