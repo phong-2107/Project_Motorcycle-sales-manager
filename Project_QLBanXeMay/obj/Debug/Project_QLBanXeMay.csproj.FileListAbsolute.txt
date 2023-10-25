@@ -25,3 +25,4 @@ D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.SqlServer.dll
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.xml
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.SqlServer.xml
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormContact.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.HoaDon.resources

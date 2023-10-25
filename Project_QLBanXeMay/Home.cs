@@ -72,14 +72,11 @@ namespace Project_QLBanXeMay
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             botttomBorder = new Panel();
-            botttomBorder.Size = new Size(160, 7);
+            botttomBorder.Size = new Size(120, 7);
             pnBar.Controls.Add(botttomBorder);
             botttomBorder.BackColor = System.Drawing.Color.FromArgb(72, 60, 255);
             botttomBorder.Location = new Point(btnCreaateInvoice.Location.X, 40);
-
-
-            leftBorder = new Panel();
-            leftBorder.Size = new Size(7, 49);
+;
             
         }
 
@@ -450,6 +447,16 @@ namespace Project_QLBanXeMay
         {
             botttomBorder.BackColor = System.Drawing.Color.FromArgb(72, 60, 255);
             botttomBorder.Location = new Point(btnCreaateInvoice.Location.X, 40);
+            home.Opacity = 80;
+            HoaDon hd = new HoaDon();
+            hd.ShowDialog();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            botttomBorder.BackColor = System.Drawing.Color.FromArgb(72, 60, 255);
+            botttomBorder.Location = new Point(button1.Location.X, 40);
         }
     }
 }

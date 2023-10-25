@@ -101,6 +101,7 @@
             this.sider = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnBar = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnCreaateInvoice = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.MenuContainer.SuspendLayout();
@@ -1115,6 +1116,7 @@
             // pnBar
             // 
             this.pnBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnBar.Controls.Add(this.button1);
             this.pnBar.Controls.Add(this.btnCreaateInvoice);
             this.pnBar.Controls.Add(this.btnHam);
             this.pnBar.Controls.Add(this.btnCreateAccount);
@@ -1125,6 +1127,22 @@
             this.pnBar.Size = new System.Drawing.Size(1349, 45);
             this.pnBar.TabIndex = 7;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Gray;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(445, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 37);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Nhập thêm xe";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnCreaateInvoice
             // 
             this.btnCreaateInvoice.BackColor = System.Drawing.Color.White;
@@ -1133,9 +1151,9 @@
             this.btnCreaateInvoice.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreaateInvoice.ForeColor = System.Drawing.Color.Gray;
             this.btnCreaateInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreaateInvoice.Location = new System.Drawing.Point(301, 2);
+            this.btnCreaateInvoice.Location = new System.Drawing.Point(299, 4);
             this.btnCreaateInvoice.Name = "btnCreaateInvoice";
-            this.btnCreaateInvoice.Size = new System.Drawing.Size(166, 41);
+            this.btnCreaateInvoice.Size = new System.Drawing.Size(120, 37);
             this.btnCreaateInvoice.TabIndex = 6;
             this.btnCreaateInvoice.Text = "Tạo hóa đơn";
             this.btnCreaateInvoice.UseVisualStyleBackColor = false;
@@ -1158,8 +1176,9 @@
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "Home";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager Motorcycle";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel3.ResumeLayout(false);
             this.MenuContainer.ResumeLayout(false);
@@ -1256,6 +1275,7 @@
         private System.Windows.Forms.Panel pnBar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnCreaateInvoice;
+        private System.Windows.Forms.Button button1;
     }
 }
 

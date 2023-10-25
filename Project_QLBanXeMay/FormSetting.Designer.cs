@@ -1285,7 +1285,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMotorcycles.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvMotorcycles.Location = new System.Drawing.Point(18, 19);
+            this.dgvMotorcycles.Location = new System.Drawing.Point(16, 15);
             this.dgvMotorcycles.Margin = new System.Windows.Forms.Padding(6);
             this.dgvMotorcycles.Name = "dgvMotorcycles";
             this.dgvMotorcycles.ReadOnly = true;
