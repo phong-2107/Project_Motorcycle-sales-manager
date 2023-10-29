@@ -33,8 +33,9 @@ namespace Project_QLBanXeMay
         private void Overview_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            txtusername.Text = Dn.DangNhap.TaiKhoan;
-
+            txtusername.Text = Dn.TenNV;
+            DayInWeek.Text = DateTime.Today.DayOfWeek.ToString();
+            dateInYear.Text = DateTime.Today.ToString(" dd-MMMM-yyyy");
             Model1 context = new Model1();
             var listXe = context.Xes.ToList();
             var listSales = context.PhieuXuats.ToList();
@@ -72,7 +73,7 @@ namespace Project_QLBanXeMay
                     dgvTransaction.Rows[index].Cells[1].Value = x.NhanVien.TenNV;
                     dgvTransaction.Rows[index].Cells[2].Value = x.KhachHang.TenKH;
                     dgvTransaction.Rows[index].Cells[3].Value = x.NgayXuat.Value.ToString("dd/MM/yyyy");
-                    dgvTransaction.Rows[index].Cells[4].Value = x.TongTien;
+                    dgvTransaction.Rows[index].Cells[4].Value = x.TongThanhTien;
                 }
             }
         }
@@ -84,16 +85,16 @@ namespace Project_QLBanXeMay
             int count = 0;
             foreach (var x in listPX)
             {
-                sumTotal += x.TongTien;
+                sumTotal += x.TongThanhTien;
                 DateTime? date = x.NgayXuat;
                 if(date.Value.Day == DateTime.Today.Day && date.Value.Year == DateTime.Today.Year && date.Value.Month == DateTime.Today.Month)
                 {
-                    sumDay += x.TongTien;
+                    sumDay += x.TongThanhTien;
                 }
                 count++;
             }
-            txtTotalCost.Text = sumTotal.ToString();
-            txtIncomeToday.Text = sumDay.ToString();
+            txtTotalCost.Text = sumTotal.ToString() + " VND";
+            txtIncomeToday.Text = sumDay.ToString() + " VND";
             txtMoborSold.Text = count.ToString();
         }
 
@@ -187,7 +188,5 @@ namespace Project_QLBanXeMay
         {
             Overview_Load(sender, e);
         }
-
-        
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project_QLBanXeMay
@@ -41,22 +42,22 @@ namespace Project_QLBanXeMay
         private void btnLogin_Click(object sender, EventArgs e)
         {
             var context = new Model1();
-            List <NhanVien> lg = context.NhanViens.ToList();
+            List<NhanVien> lg = context.NhanViens.ToList();
             //DangNhap dangNhap = new DangNhap();
             NhanVien nv = new NhanVien();
             int count = 0;
             if (txtAccount.Text != "" && txtPassword.Text != "")
             {
-                foreach(var item in lg)
+                foreach (var item in lg)
                 {
-                    if(txtAccount.Text == item.DangNhap.TaiKhoan && txtPassword.Text == item.DangNhap.MatKhau)
+                    if (item.TaiKhoan != null && txtAccount.Text == item.DangNhap.TaiKhoan && txtPassword.Text == item.DangNhap.MatKhau)
                     {
                         nv = item;
                         count = 1;
                     }
                 }
 
-                if(count == 1)
+                if (count == 1)
                 {
                     this.Hide();
                     Overview overview = new Overview();
@@ -72,7 +73,7 @@ namespace Project_QLBanXeMay
             }
             else
             {
-                if(txtAccount.Text == "")
+                if (txtAccount.Text == "")
                     MessageBox.Show("You haven't filled in your account", "Sign in", MessageBoxButtons.OK);
                 else if (txtPassword.Text == "")
                     MessageBox.Show("You haven't filled in your Password", "Sign in", MessageBoxButtons.OK);
@@ -81,5 +82,19 @@ namespace Project_QLBanXeMay
             }
         }
 
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnLogin.PerformClick();
+        }
+
+        private void txtAccount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPassword.Focus();
+                e.Handled = true;
+            }
+        }
     }
 }

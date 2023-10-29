@@ -20,7 +20,6 @@ namespace Project_QLBanXeMay.Models
         [StringLength(50)]
         public string MaNV { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string TenNV { get; set; }
 
@@ -36,16 +35,18 @@ namespace Project_QLBanXeMay.Models
         [StringLength(350)]
         public string DiaChi { get; set; }
 
-        [StringLength(250)]
-        public string ChucVu { get; set; }
+        [StringLength(200)]
+        public string Anh { get; set; }
 
         [StringLength(50)]
         public string TaiKhoan { get; set; }
 
         [StringLength(50)]
-        public string Anh { get; set; }
+        public string ChucVu { get; set; }
 
         public virtual DangNhap DangNhap { get; set; }
+
+        public virtual PhanCong PhanCong { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuNhap> PhieuNhaps { get; set; }

@@ -26,3 +26,10 @@ D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.xml
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\bin\Debug\EntityFramework.SqlServer.xml
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormContact.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.HoaDon.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormAccount.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.TableColor.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.TableNCC.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormCustomerDeleted.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormMotorDeleted.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormAddMotor.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.CreateMotor.resources

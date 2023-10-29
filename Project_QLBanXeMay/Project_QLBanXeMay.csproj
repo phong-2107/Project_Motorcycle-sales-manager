@@ -64,11 +64,20 @@
     <Compile Include="borderRadius\borderPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="borderRadius\BorderPanelBasic.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="borderRadius\pictureboxBorder.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="borderRadius\RoundedButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CreateMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateMotor.Designer.cs">
+      <DependentUpon>CreateMotor.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAbout.cs">
       <SubType>Form</SubType>
@@ -76,11 +85,35 @@
     <Compile Include="FormAbout.Designer.cs">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAccount.Designer.cs">
+      <DependentUpon>FormAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddMotor.Designer.cs">
+      <DependentUpon>FormAddMotor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormContact.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormContact.Designer.cs">
       <DependentUpon>FormContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCustomerDeleted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomerDeleted.Designer.cs">
+      <DependentUpon>FormCustomerDeleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMotorDeleted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMotorDeleted.Designer.cs">
+      <DependentUpon>FormMotorDeleted.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSetting.cs">
       <SubType>Form</SubType>
@@ -123,10 +156,15 @@
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\NhaCungCap.cs" />
     <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\PhanCong.cs" />
     <Compile Include="Models\PhieuNhap.cs" />
+    <Compile Include="Models\PhieuThanhToan.cs" />
     <Compile Include="Models\PhieuXuat.cs" />
+    <Compile Include="Models\PhuongThucTT.cs" />
+    <Compile Include="Models\PX_GiamGiaKhuyenMai.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\Xe.cs" />
+    <Compile Include="Models\XeDaXoa.cs" />
     <Compile Include="Overview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,11 +197,38 @@
     <Compile Include="SalesHistory.Designer.cs">
       <DependentUpon>SalesHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableColor.Designer.cs">
+      <DependentUpon>TableColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableNCC.Designer.cs">
+      <DependentUpon>TableNCC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CreateMotor.resx">
+      <DependentUpon>CreateMotor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAccount.resx">
+      <DependentUpon>FormAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddMotor.resx">
+      <DependentUpon>FormAddMotor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormContact.resx">
       <DependentUpon>FormContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomerDeleted.resx">
+      <DependentUpon>FormCustomerDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMotorDeleted.resx">
+      <DependentUpon>FormMotorDeleted.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
@@ -204,6 +269,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesHistory.resx">
       <DependentUpon>SalesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableColor.resx">
+      <DependentUpon>TableColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableNCC.resx">
+      <DependentUpon>TableNCC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

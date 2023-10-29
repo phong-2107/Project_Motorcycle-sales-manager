@@ -26,9 +26,10 @@ namespace Project_QLBanXeMay
             List<NhanVien> listNV = context.NhanViens.ToList();
             List<PhieuXuat> listPX = context.PhieuXuats.ToList();
             BindGridStaff(listNV);
+            /*
             var str = countStaff(listPX);
             var nv = listNV.FirstOrDefault(p => p.MaNV == str);
-            lbName.Text = nv.TenNV;
+            lbName.Text = nv.TenNV;*/
 
             countTotalStaff.Text = listNV.Count().ToString();
         }

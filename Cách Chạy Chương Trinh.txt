@@ -1,0 +1,2 @@
+1.  Mở Folder Database Và Chạy bằng Sql Server
+2. Mở Project và đăng nhập bằng 1 trong những tài khoản trong database ( admin / admin )

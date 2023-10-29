@@ -38,9 +38,6 @@
             this.MenuContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.Menu = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnStaff = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -78,31 +75,35 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btnHelp = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.BtnLogOut = new System.Windows.Forms.Button();
+            this.MenuTransition = new System.Windows.Forms.Timer(this.components);
+            this.SidebarTransistion = new System.Windows.Forms.Timer(this.components);
+            this.ReportTransition = new System.Windows.Forms.Timer(this.components);
+            this.sider = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.settingContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.BtnLogOut = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.MenuTransition = new System.Windows.Forms.Timer(this.components);
-            this.SidebarTransistion = new System.Windows.Forms.Timer(this.components);
-            this.btnCreateAccount = new System.Windows.Forms.Button();
-            this.btnHam = new System.Windows.Forms.PictureBox();
-            this.ReportTransition = new System.Windows.Forms.Timer(this.components);
-            this.sider = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAccountStaff = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btnMotorcycle = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnCustomerDeleted = new System.Windows.Forms.Button();
             this.pnBar = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCompany = new System.Windows.Forms.Button();
+            this.btnAccount = new System.Windows.Forms.Button();
+            this.btnAddColor = new System.Windows.Forms.Button();
             this.btnCreaateInvoice = new System.Windows.Forms.Button();
+            this.btnAddMotor = new System.Windows.Forms.Button();
+            this.btnHam = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.SettingsTransition = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.MenuContainer.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -114,30 +115,37 @@
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
             this.About.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.sider.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.settingContainer.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.pnBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.btnHome);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button27);
             this.panel3.Controls.Add(this.button28);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.panel3.Location = new System.Drawing.Point(0, 8);
             this.panel3.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(216, 49);
+            this.panel3.Size = new System.Drawing.Size(220, 49);
             this.panel3.TabIndex = 13;
             // 
             // btnHome
             // 
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
             this.btnHome.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnHome.FlatAppearance.BorderSize = 0;
@@ -147,11 +155,11 @@
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(216, 49);
+            this.btnHome.Size = new System.Drawing.Size(220, 49);
             this.btnHome.TabIndex = 8;
             this.btnHome.Text = "              Overview";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // button4
@@ -163,7 +171,7 @@
             this.button4.Location = new System.Drawing.Point(0, 0);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(216, 49);
+            this.button4.Size = new System.Drawing.Size(220, 49);
             this.button4.TabIndex = 7;
             this.button4.Text = "Help";
             this.button4.UseVisualStyleBackColor = true;
@@ -177,7 +185,7 @@
             this.button27.Location = new System.Drawing.Point(0, 0);
             this.button27.Name = "button27";
             this.button27.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button27.Size = new System.Drawing.Size(216, 49);
+            this.button27.Size = new System.Drawing.Size(220, 49);
             this.button27.TabIndex = 6;
             this.button27.Text = "Help";
             this.button27.UseVisualStyleBackColor = true;
@@ -191,7 +199,7 @@
             this.button28.Location = new System.Drawing.Point(0, 0);
             this.button28.Name = "button28";
             this.button28.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button28.Size = new System.Drawing.Size(216, 49);
+            this.button28.Size = new System.Drawing.Size(220, 49);
             this.button28.TabIndex = 5;
             this.button28.Text = "Help";
             this.button28.UseVisualStyleBackColor = true;
@@ -203,19 +211,17 @@
             this.MenuContainer.Controls.Add(this.panel4);
             this.MenuContainer.Controls.Add(this.panel6);
             this.MenuContainer.Controls.Add(this.panel9);
+            this.MenuContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.MenuContainer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.MenuContainer.Location = new System.Drawing.Point(0, 138);
+            this.MenuContainer.Location = new System.Drawing.Point(0, 73);
             this.MenuContainer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.MenuContainer.Name = "MenuContainer";
-            this.MenuContainer.Size = new System.Drawing.Size(217, 49);
+            this.MenuContainer.Size = new System.Drawing.Size(220, 49);
             this.MenuContainer.TabIndex = 11;
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.Menu);
-            this.panel7.Controls.Add(this.button5);
-            this.panel7.Controls.Add(this.button3);
-            this.panel7.Controls.Add(this.button6);
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
@@ -239,48 +245,6 @@
             this.Menu.Text = "     Manager     ▼";
             this.Menu.UseVisualStyleBackColor = true;
             this.Menu.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // button5
-            // 
-            this.button5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(216, 49);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Help";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(216, 49);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Help";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 0);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(216, 49);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Help";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -526,12 +490,12 @@
             this.ReportContainer.Controls.Add(this.panel11);
             this.ReportContainer.Controls.Add(this.panel12);
             this.ReportContainer.Controls.Add(this.panel13);
-            this.ReportContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.ReportContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.ReportContainer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.ReportContainer.Location = new System.Drawing.Point(0, 73);
+            this.ReportContainer.Location = new System.Drawing.Point(0, 138);
             this.ReportContainer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.ReportContainer.Name = "ReportContainer";
-            this.ReportContainer.Size = new System.Drawing.Size(217, 49);
+            this.ReportContainer.Size = new System.Drawing.Size(220, 49);
             this.ReportContainer.TabIndex = 17;
             // 
             // panel11
@@ -560,8 +524,8 @@
             this.btnReport.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnReport.Size = new System.Drawing.Size(216, 49);
             this.btnReport.TabIndex = 8;
-            this.btnReport.Text = "  Report     ▼";
-            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Text = "        Report        ▼";
+            this.btnReport.UseVisualStyleBackColor = false;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // button38
@@ -612,7 +576,7 @@
             this.panel12.Controls.Add(this.button42);
             this.panel12.Controls.Add(this.button43);
             this.panel12.Controls.Add(this.button44);
-            this.panel12.Location = new System.Drawing.Point(216, 0);
+            this.panel12.Location = new System.Drawing.Point(0, 49);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(216, 49);
@@ -685,7 +649,7 @@
             this.panel13.Controls.Add(this.button46);
             this.panel13.Controls.Add(this.button47);
             this.panel13.Controls.Add(this.button48);
-            this.panel13.Location = new System.Drawing.Point(432, 0);
+            this.panel13.Location = new System.Drawing.Point(0, 98);
             this.panel13.Margin = new System.Windows.Forms.Padding(0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(216, 49);
@@ -754,12 +718,13 @@
             // 
             // About
             // 
+            this.About.BackColor = System.Drawing.Color.Transparent;
             this.About.Controls.Add(this.btnAbout);
             this.About.Controls.Add(this.button7);
             this.About.Controls.Add(this.button16);
             this.About.Controls.Add(this.button17);
             this.About.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.About.Location = new System.Drawing.Point(0, 203);
+            this.About.Location = new System.Drawing.Point(5, 155);
             this.About.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.About.Name = "About";
             this.About.Size = new System.Drawing.Size(216, 49);
@@ -767,20 +732,22 @@
             // 
             // btnAbout
             // 
+            this.btnAbout.BackColor = System.Drawing.Color.Transparent;
             this.btnAbout.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAbout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAbout.FlatAppearance.BorderSize = 0;
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.ForeColor = System.Drawing.Color.LightGray;
             this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
             this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAbout.Location = new System.Drawing.Point(0, 0);
+            this.btnAbout.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAbout.Size = new System.Drawing.Size(216, 49);
             this.btnAbout.TabIndex = 8;
-            this.btnAbout.Text = "               About Us";
-            this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Text = "About";
+            this.btnAbout.UseVisualStyleBackColor = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // button7
@@ -825,88 +792,100 @@
             this.button17.Text = "Help";
             this.button17.UseVisualStyleBackColor = true;
             // 
-            // panel8
+            // panel5
             // 
-            this.panel8.Controls.Add(this.btnHelp);
-            this.panel8.Controls.Add(this.button23);
-            this.panel8.Controls.Add(this.button24);
-            this.panel8.Controls.Add(this.button25);
-            this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel8.Location = new System.Drawing.Point(0, 268);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(216, 49);
-            this.panel8.TabIndex = 16;
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.BtnLogOut);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.panel5.Location = new System.Drawing.Point(0, 632);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(218, 49);
+            this.panel5.TabIndex = 15;
             // 
-            // btnHelp
+            // BtnLogOut
             // 
-            this.btnHelp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHelp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHelp.FlatAppearance.BorderSize = 0;
-            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
-            this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 0);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHelp.Size = new System.Drawing.Size(216, 49);
-            this.btnHelp.TabIndex = 8;
-            this.btnHelp.Text = "               Contact";
-            this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            this.BtnLogOut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnLogOut.FlatAppearance.BorderSize = 0;
+            this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("BtnLogOut.Image")));
+            this.BtnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnLogOut.Location = new System.Drawing.Point(0, 0);
+            this.BtnLogOut.Name = "BtnLogOut";
+            this.BtnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnLogOut.Size = new System.Drawing.Size(218, 49);
+            this.BtnLogOut.TabIndex = 8;
+            this.BtnLogOut.Text = "              LogOut";
+            this.BtnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnLogOut.UseVisualStyleBackColor = false;
+            this.BtnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
             // 
-            // button23
+            // MenuTransition
             // 
-            this.button23.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button23.Image = ((System.Drawing.Image)(resources.GetObject("button23.Image")));
-            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.Location = new System.Drawing.Point(0, 0);
-            this.button23.Name = "button23";
-            this.button23.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button23.Size = new System.Drawing.Size(216, 49);
-            this.button23.TabIndex = 7;
-            this.button23.Text = "Help";
-            this.button23.UseVisualStyleBackColor = true;
+            this.MenuTransition.Interval = 10;
+            this.MenuTransition.Tick += new System.EventHandler(this.MenuTransition_Tick);
             // 
-            // button24
+            // SidebarTransistion
             // 
-            this.button24.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button24.Image = ((System.Drawing.Image)(resources.GetObject("button24.Image")));
-            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button24.Location = new System.Drawing.Point(0, 0);
-            this.button24.Name = "button24";
-            this.button24.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button24.Size = new System.Drawing.Size(216, 49);
-            this.button24.TabIndex = 6;
-            this.button24.Text = "Help";
-            this.button24.UseVisualStyleBackColor = true;
+            this.SidebarTransistion.Interval = 10;
+            this.SidebarTransistion.Tick += new System.EventHandler(this.siderTransistion_Tick);
             // 
-            // button25
+            // ReportTransition
             // 
-            this.button25.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button25.Image = ((System.Drawing.Image)(resources.GetObject("button25.Image")));
-            this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button25.Location = new System.Drawing.Point(0, 0);
-            this.button25.Name = "button25";
-            this.button25.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button25.Size = new System.Drawing.Size(216, 49);
-            this.button25.TabIndex = 5;
-            this.button25.Text = "Help";
-            this.button25.UseVisualStyleBackColor = true;
+            this.ReportTransition.Interval = 10;
+            this.ReportTransition.Tick += new System.EventHandler(this.ReportTransition_Tick);
+            // 
+            // sider
+            // 
+            this.sider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(36)))), ((int)(((byte)(90)))));
+            this.sider.Controls.Add(this.flowLayoutPanel1);
+            this.sider.Controls.Add(this.panel5);
+            this.sider.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sider.Location = new System.Drawing.Point(0, 0);
+            this.sider.Margin = new System.Windows.Forms.Padding(0);
+            this.sider.Name = "sider";
+            this.sider.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.sider.Size = new System.Drawing.Size(218, 701);
+            this.sider.TabIndex = 6;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
+            this.flowLayoutPanel1.Controls.Add(this.MenuContainer);
+            this.flowLayoutPanel1.Controls.Add(this.ReportContainer);
+            this.flowLayoutPanel1.Controls.Add(this.settingContainer);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(218, 626);
+            this.flowLayoutPanel1.TabIndex = 9;
+            // 
+            // settingContainer
+            // 
+            this.settingContainer.BackColor = System.Drawing.Color.Transparent;
+            this.settingContainer.Controls.Add(this.panel1);
+            this.settingContainer.Controls.Add(this.panel14);
+            this.settingContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settingContainer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.settingContainer.Location = new System.Drawing.Point(0, 205);
+            this.settingContainer.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.settingContainer.Name = "settingContainer";
+            this.settingContainer.Size = new System.Drawing.Size(220, 49);
+            this.settingContainer.TabIndex = 18;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btnSettings);
             this.panel1.Controls.Add(this.button26);
             this.panel1.Controls.Add(this.button29);
             this.panel1.Controls.Add(this.button30);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel1.Location = new System.Drawing.Point(0, 333);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(216, 49);
             this.panel1.TabIndex = 16;
@@ -924,7 +903,7 @@
             this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSettings.Size = new System.Drawing.Size(216, 49);
             this.btnSettings.TabIndex = 8;
-            this.btnSettings.Text = "              Settings";
+            this.btnSettings.Text = "              Settings         ▼";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
@@ -971,211 +950,242 @@
             this.button30.Text = "Help";
             this.button30.UseVisualStyleBackColor = true;
             // 
-            // panel5
+            // panel14
             // 
-            this.panel5.Controls.Add(this.BtnLogOut);
-            this.panel5.Controls.Add(this.button19);
-            this.panel5.Controls.Add(this.button20);
-            this.panel5.Controls.Add(this.button21);
-            this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.panel5.Location = new System.Drawing.Point(0, 398);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(216, 49);
-            this.panel5.TabIndex = 15;
+            this.panel14.BackColor = System.Drawing.Color.Transparent;
+            this.panel14.Controls.Add(this.panel2);
+            this.panel14.Controls.Add(this.About);
+            this.panel14.Controls.Add(this.panel10);
+            this.panel14.Controls.Add(this.panel8);
+            this.panel14.Location = new System.Drawing.Point(3, 52);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(218, 206);
+            this.panel14.TabIndex = 20;
             // 
-            // BtnLogOut
+            // panel2
             // 
-            this.BtnLogOut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnLogOut.FlatAppearance.BorderSize = 0;
-            this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("BtnLogOut.Image")));
-            this.BtnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLogOut.Location = new System.Drawing.Point(0, 0);
-            this.BtnLogOut.Name = "BtnLogOut";
-            this.BtnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnLogOut.Size = new System.Drawing.Size(216, 49);
-            this.BtnLogOut.TabIndex = 8;
-            this.BtnLogOut.Text = "              LogOut";
-            this.BtnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLogOut.UseVisualStyleBackColor = true;
-            this.BtnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
+            this.panel2.Controls.Add(this.btnAccountStaff);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(216, 49);
+            this.panel2.TabIndex = 12;
             // 
-            // button19
+            // btnAccountStaff
             // 
-            this.button19.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
-            this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button19.Location = new System.Drawing.Point(0, 0);
-            this.button19.Name = "button19";
-            this.button19.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button19.Size = new System.Drawing.Size(216, 49);
-            this.button19.TabIndex = 7;
-            this.button19.Text = "Help";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btnAccountStaff.BackColor = System.Drawing.Color.Transparent;
+            this.btnAccountStaff.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAccountStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAccountStaff.FlatAppearance.BorderSize = 0;
+            this.btnAccountStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccountStaff.ForeColor = System.Drawing.Color.LightGray;
+            this.btnAccountStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnAccountStaff.Image")));
+            this.btnAccountStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccountStaff.Location = new System.Drawing.Point(0, 0);
+            this.btnAccountStaff.Name = "btnAccountStaff";
+            this.btnAccountStaff.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnAccountStaff.Size = new System.Drawing.Size(216, 49);
+            this.btnAccountStaff.TabIndex = 8;
+            this.btnAccountStaff.Text = "Account";
+            this.btnAccountStaff.UseVisualStyleBackColor = false;
+            this.btnAccountStaff.Click += new System.EventHandler(this.btnAccountStaff_Click);
             // 
-            // button20
+            // panel10
             // 
-            this.button20.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
-            this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.Location = new System.Drawing.Point(0, 0);
-            this.button20.Name = "button20";
-            this.button20.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button20.Size = new System.Drawing.Size(216, 49);
-            this.button20.TabIndex = 6;
-            this.button20.Text = "Help";
-            this.button20.UseVisualStyleBackColor = true;
+            this.panel10.Controls.Add(this.btnMotorcycle);
+            this.panel10.Location = new System.Drawing.Point(0, 98);
+            this.panel10.Margin = new System.Windows.Forms.Padding(0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(216, 49);
+            this.panel10.TabIndex = 14;
             // 
-            // button21
+            // btnMotorcycle
             // 
-            this.button21.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button21.Image = ((System.Drawing.Image)(resources.GetObject("button21.Image")));
-            this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button21.Location = new System.Drawing.Point(0, 0);
-            this.button21.Name = "button21";
-            this.button21.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button21.Size = new System.Drawing.Size(216, 49);
-            this.button21.TabIndex = 5;
-            this.button21.Text = "Help";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btnMotorcycle.BackColor = System.Drawing.Color.Transparent;
+            this.btnMotorcycle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnMotorcycle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMotorcycle.FlatAppearance.BorderSize = 0;
+            this.btnMotorcycle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMotorcycle.ForeColor = System.Drawing.Color.LightGray;
+            this.btnMotorcycle.Image = ((System.Drawing.Image)(resources.GetObject("btnMotorcycle.Image")));
+            this.btnMotorcycle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMotorcycle.Location = new System.Drawing.Point(0, 0);
+            this.btnMotorcycle.Name = "btnMotorcycle";
+            this.btnMotorcycle.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnMotorcycle.Size = new System.Drawing.Size(216, 49);
+            this.btnMotorcycle.TabIndex = 8;
+            this.btnMotorcycle.Text = "Motorcycle";
+            this.btnMotorcycle.UseVisualStyleBackColor = false;
+            this.btnMotorcycle.Click += new System.EventHandler(this.btnMotorcycle_Click);
             // 
-            // MenuTransition
+            // panel8
             // 
-            this.MenuTransition.Interval = 10;
-            this.MenuTransition.Tick += new System.EventHandler(this.MenuTransition_Tick);
+            this.panel8.Controls.Add(this.btnCustomerDeleted);
+            this.panel8.Location = new System.Drawing.Point(0, 49);
+            this.panel8.Margin = new System.Windows.Forms.Padding(0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(216, 49);
+            this.panel8.TabIndex = 13;
             // 
-            // SidebarTransistion
+            // btnCustomerDeleted
             // 
-            this.SidebarTransistion.Interval = 10;
-            this.SidebarTransistion.Tick += new System.EventHandler(this.siderTransistion_Tick);
-            // 
-            // btnCreateAccount
-            // 
-            this.btnCreateAccount.BackColor = System.Drawing.Color.Transparent;
-            this.btnCreateAccount.FlatAppearance.BorderSize = 0;
-            this.btnCreateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateAccount.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateAccount.ForeColor = System.Drawing.Color.Gray;
-            this.btnCreateAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateAccount.Image")));
-            this.btnCreateAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateAccount.Location = new System.Drawing.Point(66, 4);
-            this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(146, 33);
-            this.btnCreateAccount.TabIndex = 5;
-            this.btnCreateAccount.Text = "anonymous";
-            this.btnCreateAccount.UseVisualStyleBackColor = false;
-            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
-            // 
-            // btnHam
-            // 
-            this.btnHam.Image = global::Project_QLBanXeMay.Properties.Resources.icons8_menu_30;
-            this.btnHam.Location = new System.Drawing.Point(3, 4);
-            this.btnHam.Name = "btnHam";
-            this.btnHam.Padding = new System.Windows.Forms.Padding(3);
-            this.btnHam.Size = new System.Drawing.Size(37, 33);
-            this.btnHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnHam.TabIndex = 3;
-            this.btnHam.TabStop = false;
-            this.btnHam.Click += new System.EventHandler(this.btnHam_Click);
-            // 
-            // ReportTransition
-            // 
-            this.ReportTransition.Interval = 10;
-            this.ReportTransition.Tick += new System.EventHandler(this.ReportTransition_Tick);
-            // 
-            // sider
-            // 
-            this.sider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(36)))), ((int)(((byte)(91)))));
-            this.sider.Controls.Add(this.flowLayoutPanel1);
-            this.sider.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sider.Location = new System.Drawing.Point(0, 0);
-            this.sider.Name = "sider";
-            this.sider.Size = new System.Drawing.Size(221, 890);
-            this.sider.TabIndex = 6;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.ReportContainer);
-            this.flowLayoutPanel1.Controls.Add(this.MenuContainer);
-            this.flowLayoutPanel1.Controls.Add(this.About);
-            this.flowLayoutPanel1.Controls.Add(this.panel8);
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.panel5);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 42);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 738);
-            this.flowLayoutPanel1.TabIndex = 9;
+            this.btnCustomerDeleted.BackColor = System.Drawing.Color.Transparent;
+            this.btnCustomerDeleted.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCustomerDeleted.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCustomerDeleted.FlatAppearance.BorderSize = 0;
+            this.btnCustomerDeleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerDeleted.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCustomerDeleted.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomerDeleted.Image")));
+            this.btnCustomerDeleted.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomerDeleted.Location = new System.Drawing.Point(0, 0);
+            this.btnCustomerDeleted.Name = "btnCustomerDeleted";
+            this.btnCustomerDeleted.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnCustomerDeleted.Size = new System.Drawing.Size(216, 49);
+            this.btnCustomerDeleted.TabIndex = 9;
+            this.btnCustomerDeleted.Text = "Customer";
+            this.btnCustomerDeleted.UseVisualStyleBackColor = false;
+            this.btnCustomerDeleted.Click += new System.EventHandler(this.btnCustomerDeleted_Click);
             // 
             // pnBar
             // 
+            this.pnBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.pnBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnBar.Controls.Add(this.button1);
+            this.pnBar.Controls.Add(this.btnCompany);
+            this.pnBar.Controls.Add(this.btnAccount);
+            this.pnBar.Controls.Add(this.btnAddColor);
             this.pnBar.Controls.Add(this.btnCreaateInvoice);
+            this.pnBar.Controls.Add(this.btnAddMotor);
             this.pnBar.Controls.Add(this.btnHam);
-            this.pnBar.Controls.Add(this.btnCreateAccount);
             this.pnBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnBar.Location = new System.Drawing.Point(221, 0);
+            this.pnBar.Location = new System.Drawing.Point(218, 0);
             this.pnBar.Margin = new System.Windows.Forms.Padding(0);
             this.pnBar.Name = "pnBar";
-            this.pnBar.Size = new System.Drawing.Size(1349, 45);
+            this.pnBar.Size = new System.Drawing.Size(1066, 45);
             this.pnBar.TabIndex = 7;
             // 
-            // button1
+            // btnCompany
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Gray;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(445, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 37);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Nhập thêm xe";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCompany.BackColor = System.Drawing.Color.Transparent;
+            this.btnCompany.FlatAppearance.BorderSize = 0;
+            this.btnCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompany.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompany.ForeColor = System.Drawing.Color.Gray;
+            this.btnCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompany.Location = new System.Drawing.Point(542, 4);
+            this.btnCompany.Name = "btnCompany";
+            this.btnCompany.Size = new System.Drawing.Size(120, 37);
+            this.btnCompany.TabIndex = 12;
+            this.btnCompany.Text = "Thêm NCC";
+            this.btnCompany.UseVisualStyleBackColor = false;
+            this.btnCompany.Click += new System.EventHandler(this.btnCompany_Click);
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.BackColor = System.Drawing.Color.Transparent;
+            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAccount.Image")));
+            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccount.Location = new System.Drawing.Point(933, 0);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(133, 45);
+            this.btnAccount.TabIndex = 5;
+            this.btnAccount.Text = "anonymous";
+            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
+            // 
+            // btnAddColor
+            // 
+            this.btnAddColor.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddColor.FlatAppearance.BorderSize = 0;
+            this.btnAddColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddColor.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddColor.ForeColor = System.Drawing.Color.Gray;
+            this.btnAddColor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddColor.Location = new System.Drawing.Point(405, 5);
+            this.btnAddColor.Name = "btnAddColor";
+            this.btnAddColor.Size = new System.Drawing.Size(120, 37);
+            this.btnAddColor.TabIndex = 11;
+            this.btnAddColor.Text = "Thêm màu";
+            this.btnAddColor.UseVisualStyleBackColor = false;
+            this.btnAddColor.Click += new System.EventHandler(this.btnAddColor_Click);
             // 
             // btnCreaateInvoice
             // 
-            this.btnCreaateInvoice.BackColor = System.Drawing.Color.White;
+            this.btnCreaateInvoice.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCreaateInvoice.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreaateInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCreaateInvoice.FlatAppearance.BorderSize = 0;
             this.btnCreaateInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreaateInvoice.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreaateInvoice.ForeColor = System.Drawing.Color.Gray;
             this.btnCreaateInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreaateInvoice.Location = new System.Drawing.Point(299, 4);
+            this.btnCreaateInvoice.Location = new System.Drawing.Point(85, 2);
+            this.btnCreaateInvoice.MaximumSize = new System.Drawing.Size(120, 40);
             this.btnCreaateInvoice.Name = "btnCreaateInvoice";
-            this.btnCreaateInvoice.Size = new System.Drawing.Size(120, 37);
-            this.btnCreaateInvoice.TabIndex = 6;
-            this.btnCreaateInvoice.Text = "Tạo hóa đơn";
+            this.btnCreaateInvoice.Size = new System.Drawing.Size(120, 38);
+            this.btnCreaateInvoice.TabIndex = 12;
+            this.btnCreaateInvoice.TabStop = false;
+            this.btnCreaateInvoice.Text = "Hóa Đơn";
+            this.btnCreaateInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCreaateInvoice.UseVisualStyleBackColor = false;
             this.btnCreaateInvoice.Click += new System.EventHandler(this.btnCreaateInvoice_Click);
+            // 
+            // btnAddMotor
+            // 
+            this.btnAddMotor.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddMotor.FlatAppearance.BorderSize = 0;
+            this.btnAddMotor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMotor.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMotor.ForeColor = System.Drawing.Color.Gray;
+            this.btnAddMotor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddMotor.Location = new System.Drawing.Point(230, 2);
+            this.btnAddMotor.MaximumSize = new System.Drawing.Size(120, 40);
+            this.btnAddMotor.Name = "btnAddMotor";
+            this.btnAddMotor.Size = new System.Drawing.Size(120, 40);
+            this.btnAddMotor.TabIndex = 7;
+            this.btnAddMotor.Text = "Thêm Xe";
+            this.btnAddMotor.UseVisualStyleBackColor = false;
+            this.btnAddMotor.Click += new System.EventHandler(this.btnAddMotor_Click);
+            // 
+            // btnHam
+            // 
+            this.btnHam.Image = global::Project_QLBanXeMay.Properties.Resources.icons8_menu_30;
+            this.btnHam.Location = new System.Drawing.Point(0, 0);
+            this.btnHam.Name = "btnHam";
+            this.btnHam.Padding = new System.Windows.Forms.Padding(3);
+            this.btnHam.Size = new System.Drawing.Size(47, 45);
+            this.btnHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnHam.TabIndex = 3;
+            this.btnHam.TabStop = false;
+            this.btnHam.Click += new System.EventHandler(this.btnHam_Click);
+            // 
+            // SettingsTransition
+            // 
+            this.SettingsTransition.Interval = 10;
+            this.SettingsTransition.Tick += new System.EventHandler(this.SettingsTransition_Tick);
             // 
             // Home
             // 
             this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1570, 890);
+            this.ClientSize = new System.Drawing.Size(1284, 701);
             this.Controls.Add(this.pnBar);
             this.Controls.Add(this.sider);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.IsMdiContainer = true;
             this.MaximumSize = new System.Drawing.Size(1586, 929);
-            this.MinimumSize = new System.Drawing.Size(1200, 700);
+            this.MinimumSize = new System.Drawing.Size(1200, 670);
             this.Name = "Home";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager Motorcycle";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1191,24 +1201,24 @@
             this.panel12.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.About.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.sider.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.settingContainer.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.pnBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.FlowLayoutPanel MenuContainer;
         private System.Windows.Forms.Button Menu;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnStaff;
         private System.Windows.Forms.Button button9;
@@ -1229,16 +1239,8 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button BtnLogOut;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Timer SidebarTransistion;
         private System.Windows.Forms.Button btnCustomer;
         private System.Windows.Forms.Panel panel9;
@@ -1248,7 +1250,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.PictureBox btnHam;
-        private System.Windows.Forms.Button btnCreateAccount;
+        private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.FlowLayoutPanel ReportContainer;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btnReport;
@@ -1266,16 +1268,29 @@
         private System.Windows.Forms.Button button47;
         private System.Windows.Forms.Button button48;
         private System.Windows.Forms.Timer ReportTransition;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Panel sider;
         private System.Windows.Forms.Panel pnBar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnCreaateInvoice;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddMotor;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button btnAddColor;
+        private System.Windows.Forms.Button btnCompany;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Timer SettingsTransition;
+        private System.Windows.Forms.FlowLayoutPanel settingContainer;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnAccountStaff;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnCustomerDeleted;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button btnMotorcycle;
+        private System.Windows.Forms.Panel panel14;
     }
 }
 

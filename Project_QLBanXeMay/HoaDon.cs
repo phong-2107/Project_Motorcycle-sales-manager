@@ -15,6 +15,8 @@ namespace Project_QLBanXeMay
     {
 
         Model1 context = new Model1();
+        List<ChiTietPhieuXuat> list = new List<ChiTietPhieuXuat>();
+
 
         public HoaDon()
         {
@@ -28,13 +30,9 @@ namespace Project_QLBanXeMay
 
             FillXe(context.Xes.ToList());
             FillNV(context.NhanViens.ToList());
-            
+            FillPTTT(context.PhuongThucTTs.ToList());
+            FillKhuyenMai(context.PX_GiamGiaKhuyenMai.ToList());
 
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         void StyleDatagridview(DataGridView dgvMotor)
@@ -74,15 +72,31 @@ namespace Project_QLBanXeMay
 
         }
 
-        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        private void FillPTTT(List<PhuongThucTT> list)
         {
-            if (txtQuantity.Text != null)
+            this.cmbThanhToan.DataSource = list;
+            this.cmbThanhToan.DisplayMember = "PTTilte";
+            this.cmbThanhToan.ValueMember = "PTThanhToanID";
+        }
+
+        private void FillKhuyenMai(List<PX_GiamGiaKhuyenMai> list)
+        {
+            this.cmbMaGG.DataSource = list;
+            this.cmbMaGG.DisplayMember = "Promotilte";
+            this.cmbMaGG.ValueMember = "PromoID";
+        }
+
+        private void cmbMaXe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var find = context.Xes.FirstOrDefault(p => p.MaXe == cmbMaXe.Text.Trim());
+            if (find != null)
             {
-                btnAddXe.Visible = true;
+                txtTenXe.Text = find.TenXe.ToString();
+                txtColor.Text = find.MauXe.TenMau.ToString();
             }
         }
-        List<ChiTietPhieuXuat> list = new List<ChiTietPhieuXuat>();
-        private void btnAddXe_Click(object sender, EventArgs e)
+
+        private void btnAddXe_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -94,19 +108,20 @@ namespace Project_QLBanXeMay
                 }
                 else
                 {
+                    PhieuXuat px = new PhieuXuat();
+
                     x.MaXe = cmbMaXe.Text;
-                    x.MaPX = txtMaPX.Text;
+                    x.MaPX = "tmp";
                     x.SoLuong = int.Parse(txtQuantity.Text);
                     list.Add(x);
                 }
 
                 BindGrid(list);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
         private void BindGrid(List<ChiTietPhieuXuat> list)
@@ -126,19 +141,17 @@ namespace Project_QLBanXeMay
             }
             lbsumCost.Text = sum.ToString();
         }
-        private void cmbMaXe_TextChanged(object sender, EventArgs e)
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
         {
-            var find = context.Xes.FirstOrDefault(p => p.MaXe == cmbMaXe.Text.Trim());
-            if (find != null)
+            if (txtQuantity.Text != null)
             {
-                txtTenXe.Text = find.TenXe.ToString();
+                btnAddXe.Visible = true;
             }
-            
         }
 
         private void reset()
         {
-            txtMaPX.Text = "";
             txtID.Text = "";
             txtFullName.Text = "";
             txtDT.Text = "";
@@ -151,77 +164,130 @@ namespace Project_QLBanXeMay
             lbsumCost.Text = "...$";
         }
 
+        private double? tinhTien(string m, string ID)
+        {
+            double? sum = 0;
+            if (string.IsNullOrEmpty(m)) { return 0; }
+            else
+            {
+                if(ID.Equals("PR001") == true)
+                {
+                    sum = double.Parse(m) - (double.Parse(m)*0.03);
+                }
+                else if(ID.Equals("PR002") == true)
+                {
+                    sum = double.Parse(m) - (double.Parse(m) * 0.15);
+                }
+                else if (ID.Equals("PR003") == true)
+                {
+                    sum = double.Parse(m) - (double.Parse(m) * 0.5);
+                }
+            }
+            return sum;
+            
+        }
+
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            using (var transaction = context.Database.BeginTransaction()) {
-                try
+            if (txtID.Text == "" || txtFullName.Text == "" || txtMail.Text == "" || cmbThanhToan.Text == "")
+            {
+                MessageBox.Show("Ban phai nhap day du thong tin");
+            }
+            else
+            {
+                using (var transaction = context.Database.BeginTransaction())
                 {
-                    var find = context.KhachHangs.FirstOrDefault(p => p.MaKH == txtID.Text);
-                    if(find != null)
+                    try
                     {
-                        var findNV = context.NhanViens.FirstOrDefault(p => p.TenNV == cmbStaff.Text.Trim());
-
-                        PhieuXuat px = new PhieuXuat();
-                        px.MaPX = txtMaPX.Text;
-                        px.MaNV = findNV.MaNV;
-                        px.MaKH = find.MaKH;
-                        px.NgayXuat = DateTime.Parse(lbDate.Text);
-                        px.TongTien = double.Parse(lbsumCost.Text);
-                        context.PhieuXuats.Add(px);
-                        context.SaveChanges();
-
-                        foreach (var i in list)
+                        var find = context.KhachHangs.FirstOrDefault(p => p.MaKH == txtID.Text);
+                        if (find != null)
                         {
-                            ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat();
-                            ctpx.MaPX = i.MaPX;
-                            ctpx.MaXe = i.MaXe;
-                            ctpx.SoLuong = i.SoLuong;
-                            context.ChiTietPhieuXuats.Add(ctpx);
+                            var findNV = context.NhanViens.FirstOrDefault(p => p.TenNV == cmbStaff.Text.Trim());
+                            var findPM = context.PX_GiamGiaKhuyenMai.FirstOrDefault(p => p.Promotilte == cmbMaGG.Text.Trim());
+                            PhieuXuat px = new PhieuXuat();
+                            px.MaNV = findNV.MaNV;
+                            px.MaKH = find.MaKH;
+                            px.NgayXuat = DateTime.Parse(lbDate.Text);
+                            px.TongThanhTien = tinhTien(lbsumCost.Text, findPM.PromoID);
+                            px.PromoID = findPM.PromoID;
+                            context.PhieuXuats.Add(px);
                             context.SaveChanges();
+
+                            foreach (var i in list)
+                            {
+                                ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat();
+                                ctpx.MaPX = px.MaPX;
+                                ctpx.MaXe = i.MaXe;
+                                ctpx.SoLuong = i.SoLuong;
+                                context.ChiTietPhieuXuats.Add(ctpx);
+                                context.SaveChanges();
+                            }
+
+                            foreach (var x in list)
+                            {
+                                var xe = context.Xes.FirstOrDefault(p => p.MaXe == x.MaXe);
+                                if (xe != null)
+                                {
+                                    xe.SoLuong = xe.SoLuong.Value - x.SoLuong.Value;
+                                    context.SaveChanges();
+                                }
+                            }
+
                         }
+                        else
+                        {
+                            KhachHang kh = new KhachHang();
+                            kh.MaKH = txtID.Text;
+                            kh.TenKH = txtFullName.Text;
+                            kh.Email = txtMail.Text;
+                            kh.DienThoai = txtDT.Text;
+                            kh.DiaChi = TxtAdd.Text;
+                            context.KhachHangs.Add(kh);
+                            context.SaveChanges();
+
+                            var findNV = context.NhanViens.FirstOrDefault(p => p.TenNV == cmbStaff.Text.Trim());
+                            var findPM = context.PX_GiamGiaKhuyenMai.FirstOrDefault(p => p.Promotilte == cmbMaGG.Text.Trim());
+                            PhieuXuat px = new PhieuXuat();
+                            px.MaNV = findNV.MaNV;
+                            px.MaKH = txtID.Text;
+                            px.NgayXuat = DateTime.Today;
+                            px.TongThanhTien = tinhTien(lbsumCost.Text, findPM.PromoID);
+                            px.PromoID = findPM.PromoID;
+                            context.PhieuXuats.Add(px);
+                            context.SaveChanges();
+
+                            foreach (var i in list)
+                            {
+                                ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat();
+                                ctpx.MaPX = px.MaPX;
+                                ctpx.MaXe = i.MaXe;
+                                ctpx.SoLuong = i.SoLuong;
+                                context.ChiTietPhieuXuats.Add(ctpx);
+                                context.SaveChanges();
+                            }
+                            foreach (var x in list)
+                            {
+                                var xe = context.Xes.FirstOrDefault(p => p.MaXe == x.MaXe);
+                                if (xe != null)
+                                {
+                                    xe.SoLuong = xe.SoLuong.Value - x.SoLuong.Value;
+                                    context.SaveChanges();
+                                }
+                            }
+                        }
+                        transaction.Commit();
+                        MessageBox.Show("Them Thanh Cong");
+                        reset();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        KhachHang kh = new KhachHang();
-                        kh.MaKH = txtID.Text;
-                        kh.TenKH = txtFullName.Text;
-                        kh.Email = txtMail.Text;
-                        kh.DienThoai = txtDT.Text;
-                        kh.DiaChi = TxtAdd.Text;
-                        context.KhachHangs.Add(kh);
-                        context.SaveChanges();
-
-                        var findNV = context.NhanViens.FirstOrDefault(p => p.TenNV == cmbStaff.Text.Trim());
-
-                        PhieuXuat px = new PhieuXuat();
-                        px.MaPX = txtMaPX.Text;
-                        px.MaNV = findNV.MaNV;
-                        px.MaKH = txtID.Text;
-                        px.NgayXuat = DateTime.Today;
-                        px.TongTien = double.Parse(lbsumCost.Text);
-                        context.PhieuXuats.Add(px);
-                        context.SaveChanges();
-
-                        foreach(var i in list)
-                        {
-                            ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat();
-                            ctpx.MaPX = i.MaPX;
-                            ctpx.MaXe = i.MaXe;
-                            ctpx.SoLuong = i.SoLuong;
-                            context.ChiTietPhieuXuats.Add(ctpx);
-                            context.SaveChanges();
-                        }
+                        MessageBox.Show(ex.Message);
+                        transaction.Rollback();
                     }
-                    transaction.Commit();
-                    MessageBox.Show("Them Thanh Cong");
-                    reset();
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    transaction.Rollback();
                 }
             }
         }
+
+        
     }
 }

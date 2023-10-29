@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button button1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesHistory));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Button button1;
             this.label5 = new System.Windows.Forms.Label();
             this.btnRefresh = new Project_QLBanXeMay.borderRadius.RoundedButton();
             this.SearchByDate = new Project_QLBanXeMay.borderRadius.borderPanel();
@@ -69,6 +69,17 @@
             this.borderPanel2.SuspendLayout();
             this.borderPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            button1.Location = new System.Drawing.Point(17, 5);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(43, 36);
+            button1.TabIndex = 10;
+            button1.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -259,7 +270,7 @@
             this.dgvMotorcycles.RowTemplate.ReadOnly = true;
             this.dgvMotorcycles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMotorcycles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMotorcycles.Size = new System.Drawing.Size(1004, 580);
+            this.dgvMotorcycles.Size = new System.Drawing.Size(1004, 469);
             this.dgvMotorcycles.StandardTab = true;
             this.dgvMotorcycles.TabIndex = 0;
             // 
@@ -326,17 +337,6 @@
             this.searchLabel.TabIndex = 19;
             this.searchLabel.Text = "Search  by ID";
             this.searchLabel.Click += new System.EventHandler(this.searchLabel_Click);
-            // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            button1.Location = new System.Drawing.Point(17, 5);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(43, 36);
-            button1.TabIndex = 10;
-            button1.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -419,10 +419,10 @@
             // 
             // SalesHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1350, 850);
+            this.ClientSize = new System.Drawing.Size(1284, 701);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.SearchByDate);
             this.Controls.Add(this.borderPanel3);

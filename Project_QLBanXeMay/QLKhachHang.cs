@@ -118,9 +118,6 @@ namespace Project_QLBanXeMay
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var findKH = context.KhachHangs.FirstOrDefault(p => p.MaKH == txtID.Text);
-            
-            
-
             if (findKH != null)
             {
                 DialogResult res = MessageBox.Show("Are you sure you want to Delete", "Confirmation", MessageBoxButtons.YesNo);
@@ -136,7 +133,7 @@ namespace Project_QLBanXeMay
             }
             else
             {
-                MessageBox.Show("kh tim thay");
+                MessageBox.Show("not found Customer", "Delete", MessageBoxButtons.OK);
             }
         }
 
@@ -155,13 +152,11 @@ namespace Project_QLBanXeMay
         {
             Model1 context = new Model1();
             var listKHHD = context.KhachHangs.Where(p => p.HoatDong == 1).ToList();
-            var listSeach = listKHHD.Where(x => (x.MaKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower())) || (x.TenKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower()))).ToList();
+            var listSeach = listKHHD.Where(x => 
+                                    (x.MaKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower())) 
+                                    || (x.TenKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower())) 
+                                    || x.DienThoai.Contains(textBox1.Text.Trim())).ToList();
             BindGrid(listSeach);
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

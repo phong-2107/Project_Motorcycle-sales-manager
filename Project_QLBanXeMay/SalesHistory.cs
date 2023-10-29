@@ -155,8 +155,8 @@ namespace Project_QLBanXeMay
                 dgvMotorcycles.Rows[index].Cells[0].Value = x.MaPX;
                 dgvMotorcycles.Rows[index].Cells[1].Value = x.PhieuXuat.KhachHang.TenKH;
                 dgvMotorcycles.Rows[index].Cells[2].Value = x.Xe.TenXe;
-                dgvMotorcycles.Rows[index].Cells[3].Value = x.Xe.SoLuongTong;
-                dgvMotorcycles.Rows[index].Cells[4].Value = x.Xe.DonGia;
+                dgvMotorcycles.Rows[index].Cells[3].Value = x.SoLuong;
+                dgvMotorcycles.Rows[index].Cells[4].Value = x.Xe.DonGia * x.SoLuong;
                 dgvMotorcycles.Rows[index].Cells[5].Value = x.PhieuXuat.NgayXuat.Value.ToString("dd/MM/yyyy");
             }
         }

@@ -19,11 +19,11 @@ namespace Project_QLBanXeMay.Models
         [StringLength(50)]
         public string TaiKhoan { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string MatKhau { get; set; }
 
-        public int Quyen { get; set; }
+        [StringLength(50)]
+        public string TenQuyen { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhanVien> NhanViens { get; set; }

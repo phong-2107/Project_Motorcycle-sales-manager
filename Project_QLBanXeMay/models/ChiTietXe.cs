@@ -12,7 +12,7 @@ namespace Project_QLBanXeMay.Models
         [Key]
         public int MaCT { get; set; }
 
-        [StringLength(50)]
+        [StringLength(10)]
         public string MaXe { get; set; }
 
         [StringLength(50)]

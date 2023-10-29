@@ -14,6 +14,7 @@ namespace Project_QLBanXeMay.Models
         {
             ChiTietPhieuXuats = new HashSet<ChiTietPhieuXuat>();
             ChiTietXes = new HashSet<ChiTietXe>();
+            PhieuThanhToans = new HashSet<PhieuThanhToan>();
         }
 
         [Key]
@@ -26,10 +27,12 @@ namespace Project_QLBanXeMay.Models
         [StringLength(50)]
         public string MaKH { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? NgayXuat { get; set; }
 
-        public double? TongTien { get; set; }
+        public double? TongThanhTien { get; set; }
+
+        [StringLength(50)]
+        public string PromoID { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietPhieuXuat> ChiTietPhieuXuats { get; set; }
@@ -40,5 +43,10 @@ namespace Project_QLBanXeMay.Models
         public virtual KhachHang KhachHang { get; set; }
 
         public virtual NhanVien NhanVien { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PhieuThanhToan> PhieuThanhToans { get; set; }
+
+        public virtual PX_GiamGiaKhuyenMai PX_GiamGiaKhuyenMai { get; set; }
     }
 }

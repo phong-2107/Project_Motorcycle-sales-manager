@@ -18,27 +18,28 @@ namespace Project_QLBanXeMay.Models
         }
 
         [Key]
-        [StringLength(50)]
+        [StringLength(10)]
         public string MaXe { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string TenXe { get; set; }
 
         [StringLength(50)]
         public string MaMau { get; set; }
 
-        public int SoLuongTong { get; set; }
+        public int? SoLuong { get; set; }
 
-        public double DonGia { get; set; }
+        public double? DonGia { get; set; }
 
-        public int PhanKhoi { get; set; }
+        [StringLength(50)]
+        public string NhienLieu { get; set; }
 
-        [Required]
+        public int? PhanKhoi { get; set; }
+
         [StringLength(50)]
         public string LoaiXe { get; set; }
 
-        [StringLength(50)]
+        [StringLength(200)]
         public string AnhXe { get; set; }
 
         [StringLength(50)]

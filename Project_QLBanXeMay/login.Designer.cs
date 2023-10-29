@@ -44,7 +44,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.lbForgetPass = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -160,6 +159,7 @@
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.Size = new System.Drawing.Size(346, 20);
             this.txtAccount.TabIndex = 5;
+            this.txtAccount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAccount_KeyDown);
             // 
             // pictureBox2
             // 
@@ -189,6 +189,7 @@
             this.txtPassword.Size = new System.Drawing.Size(346, 20);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // pictureBox3
             // 
@@ -214,17 +215,6 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // lbForgetPass
-            // 
-            this.lbForgetPass.AutoSize = true;
-            this.lbForgetPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbForgetPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(163)))));
-            this.lbForgetPass.Location = new System.Drawing.Point(467, 394);
-            this.lbForgetPass.Name = "lbForgetPass";
-            this.lbForgetPass.Size = new System.Drawing.Size(125, 17);
-            this.lbForgetPass.TabIndex = 6;
-            this.lbForgetPass.Text = "Forget password ?";
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
@@ -246,7 +236,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 500);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.lbForgetPass);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -288,7 +277,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label lbForgetPass;
         private System.Windows.Forms.Button btnExit;
     }
 }

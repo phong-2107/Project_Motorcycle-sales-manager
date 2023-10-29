@@ -19,7 +19,6 @@ namespace Project_QLBanXeMay.Models
         [StringLength(50)]
         public string MaHang { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string TenHang { get; set; }
 

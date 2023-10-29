@@ -16,7 +16,7 @@ namespace Project_QLBanXeMay.Models
 
         [Key]
         [Column(Order = 1)]
-        [StringLength(50)]
+        [StringLength(10)]
         public string MaXe { get; set; }
 
         public int? SoLuong { get; set; }

@@ -294,9 +294,10 @@
             // 
             // QLNhanVien
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1350, 850);
+            this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.borderPanel4);
             this.Controls.Add(this.borderPanel2);
             this.Controls.Add(this.borderPanel1);
