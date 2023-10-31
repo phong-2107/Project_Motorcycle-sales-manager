@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project_QLBanXeMay
 {
@@ -26,10 +27,7 @@ namespace Project_QLBanXeMay
             List<NhanVien> listNV = context.NhanViens.ToList();
             List<PhieuXuat> listPX = context.PhieuXuats.ToList();
             BindGridStaff(listNV);
-            /*
-            var str = countStaff(listPX);
-            var nv = listNV.FirstOrDefault(p => p.MaNV == str);
-            lbName.Text = nv.TenNV;*/
+       
 
             countTotalStaff.Text = listNV.Count().ToString();
         }
@@ -50,14 +48,6 @@ namespace Project_QLBanXeMay
             }
         }
 
-        private string countStaff(List<PhieuXuat> list)
-        {
-            int count = 0;
-            var most = list.GroupBy(x => x.MaNV).OrderByDescending(p => p.Count()).Select(gp => gp.Key).First();
-            return most;
-        }
-
-
         void StyleDatagridview(DataGridView dgvMotor)
         {
             dgvMotor.BorderStyle = BorderStyle.None;
@@ -70,12 +60,22 @@ namespace Project_QLBanXeMay
             dgvMotor.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(41, 39, 163);
             dgvMotor.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 14);
             dgvMotor.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(41, 39, 163);
-            dgvMotor.DefaultCellStyle.ForeColor = Color.FromArgb(125, 124, 124);
+            dgvMotor.DefaultCellStyle.ForeColor = Color.FromArgb(92,84,122);
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            label3.Visible = false;
+            Model1 context1 = new Model1();
+            var listSeach = context1.NhanViens.Where(x =>
+                                    (x.MaNV.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))
+                                    || (x.TenNV.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))
+            || (x.DienThoai.Contains(txtSearch.Text.Trim()))
+                                    || (x.Email.Contains(txtSearch.Text.Trim()))).ToList();
+            if (txtSearch.Text.Trim() == "")
+                BindGridStaff(context1.NhanViens.ToList());
+            else
+                BindGridStaff(listSeach);
+            
         }
     }
 }

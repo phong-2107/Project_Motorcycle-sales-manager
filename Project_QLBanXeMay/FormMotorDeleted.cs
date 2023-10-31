@@ -21,9 +21,10 @@ namespace Project_QLBanXeMay
 
         private void FormMotorDeleted_Load(object sender, EventArgs e)
         {
+            Model1 context1 = new Model1();
             this.ControlBox = false;
             StyleDatagridview(dgvMotorcycles);
-            BindGridXe(context.Xes.ToList());
+            BindGridXe(context1.Xes.ToList());
         }
 
         void StyleDatagridview(DataGridView dgvMotor)
@@ -103,6 +104,11 @@ namespace Project_QLBanXeMay
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            FormMotorDeleted_Load(sender, e);
         }
     }
 }

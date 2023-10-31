@@ -152,11 +152,18 @@ namespace Project_QLBanXeMay
         {
             Model1 context = new Model1();
             var listKHHD = context.KhachHangs.Where(p => p.HoatDong == 1).ToList();
-            var listSeach = listKHHD.Where(x => 
-                                    (x.MaKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower())) 
-                                    || (x.TenKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower())) 
-                                    || x.DienThoai.Contains(textBox1.Text.Trim())).ToList();
+            var listSeach = listKHHD.Where(x =>
+                                    (x.MaKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower()))
+                                    || (x.TenKH.Trim().ToLower().Contains(textBox1.Text.Trim().ToLower()))
+                                    || (x.DienThoai.Contains(textBox1.Text.Trim()))
+                                    || (x.Email.Contains(textBox1.Text.Trim()))).ToList();
+
             BindGrid(listSeach);
+        }
+
+        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

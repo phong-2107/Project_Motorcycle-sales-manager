@@ -22,8 +22,9 @@ namespace Project_QLBanXeMay
 
         private void FormCustomerDeleted_Load(object sender, EventArgs e)
         {
+            Model1 context1 = new Model1();
             this.ControlBox = false;
-            BindGrid(context.KhachHangs.ToList());
+            BindGrid(context1.KhachHangs.ToList());
             StyleDatagridview(dgvCustomer);
         }
 
@@ -93,6 +94,11 @@ namespace Project_QLBanXeMay
             {
                 MessageBox.Show("khong tim thay khach hang trong csdl", "khoi phuc", MessageBoxButtons.OK);
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            FormCustomerDeleted_Load(sender, e);
         }
     }
 }

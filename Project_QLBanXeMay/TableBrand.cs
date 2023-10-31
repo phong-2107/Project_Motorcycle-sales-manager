@@ -5,25 +5,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_QLBanXeMay
 {
-    public partial class TableColor : Form
+    public partial class TableBrand : Form
     {
-        public TableColor()
+        public TableBrand()
         {
             InitializeComponent();
         }
         Model1 context = new Model1();
-        private void TableColor_Load(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            BindGrid(context.MauXes.ToList());
-            StyleDatagridview(dgvColors);
+            this.Close();
         }
-
         void StyleDatagridview(DataGridView dgvMotor)
         {
             dgvMotor.BorderStyle = BorderStyle.None;
@@ -38,71 +37,52 @@ namespace Project_QLBanXeMay
 
         }
 
-        private void BindGrid(List<MauXe> list)
+        private void BindGrid(List<HangXe> list)
         {
-            dgvColors.Rows.Clear();
+            dgvBrands.Rows.Clear();
             foreach (var x in list)
             {
-                int index = dgvColors.Rows.Add();
-                dgvColors.Rows[index].Cells[0].Value = x.MaMau;
-                dgvColors.Rows[index].Cells[1].Value = x.TenMau;
+                int index = dgvBrands.Rows.Add();
+                dgvBrands.Rows[index].Cells[0].Value = x.MaHang;
+                dgvBrands.Rows[index].Cells[1].Value = x.TenHang;
             }
         }
 
-        private void dgvColor_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                DataGridViewRow row = new DataGridViewRow();
-                row = dgvColors.Rows[e.RowIndex];
-                txtID.Text = row.Cells[0].Value.ToString();
-                txtName.Text = row.Cells[1].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void btnAddUpp_Click(object sender, EventArgs e)
         {
-            var find = context.MauXes.FirstOrDefault(p => p.MaMau == txtID.Text);
-            if(find != null)
+            var find = context.HangXes.FirstOrDefault(p => p.MaHang == txtID.Text);
+            if (find != null)
             {
-                find.TenMau = txtName.Text;
+                find.TenHang = txtName.Text;
                 context.SaveChanges();
-                BindGrid(context.MauXes.ToList());
+                BindGrid(context.HangXes.ToList());
                 MessageBox.Show("Update successfully", "Update", MessageBoxButtons.OK);
             }
             else
             {
-                MauXe color = new MauXe();
-                color.MaMau = txtID.Text;
-                color.TenMau = txtName.Text;
-                context.MauXes.Add(color);
-                context.SaveChanges() ;
-                BindGrid(context.MauXes.ToList());
+                HangXe color = new HangXe();
+                color.MaHang = txtID.Text;
+                color.TenHang = txtName.Text;
+                context.HangXes.Add(color);
+                context.SaveChanges();
+                BindGrid(context.HangXes.ToList());
                 MessageBox.Show("add new color successfully", "Update", MessageBoxButtons.OK);
             }
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            var find = context.MauXes.FirstOrDefault(p => p.MaMau == txtID.Text);
-            if(find != null)
+            var find = context.HangXes.FirstOrDefault(p => p.MaHang == txtID.Text);
+            if (find != null)
             {
                 DialogResult res = MessageBox.Show("Are you sure you want to Delete", "Delete", MessageBoxButtons.YesNo);
                 if (res == DialogResult.Yes)
                 {
-                    context.MauXes.Remove(find);
+                    context.HangXes.Remove(find);
                     context.SaveChanges();
                     MessageBox.Show("Deleted successfully", "Delete", MessageBoxButtons.OK);
-                    BindGrid(context.MauXes.ToList());
+                    BindGrid(context.HangXes.ToList());
                 }
             }
             else
@@ -111,9 +91,25 @@ namespace Project_QLBanXeMay
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void TableBrand_Load(object sender, EventArgs e)
         {
+            StyleDatagridview(dgvBrands);
+            BindGrid(context.HangXes.ToList());
+        }
 
+        private void dgvBrands_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvBrands.Rows[e.RowIndex];
+                txtID.Text = row.Cells[0].Value.ToString();
+                txtName.Text = row.Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

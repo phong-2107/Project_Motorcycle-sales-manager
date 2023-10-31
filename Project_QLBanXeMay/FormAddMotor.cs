@@ -20,6 +20,9 @@ namespace Project_QLBanXeMay
         int countM = 0;
         private Xe xe = new Xe();
 
+        private NhanVien dn = new NhanVien();
+        public NhanVien Dn { get => dn; set => dn = value; }
+
         List<ChiTietPhieuNhap> listCTPN = new List<ChiTietPhieuNhap>();
 
         public Xe Xe { get => xe; set => xe = value; }
@@ -27,6 +30,12 @@ namespace Project_QLBanXeMay
         public FormAddMotor()
         {
             InitializeComponent();
+            DisplayNgayXuat();
+        }
+
+        private void DisplayNgayXuat()
+        {
+            lbDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void FormAddMotor_Load(object sender, EventArgs e)
@@ -41,8 +50,11 @@ namespace Project_QLBanXeMay
         {
             foreach (var item in list)
             {
-                string dp = item.MaXe.ToString() + "-" + item.TenXe.ToString();
-                cmbID.Items.Add(dp);
+                if(item.HoatDong == 1)
+                {
+                    string dp = item.MaXe.ToString() + "-" + item.TenXe.ToString();
+                    cmbID.Items.Add(dp);
+                }
             }
         }
 
@@ -98,6 +110,7 @@ namespace Project_QLBanXeMay
             ct.ThanhTien = find.DonGia * double.Parse(txtQuantity.Text.Trim());
             listCTPN.Add(ct);
             countM++;
+            MessageBox.Show("Thêm xe Thanh Công");
         }
         private void cmbID_TextChanged(object sender, EventArgs e)
         {
@@ -132,7 +145,7 @@ namespace Project_QLBanXeMay
                 clearCT();
                 dem++;
                 BindGrid(CTX);
-                if (count == int.Parse(txtQuantity.Text))
+                if (count > int.Parse(txtQuantity.Text))
                 {
 
                     DialogResult res = MessageBox.Show("Thêm Hoàn tất, bạn Có Muốn tiếp tục thêm xe?", "Add Motor", MessageBoxButtons.YesNo);
@@ -170,10 +183,6 @@ namespace Project_QLBanXeMay
                 }
                 lbsumCost.Text = sum.ToString();
             }
-            else
-            {
-                MessageBox.Show("khong co gia tri");
-            }
         }
 
         private void reset()
@@ -199,9 +208,15 @@ namespace Project_QLBanXeMay
 
         private bool RangBuoc()
         {
-            if(txtID.Text == "" || txtName.Text == "" || txtColor.Text == "" || txtQuantity.Text == "" || cmbNCC.Text == "")
+            if(txtMaPN.Text == "" || txtID.Text == "" || txtName.Text == "" || txtColor.Text == "" || txtQuantity.Text == "" || cmbNCC.Text == "")
             {
                 MessageBox.Show("Ban Can nhap Day Du thong Tin", "Note", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            var find = context.PhieuNhaps.FirstOrDefault(p => p.MaPN == txtMaPN.Text.Trim());
+            if(find != null)
+            {
+                MessageBox.Show("Ma Phieu Nhap Da Co Trong CSDL !!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -240,6 +255,102 @@ namespace Project_QLBanXeMay
         private void dgvMotorcycles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            using (var transaction = context.Database.BeginTransaction())
+            {
+                try
+                {
+                    PhieuNhap pn = new PhieuNhap();
+                    pn.MaPN = txtMaPN.Text.Trim();
+                    pn.MaNV = Dn.MaNV;
+                    var findNCC = context.NhaCungCaps.FirstOrDefault(p => p.TenNCC == cmbNCC.Text.Trim());
+                    if (findNCC != null)
+                    {
+                        pn.MaNCC = findNCC.MaNCC;
+                    }
+                    pn.NgayNhap = DateTime.Today;
+                    pn.TongTien = double.Parse(lbsumCost.Text);
+                    context.PhieuNhaps.Add(pn);
+                    context.SaveChanges();
+                    
+                    foreach (var i in listCTPN)
+                    {
+                        ChiTietPhieuNhap ct = new ChiTietPhieuNhap();
+                        ct.MaPN = txtMaPN.Text.Trim();
+                        ct.MaXe = i.MaXe;
+                        ct.SoLuong = i.SoLuong;
+                        ct.DonGia = i.DonGia;
+                        ct.ThanhTien = i.ThanhTien;
+                        context.ChiTietPhieuNhaps.Add(ct);
+                        context.SaveChanges();
+                        var findXe = context.Xes.FirstOrDefault(p => p.MaXe == i.MaXe);
+                        if (findXe != null)
+                        {
+                            findXe.SoLuong += i.SoLuong;
+                            context.SaveChanges();
+                        }
+                    }
+                     foreach (var i in CTX)
+                    {
+                        ChiTietXe ct = new ChiTietXe();
+                        ct.MaXe = i.MaXe;
+                        ct.SoKhung = i.SoKhung;
+                        ct.SoMay = i.SoMay;
+                        ct.Active = i.Active;
+                        ct.MaPN = txtMaPN.Text.Trim();
+                        context.ChiTietXes.Add(ct);
+                        context.SaveChanges();
+                    }
+
+                     
+                    transaction.Commit();
+                    MessageBox.Show("Them Thanh Cong");
+                    reset();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    transaction.Rollback();
+                }
+            }
+        }
+
+        private void txtSoKhung_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSoMay.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtSoMay_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSave.PerformClick();
+        }
+
+        private void borderPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSoKhung.Focus();
+                e.Handled = true;
+            }
         }
     }
 }

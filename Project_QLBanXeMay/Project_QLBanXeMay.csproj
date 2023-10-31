@@ -103,6 +103,12 @@
     <Compile Include="FormContact.Designer.cs">
       <DependentUpon>FormContact.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCTPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCTPN.Designer.cs">
+      <DependentUpon>FormCTPN.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCustomerDeleted.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,12 @@
     <Compile Include="SalesHistory.Designer.cs">
       <DependentUpon>SalesHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableBrand.Designer.cs">
+      <DependentUpon>TableBrand.cs</DependentUpon>
+    </Compile>
     <Compile Include="TableColor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormContact.resx">
       <DependentUpon>FormContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCTPN.resx">
+      <DependentUpon>FormCTPN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCustomerDeleted.resx">
       <DependentUpon>FormCustomerDeleted.cs</DependentUpon>
@@ -269,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesHistory.resx">
       <DependentUpon>SalesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableBrand.resx">
+      <DependentUpon>TableBrand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TableColor.resx">
       <DependentUpon>TableColor.cs</DependentUpon>

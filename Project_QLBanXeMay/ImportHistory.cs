@@ -5,9 +5,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Project_QLBanXeMay
 {
@@ -17,6 +19,11 @@ namespace Project_QLBanXeMay
         {
             InitializeComponent();
         }
+        Model1 context = new Model1();
+        ChiTietXe ctx = new ChiTietXe();
+        public ChiTietXe Ctx { get => ctx; set => ctx = value; }
+
+        FormCTPN formCTPN;
 
         private void ImportHistory_Load(object sender, EventArgs e)
         {
@@ -189,33 +196,62 @@ namespace Project_QLBanXeMay
         {
             Model1 context = new Model1();
             var listCTPN = context.ChiTietPhieuNhaps.ToList();
-            var listSeach = listCTPN.Where(x => x.MaPN.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower())).ToList();
-            BindGrid(listSeach);
+            var listSeach = listCTPN.Where(x => (x.MaPN.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))
+                                                || (x.Xe.HangXe.TenHang.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))
+                                                || (x.Xe.TenXe.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))
+                                                ).ToList();
+            if (txtSearch.Text.Trim() == "")
+                BindGrid(context.ChiTietPhieuNhaps.ToList());
+            else
+                BindGrid(listSeach);
         }
-
-        private void borderPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void borderPanel2_Click(object sender, EventArgs e)
-        {
-            searchLabel.Visible = false;
-        }
-
-        private void searchLabel_Click(object sender, EventArgs e)
-        {
-            searchLabel.Visible = false;
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             ImportHistory_Load(sender, e);
+        }
+
+        private void dgvMotorcycles_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvMotorcycles.Rows[e.RowIndex];
+                string tmp = row.Cells[0].Value.ToString();
+                var find = context.ChiTietXes.Where(p => p.MaPN == tmp).ToList();
+
+                    if (formCTPN == null)
+                    {
+
+                        formCTPN = new FormCTPN();
+                        formCTPN.FormClosed += formCTPN_FormClosed;
+                        formCTPN.Ctx = find;
+                        formCTPN.Show();
+                        
+                    }
+                    else
+                    {
+                        formCTPN.Activate();
+                    }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvMotorcycles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            
+
+            
+        }
+        private void formCTPN_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formCTPN = null;
         }
     }
 }

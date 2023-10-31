@@ -159,6 +159,7 @@
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.Size = new System.Drawing.Size(346, 20);
             this.txtAccount.TabIndex = 5;
+            this.txtAccount.TextChanged += new System.EventHandler(this.txtAccount_TextChanged);
             this.txtAccount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAccount_KeyDown);
             // 
             // pictureBox2

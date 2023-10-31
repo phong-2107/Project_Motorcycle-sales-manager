@@ -35,10 +35,12 @@ namespace Project_QLBanXeMay
         FormCustomerDeleted customerDeleted;
         FormMotorDeleted motorDeleted;
         FormAddMotor AddMotor;
+        TableBrand brand;
         /*  initialize variables */
         bool menuExpand = false;
         bool reportExpand = false;
         bool settingExpand = false;
+        bool VehicleExpand = false;
 
         private NhanVien dn = new NhanVien();
         public NhanVien Dn { get => dn; set => dn = value; }
@@ -71,7 +73,7 @@ namespace Project_QLBanXeMay
 
             leftBorder = new Panel();
             leftBorder.Size = new Size(7, 49);
-            flowLayoutPanel1.Controls.Add(leftBorder);
+            pltask.Controls.Add(leftBorder);
             
         }
 
@@ -121,7 +123,7 @@ namespace Project_QLBanXeMay
             if(menuExpand == false)
             {
                 MenuContainer.Height += 10;
-                if(MenuContainer.Height >= 197)
+                if((MenuContainer.Height >= 240 && vehicleContainer.Height <= 49) || (MenuContainer.Height >= 400 && vehicleContainer.Height <= 49))
                 {
                     MenuTransition.Stop();
                     menuExpand = true;
@@ -130,20 +132,152 @@ namespace Project_QLBanXeMay
             else
             {
                 MenuContainer.Height -= 10;
-                if(MenuContainer.Height <= 52)
+                if(MenuContainer.Height <= 49)
                 {
                     MenuTransition.Stop();
                     menuExpand = false;
                 }
             }
         }
-
+        
         private void Menu_Click(object sender, EventArgs e)
         {
             MenuTransition.Start();
         }
         bool sidebarExpand = true;
 
+
+        private void VehicleTransition_Tick(object sender, EventArgs e)
+        {
+            if (VehicleExpand == false)
+            {
+                vehicleContainer.Height += 10;
+                MenuContainer.Height += 10;
+                if ((vehicleContainer.Height >= 200 && MenuContainer.Height >= 400))
+                {
+                    MenuTransition.Stop();
+                    VehicleTransition.Stop();
+                    VehicleExpand = true;
+                    menuExpand = true;
+                }
+
+            }
+            else
+            {
+                vehicleContainer.Height -= 10;
+                MenuContainer.Height -= 10;
+                if (vehicleContainer.Height <= 49 && MenuContainer.Height >=245)
+                {
+                    VehicleTransition.Stop();
+                    MenuTransition.Stop();
+                    menuExpand= false;
+                    VehicleExpand = false;
+                }
+            }
+        }
+        private void btnVehicle_Click(object sender, EventArgs e)
+        {
+            VehicleTransition.Start();
+        }
+
+        
+
+        private void btnMotor_Click(object sender, EventArgs e)
+        {
+            TemplateCurrentBn(btnMotor);
+            if (qLVehicle == null)
+            {
+                qLVehicle = new QLVehicle();
+                formActive = qLVehicle;
+                qLVehicle.FormClosed += Vehicle_FormClosed;
+                qLVehicle.MdiParent = this;
+                qLVehicle.Dock = DockStyle.Fill;
+                qLVehicle.Refresh();
+                qLVehicle.Show();
+            }
+            else
+            {
+                qLVehicle.Activate();
+            }
+        }
+
+        private void Vehicle_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            qLVehicle = null;
+        }
+        private void MotorDeleted_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            motorDeleted = null;
+        }
+        private void btnBrand_Click(object sender, EventArgs e)
+        {
+            TemplateCurrentBn(btnBrand);
+            if (brand == null)
+            {
+                brand = new TableBrand();
+                brand.FormClosed += Brand_FormClosed;
+                brand.MdiParent = this;
+                brand.Show();
+            }
+            else
+            {
+                brand.Activate();
+            }
+        }
+        private void Brand_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            brand = null;
+        }
+
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            TemplateCurrentBn(btnColor);
+            if (color == null)
+            {
+                color = new TableColor();
+                color.FormClosed += Color_FormClosed;
+                color.MdiParent = this;
+                color.Show();
+            }
+            else
+            {
+                color.Activate();
+            }
+        }
+        private void Color_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            color = null;
+        }
+
+
+        private void btnPartner_Click(object sender, EventArgs e)
+        {
+            TemplateCurrentBn(btnPartner);
+            if (company == null)
+            {
+                company = new TableNCC();
+                company.FormClosed += NCC_FormClosed;
+                company.MdiParent = this;
+                company.Dock = DockStyle.Fill;
+                company.Refresh();
+                company.Show();
+            }
+            else
+            {
+                company.Activate();
+            }
+        }
+        private void NCC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            company = null;
+        }
+
+
+        private void _FormClosed(object sender, FormClosedEventArgs e)
+        {
+            color = null;
+        }
         private void ReportTransition_Tick(object sender, EventArgs e)
         {
             if (reportExpand == false)
@@ -179,35 +313,27 @@ namespace Project_QLBanXeMay
             {
                 
                 sider.Width -= 15;
-                if ( sider.Width <= 70)
+                if ( sider.Width <= 72)
                 {
                     sidebarExpand = false;
                     SidebarTransistion.Stop();
                     btnHome.Width = sider.Width;
-                    btnAbout.Width = sider.Width;
                     btnCreaateInvoice.Width = sider.Width;
                     btnReport.Width = sider.Width;
                     btnSettings.Width = sider.Width;
-                    //MenuContainer.Width = sider.Width;
-                    //ReportContainer.Width = sider.Width;
-                    //settingContainer.Width = sider.Width;
                 }
             }
             else
             {
                 sider.Width += 15;
-                if ( sider.Width >= 216)
+                if ( sider.Width >= 225)
                 {
                     sidebarExpand = true;
                     SidebarTransistion.Stop();
-                    btnCreaateInvoice.Width = sider.Width;
                     btnHome.Width = sider.Width;
-                    btnAbout.Width = sider.Width;
+                    btnCreaateInvoice.Width = sider.Width;
                     btnSettings.Width = sider.Width;
-                    //MenuContainer.Width = sider.Width;
-                    //ReportContainer.Width = sider.Width;
                     btnReport.Width = sider.Width;
-                    //settingContainer.Width = sider.Width;
                 }
             }
         }
@@ -321,28 +447,7 @@ namespace Project_QLBanXeMay
         }
 
         //========= 2.3 Vehicle Event CLick ===========
-        private void btnVehicle_Click(object sender, EventArgs e)
-        {
-            TemplateCurrentBn(btnVehicle);
-            if (qLVehicle == null)
-            {
-                qLVehicle = new QLVehicle();
-                formActive = qLVehicle;
-                qLVehicle.FormClosed += Vehicle_FormClosed;
-                qLVehicle.MdiParent = this;
-                qLVehicle.Dock = DockStyle.Fill;
-                qLVehicle.Refresh();
-                qLVehicle.Show();
-            }
-            else
-            {
-                qLVehicle.Activate();
-            }
-        }
-        private void Vehicle_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            qLVehicle.Activate();
-        }
+        
 
 
         private void btnSalesHistory_Click(object sender, EventArgs e)
@@ -468,6 +573,7 @@ namespace Project_QLBanXeMay
                 hoadon = new HoaDon();
                 hoadon.FormClosed += hoadon_FormClosed;
                 hoadon.MdiParent = this;
+                hoadon.Dn = Dn;
                 hoadon.Dock = DockStyle.Fill;
                 hoadon.Refresh();
                 hoadon.Show();
@@ -493,6 +599,7 @@ namespace Project_QLBanXeMay
                 AddMotor = new FormAddMotor();
                 AddMotor.FormClosed += MotorAdd_FormClosed;
                 AddMotor.MdiParent = this;
+                AddMotor.Dn = Dn;
                 AddMotor.Dock = DockStyle.Fill;
                 AddMotor.Show();
             }
@@ -507,6 +614,7 @@ namespace Project_QLBanXeMay
             AddMotor = null;
 
         }
+        /*
         private void btnAddColor_Click(object sender, EventArgs e)
         {
             if (color == null)
@@ -526,29 +634,7 @@ namespace Project_QLBanXeMay
         private void Color_FormClosed(object sender, FormClosedEventArgs e)
         {
             color = null;
-        }
-
-        private void btnCompany_Click(object sender, EventArgs e)
-        {
-            botttomBorder.BackColor = System.Drawing.Color.FromArgb(72, 60, 255);
-            botttomBorder.Location = new Point(btnCompany.Location.X, 41);
-            if (company == null)
-            {
-                company = new TableNCC();
-                company.FormClosed += NCC_FormClosed;
-                company.MdiParent = this;
-                company.Dock = DockStyle.Fill;
-                company.Show();
-            }
-            else
-            {
-                company.Activate();
-            }
-        }
-        private void NCC_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            company = null;
-        }
+        }*/
 
         private void btnAccountStaff_Click(object sender, EventArgs e)
         {
@@ -602,6 +688,7 @@ namespace Project_QLBanXeMay
                 motorDeleted = new FormMotorDeleted();
                 motorDeleted.FormClosed += MotorDeleted_FormClosed;
                 motorDeleted.MdiParent = this;
+
                 motorDeleted.Dock = DockStyle.Fill;
                 motorDeleted.Refresh();
                 motorDeleted.Show();
@@ -611,9 +698,7 @@ namespace Project_QLBanXeMay
                 motorDeleted.Activate();
             }
         }
-        private void MotorDeleted_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            motorDeleted = null;
-        }
+
+        
     }
 }

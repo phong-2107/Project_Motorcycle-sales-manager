@@ -33,3 +33,5 @@ D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormCustomerDe
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormMotorDeleted.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormAddMotor.resources
 D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.CreateMotor.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.FormCTPN.resources
+D:\C-Sharp\Nhom_3\Project_QLBanXeMay\obj\Debug\Project_QLBanXeMay.TableBrand.resources

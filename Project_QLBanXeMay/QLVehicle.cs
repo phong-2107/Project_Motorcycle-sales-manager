@@ -132,7 +132,6 @@ namespace Project_QLBanXeMay
                 txtId.Text = row.Cells[0].Value.ToString();
                 txtNameMotor.Text = row.Cells[1].Value.ToString();
                 cmbColor.Text = row.Cells[2].Value.ToString();
-                txtQuantity.Text = row.Cells[3].Value.ToString();
                 txtPrice.Text = row.Cells[4].Value.ToString();
                 cmbCompany.Text = row.Cells[5].Value.ToString();
                 var find = list.FirstOrDefault(p => p.MaXe.Trim() == txtId.Text);
@@ -191,11 +190,9 @@ namespace Project_QLBanXeMay
                     find.TenXe = txtNameMotor.Text;
                     find.MauXe.TenMau = cmbColor.Text;
                     find.DonGia = int.Parse(txtPrice.Text);
-                    find.SoLuong = int.Parse(txtQuantity.Text);
                     find.PhanKhoi = int.Parse(txtDisplacement.Text);
                     find.HangXe.TenHang = cmbCompany.Text;
                     find.LoaiXe = txtLoai.Text;
-
                     find.AnhXe = pathImage;
                     SaveImage(pathImage);
                     context.SaveChanges();
@@ -208,7 +205,7 @@ namespace Project_QLBanXeMay
                     x.MaXe = txtId.Text;
                     x.TenXe = txtNameMotor.Text;
                     x.MauXe.TenMau = cmbColor.Text;
-                    x.SoLuong = int.Parse(txtQuantity.Text);
+                    x.SoLuong = 0;
                     x.DonGia = double.Parse(txtPrice.Text);
                     x.PhanKhoi = int.Parse(txtDisplacement.Text);
                     x.HangXe.TenHang = cmbCompany.Text;

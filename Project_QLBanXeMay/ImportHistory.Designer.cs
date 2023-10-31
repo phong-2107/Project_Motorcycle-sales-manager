@@ -58,7 +58,6 @@
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateImport = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borderPanel2 = new Project_QLBanXeMay.borderRadius.borderPanel();
-            this.searchLabel = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.borderPanel1 = new Project_QLBanXeMay.borderRadius.borderPanel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -121,7 +120,6 @@
             this.label10.Size = new System.Drawing.Size(111, 20);
             this.label10.TabIndex = 0;
             this.label10.Text = "Số xe đã nhập";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // lbNumber
             // 
@@ -271,7 +269,7 @@
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMotorcycles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -291,7 +289,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMotorcycles.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMotorcycles.Location = new System.Drawing.Point(23, 20);
+            this.dgvMotorcycles.Location = new System.Drawing.Point(13, 20);
             this.dgvMotorcycles.Margin = new System.Windows.Forms.Padding(9);
             this.dgvMotorcycles.Name = "dgvMotorcycles";
             this.dgvMotorcycles.ReadOnly = true;
@@ -306,10 +304,12 @@
             this.dgvMotorcycles.RowTemplate.Height = 50;
             this.dgvMotorcycles.RowTemplate.ReadOnly = true;
             this.dgvMotorcycles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMotorcycles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvMotorcycles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMotorcycles.Size = new System.Drawing.Size(963, 507);
             this.dgvMotorcycles.StandardTab = true;
             this.dgvMotorcycles.TabIndex = 0;
+            this.dgvMotorcycles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMotorcycles_CellClick);
+            this.dgvMotorcycles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMotorcycles_CellContentClick);
             // 
             // IDImport
             // 
@@ -355,27 +355,12 @@
             // borderPanel2
             // 
             this.borderPanel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.borderPanel2.Controls.Add(this.searchLabel);
             this.borderPanel2.Controls.Add(button1);
             this.borderPanel2.Controls.Add(this.txtSearch);
             this.borderPanel2.Location = new System.Drawing.Point(33, 163);
             this.borderPanel2.Name = "borderPanel2";
             this.borderPanel2.Size = new System.Drawing.Size(370, 48);
             this.borderPanel2.TabIndex = 37;
-            this.borderPanel2.Click += new System.EventHandler(this.borderPanel2_Click);
-            this.borderPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.borderPanel2_Paint);
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.searchLabel.Location = new System.Drawing.Point(66, 17);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(96, 18);
-            this.searchLabel.TabIndex = 19;
-            this.searchLabel.Text = "Search  by ID";
-            this.searchLabel.Click += new System.EventHandler(this.searchLabel_Click);
             // 
             // button1
             // 
@@ -472,7 +457,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1300, 740);
+            this.ClientSize = new System.Drawing.Size(1350, 850);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.borderPanel4);
             this.Controls.Add(this.SearchByDate);
@@ -481,6 +466,7 @@
             this.Controls.Add(this.borderPanel1);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Name = "ImportHistory";
             this.Text = "ImportHistory";
             this.Load += new System.EventHandler(this.ImportHistory_Load);
@@ -513,7 +499,6 @@
         private borderRadius.borderPanel borderPanel3;
         private System.Windows.Forms.DataGridView dgvMotorcycles;
         private borderRadius.borderPanel borderPanel2;
-        private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox txtSearch;
         private borderRadius.borderPanel borderPanel1;
         private System.Windows.Forms.Panel panel6;

@@ -779,7 +779,7 @@
             this.borderPanel3.Controls.Add(this.pictureBox4);
             this.borderPanel3.Location = new System.Drawing.Point(803, 77);
             this.borderPanel3.Name = "borderPanel3";
-            this.borderPanel3.Size = new System.Drawing.Size(478, 713);
+            this.borderPanel3.Size = new System.Drawing.Size(496, 713);
             this.borderPanel3.TabIndex = 16;
             // 
             // lbMontorcycle
@@ -840,7 +840,7 @@
             this.dgvMotor.RowTemplate.ReadOnly = true;
             this.dgvMotor.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMotor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMotor.Size = new System.Drawing.Size(452, 603);
+            this.dgvMotor.Size = new System.Drawing.Size(470, 603);
             this.dgvMotor.TabIndex = 17;
             // 
             // nameMotorcycle
